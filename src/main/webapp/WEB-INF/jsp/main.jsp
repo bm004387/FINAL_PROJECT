@@ -82,6 +82,14 @@
 	</div>
 </div>
 <div class="container">
+	<div class="bestcont row">
+		<div class="bestTour col">
+			
+		</div>
+		<div class="suggest col">
+			
+		</div>
+	</div>
 	<div class="ctcont row">
 		<div id="carouselExampleFade" class="carousel slide carousel-fade col" data-bs-ride="carousel">
 		  <div class="carousel-inner ctcontleft">

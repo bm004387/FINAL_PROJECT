@@ -1,15 +1,41 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title></title>
-<link rel='stylesheet' type='text/css' media='screen' href='${context}/css/bootstrap-3.3.2.min.css'>
-<script src="${context}/js/jquery-3.5.1.min.js"></script>
+<div class="container" style="margin-top:25px;">
+	<div id="memberSearchDiv" class="text-center">
+	
+		<form id="searchForm" name="searchForm" method="post" class="navbar-form navbar-left" role="search" onsubmit="event.preventDefault();">
+			<input type="hidden" name="currentPage" value="1"/>
+			<input type="hidden" name="countPerPage" value="100"/>
+			<input type="hidden" name="resultType" value="json"/> 
+			<input type="hidden" id="confmKey" name="confmKey" value="devU01TX0FVVEgyMDIxMDQwODIyMzM0OTNj="/> 
+		
+			<div class="form-group">
+				<input type="text" id="keyword" name="keyword" class="form-control" placeholder="도로명+건물번호, 건물명, 지번을 입력하세요." onkeypress="javascript:enterSearch();" />
+			</div>
+			<button type="button" class="btn btn-default" onclick="javascript:fn_search();">검색</button>
+		</form>
+		
+	</div>
+	
+	<div>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>주소</th>
+					<th>우편번호</th>
+				</tr>
+			</thead>
+			<tbody id="addressTableTbody">
+				
+			</tbody>
+		</table>	
+	</div>
+</div>
+
 <script>
-	<%-- 도로명 주소로 검색 api 연동을 ajax로 처리 합니다. --%>
+	<%-- 주소명으로 검색 --%>
 	function fn_search(){
+
 		$.ajax({
 			 url :"http://www.juso.go.kr/addrlink/addrLinkApiJsonp.do"
 			,type:"post"
@@ -55,7 +81,7 @@
 		var evt_code = (window.netscape) ? ev.which : event.keyCode;
 		if (evt_code == 13) {    
 			event.keyCode = 0;  
-			fn_search(); //jsonp사용하여 enter키 입력 확인 
+			fn_search(); //jsonp사용시 enter검색 
 		} 
 	}
 
@@ -64,46 +90,9 @@
 		var aParam = [];
 		aParam["roadAddr"] = roadAddr;
 		aParam["jibunAddr"] = roadAddr;
-		aParam["zipNo"] = zipNo;
+		aParam["zipNo"] = roadAddr;
 
 		opener.callback_openAddressPopup(aParam);
 		window.close();
 	}
 </script>
-<style type="text/css">
-	#searchForm{
-	    display: flex;
-   		flex-direction: column;
-	}
-</style>
-</head>
-<div class="container" style="margin-top:25px;">
-	<div id="memberSearchDiv" class="text-center">
-		<form id="searchForm" name="searchForm" method="post" class="navbar-form navbar-left" role="search" onsubmit="event.preventDefault();">
-			<input type="hidden" name="currentPage" value="1"/>
-			<input type="hidden" name="countPerPage" value="100"/>
-			<input type="hidden" name="resultType" value="json"/>
-			<input type="hidden" id="confmKey" name="confmKey" value="devU01TX0FVVEgyMDIzMDExMTEyMTM0MTExMzQxODE="/>
-		
-			<div class="form-group">
-				<input type="text" id="keyword" name="keyword" class="form-control" placeholder="도로명+건물번호, 건물명, 지번을 입력하세요." onkeypress="javascript:enterSearch();" />
-			</div>
-			<button type="button" class="btn btn-default" onclick="javascript:fn_search();">검색</button>
-		</form>
-		
-	</div>
-	
-	<div>
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th>주소</th>
-					<th>우편번호</th>
-				</tr>
-			</thead>
-			<tbody id="addressTableTbody">
-				
-			</tbody>
-		</table>	
-	</div>
-</div>

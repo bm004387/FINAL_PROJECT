@@ -15,7 +15,7 @@
 <div class="container header">
 	<ul class="nav justify-content-end">
 	  <li class="nav-item">
-	    <a class="nav-link active" aria-current="page" href="#">로그인</a>
+	    <a class="nav-link active" aria-current="page" href="login.do">로그인</a>
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link" href="#">회원가입</a>

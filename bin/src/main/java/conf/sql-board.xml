@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				  "dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+	<resultMap id="boardResult" type="board">
+		<result property="boardNo" column="BOARD_NO" />
+		<result property="userCode" column="USER_CODE" />
+		<result property="boardTitle" column="BOARD_TITLE" />
+		<result property="boardContents" column="BOARD_CONTENTS" />
+		<result property="boardDate" column="BOARD_DATE" />
+		<result property="boardHits" column="BOARD_HITS" />
+		<result property="boardPhone" column="BOARD_PHONE" />
+	</resultMap>
+
+	<select id="retrieveBoardList" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveBoardList	*/
+		
+			SELECT BOARD.BOARD_NO
+				 , BOARD.USER_CODE
+				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = BOARD.USER_CODE) AS USER_ID
+				 , BOARD.BOARD_TITLE
+				 , BOARD.BOARD_CONTENTS
+				 , BOARD.BOARD_DATE
+				 , (SELECT COUNT(*) FROM TB_BOARD) AS BOARD_COUNT
+				 , BOARD.BOARD_HITS
+	             , (CASE WHEN TRUNC(((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI')) * 24)) < 24
+                    THEN TRUNC(((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI')) * 24)) || '시간 전'
+                    ELSE TRUNC((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI'))) || '일 전' END) AS BOARD_TIMEAGO
+			FROM   TB_BOARD BOARD
+			WHERE  1=1
+			ORDER BY BOARD.BOARD_DATE DESC
+			
+			
+			
+		]]>
+	</select>
+	
+	<select id="retrieveBoardList2" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveBoardList	*/
+		
+			SELECT BOARD.BOARD_NO
+				 , BOARD.USER_CODE
+				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = BOARD.USER_CODE) AS USER_ID
+				 , BOARD.BOARD_TITLE
+				 , BOARD.BOARD_CONTENTS
+				 , BOARD.BOARD_DATE
+				 , (SELECT COUNT(*) FROM TB_BOARD) AS BOARD_COUNT
+				 , BOARD.BOARD_HITS
+	             , (CASE WHEN TRUNC(((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI')) * 24)) < 24
+                    THEN TRUNC(((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI')) * 24)) || '시간 전'
+                    ELSE TRUNC((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI'))) || '일 전' END) AS BOARD_TIMEAGO
+			FROM   TB_BOARD_user BOARD
+			WHERE  1=1
+			ORDER BY BOARD.BOARD_DATE DESC
+			
+			
+			
+		]]>
+	</select>
+	
+	<select id="retrieveBoardList3" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveBoardList	*/
+		
+			SELECT BOARD.BOARD_NO
+				 , BOARD.USER_CODE
+				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = BOARD.USER_CODE) AS USER_ID
+				 , BOARD.BOARD_TITLE
+				 , BOARD.BOARD_CONTENTS
+				 , BOARD.BOARD_DATE
+				 , (SELECT COUNT(*) FROM TB_BOARD) AS BOARD_COUNT
+				 , BOARD.BOARD_HITS
+	             , (CASE WHEN TRUNC(((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI')) * 24)) < 24
+                    THEN TRUNC(((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI')) * 24)) || '시간 전'
+                    ELSE TRUNC((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI'))) || '일 전' END) AS BOARD_TIMEAGO
+			FROM   TB_BOARD_comu BOARD
+			WHERE  1=1
+			ORDER BY BOARD.BOARD_DATE DESC
+			
+			
+			
+		]]>
+	</select>
+	
+	<select id="retrieveBoardList4" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveBoardList	*/
+		
+			SELECT BOARD.BOARD_NO
+				 , BOARD.USER_CODE
+				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = BOARD.USER_CODE) AS USER_ID
+				 , BOARD.BOARD_TITLE
+				 , BOARD.BOARD_CONTENTS
+				 , BOARD.BOARD_DATE
+				 , (SELECT COUNT(*) FROM TB_BOARD) AS BOARD_COUNT
+				 , BOARD.BOARD_HITS
+				 , BOARD.BOARD_PHONE
+	             , (CASE WHEN TRUNC(((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI')) * 24)) < 24
+                    THEN TRUNC(((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI')) * 24)) || '시간 전'
+                    ELSE TRUNC((TO_DATE(TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'), 'YYYY-MM-DD HH24:MI') - TO_DATE(BOARD_DATE, 'YYYY-MM-DD HH24:MI'))) || '일 전' END) AS BOARD_TIMEAGO
+			FROM   TB_BOARD_PRODUCQUS BOARD
+			WHERE  1=1
+			ORDER BY BOARD.BOARD_DATE DESC
+			
+			
+			
+		]]>
+	</select>
+	
+	
+
+	<select id="retrieveBoard" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveBoard	*/
+	
+			SELECT BOARD.BOARD_NO
+				 , BOARD.USER_CODE
+				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = BOARD.USER_CODE) AS USER_ID
+				 , BOARD.BOARD_TITLE
+				 , BOARD.BOARD_CONTENTS
+				 , BOARD.BOARD_DATE
+				 , BOARD.BOARD_HITS
+			FROM   TB_BOARD BOARD
+			WHERE  1=1
+			AND    BOARD_NO = #{boardNo}
+			
+		
+			
+		]]>
+	</select>
+	
+	<select id="retrieveBoard2" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveBoard	*/
+	
+			SELECT BOARD.BOARD_NO
+				 , BOARD.USER_CODE
+				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = BOARD.USER_CODE) AS USER_ID
+				 , BOARD.BOARD_TITLE
+				 , BOARD.BOARD_CONTENTS
+				 , BOARD.BOARD_DATE
+				 , BOARD.BOARD_HITS
+			FROM   TB_BOARD_user BOARD
+			WHERE  1=1
+			AND    BOARD_NO = #{boardNo}
+			
+		
+			
+		]]>
+	</select>
+	
+	<select id="retrieveBoard3" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveBoard	*/
+	
+			SELECT BOARD.BOARD_NO
+				 , BOARD.USER_CODE
+				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = BOARD.USER_CODE) AS USER_ID
+				 , BOARD.BOARD_TITLE
+				 , BOARD.BOARD_CONTENTS
+				 , BOARD.BOARD_DATE
+				 , BOARD.BOARD_HITS
+			FROM   TB_BOARD_comu BOARD
+			WHERE  1=1
+			AND    BOARD_NO = #{boardNo}
+			
+		
+			
+		]]>
+	</select>
+	
+	<select id="retrieveBoard4" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveBoard	*/
+	
+			SELECT BOARD.BOARD_NO
+				 , BOARD.USER_CODE
+				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = BOARD.USER_CODE) AS USER_ID
+				 , BOARD.BOARD_TITLE
+				 , BOARD.BOARD_CONTENTS
+				 , BOARD.BOARD_DATE
+				 , BOARD.BOARD_HITS
+				  , BOARD.BOARD_PHONE
+			FROM   TB_BOARD_PRODUCQUS BOARD
+			WHERE  1=1
+			AND    BOARD_NO = #{boardNo}
+			
+		
+			
+		]]>
+	</select>
+	
+	<select id="retrieveMaxBoardNo" resultType="string">
+		<![CDATA[
+		/*	retrieveMaxBoardNo	*/
+		
+			SELECT MAX(BOARD.BOARD_NO)
+			FROM   TB_BOARD BOARD
+			
+		
+		]]>
+	</select>
+	
+	<select id="retrieveMaxBoardNo2" resultType="string">
+		<![CDATA[
+		/*	retrieveMaxBoardNo	*/
+		
+			SELECT MAX(BOARD.BOARD_NO)
+			FROM   TB_BOARD_user BOARD
+			
+		
+		]]>
+	</select>
+	
+	<select id="retrieveMaxBoardNo3" resultType="string">
+		<![CDATA[
+		/*	retrieveMaxBoardNo	*/
+		
+			SELECT MAX(BOARD.BOARD_NO)
+			FROM   TB_BOARD_comu BOARD
+			
+		
+		]]>
+	</select>
+	
+	<select id="retrieveMaxBoardNo4" resultType="string">
+		<![CDATA[
+		/*	retrieveMaxBoardNo	*/
+		
+			SELECT MAX(BOARD.BOARD_NO)
+			FROM   TB_BOARD_PRODUCQUS BOARD
+			
+		
+		]]>
+	</select>
+	
+	
+
+	<insert id="createBoard" parameterType="board">
+		<![CDATA[
+		/*	createBoard	*/
+	
+			INSERT INTO TB_BOARD(
+			  BOARD_NO
+			, USER_CODE
+			, BOARD_TITLE
+			, BOARD_CONTENTS
+			, BOARD_DATE
+			) VALUES (
+			  'B' || LPAD(BOARD_SEQ.NEXTVAL, 5, 0)
+			, #{userCode}
+			, #{boardTitle}
+			, #{boardContents}
+			, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
+			)
+			
+		
+		]]>
+	</insert>
+	
+	<insert id="createBoard2" parameterType="board">
+		<![CDATA[
+		/*	createBoard	*/
+	
+			INSERT INTO TB_BOARD_user(
+			  BOARD_NO
+			, USER_CODE
+			, BOARD_TITLE
+			, BOARD_CONTENTS
+			, BOARD_DATE
+			) VALUES (
+			  'B' || LPAD(BOARD_SEQ.NEXTVAL, 5, 0)
+			, #{userCode}
+			, #{boardTitle}
+			, #{boardContents}
+			, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
+			)
+			
+		
+		]]>
+	</insert>
+	
+	<insert id="createBoard3" parameterType="board">
+		<![CDATA[
+		/*	createBoard	*/
+	
+			INSERT INTO TB_BOARD_comu(
+			  BOARD_NO
+			, USER_CODE
+			, BOARD_TITLE
+			, BOARD_CONTENTS
+			, BOARD_DATE
+			) VALUES (
+			  'B' || LPAD(BOARD_SEQ.NEXTVAL, 5, 0)
+			, #{userCode}
+			, #{boardTitle}
+			, #{boardContents}
+			, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
+			)
+			
+		
+		]]>
+	</insert>
+	
+	<insert id="createBoard4" parameterType="board">
+		<![CDATA[
+		/*	createBoard	*/
+	
+			INSERT INTO TB_BOARD_PRODUCQUS(
+			  BOARD_NO
+			, USER_CODE
+			, BOARD_TITLE
+			, BOARD_CONTENTS
+			, BOARD_PHONE
+			, BOARD_DATE
+			) VALUES (
+			  'B' || LPAD(BOARD_SEQ.NEXTVAL, 5, 0)
+			, #{userCode}
+			, #{boardTitle}
+			, #{boardContents}
+			,(select phone_num from tb_com_user where USER_CODE=#{userCode})
+			, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
+			)
+			
+		
+		]]>
+	</insert>
+	
+	
+
+	<update id="updateBoard" parameterType="board">
+		<![CDATA[
+		/*	updateBoard	*/
+		
+		
+			UPDATE TB_BOARD
+			SET BOARD_TITLE          =  #{boardTitle}
+			  , BOARD_CONTENTS       =  #{boardContents}
+			WHERE BOARD_NO = #{boardNo}
+			
+		
+		]]>
+	</update>
+	
+	<update id="updateBoard2" parameterType="board">
+		<![CDATA[
+		/*	updateBoard	*/
+		
+		
+			UPDATE TB_BOARD_user
+			SET BOARD_TITLE          =  #{boardTitle}
+			  , BOARD_CONTENTS       =  #{boardContents}
+			WHERE BOARD_NO = #{boardNo}
+			
+		
+		]]>
+	</update>
+	
+	<update id="updateBoard3" parameterType="board">
+		<![CDATA[
+		/*	updateBoard	*/
+		
+		
+			UPDATE TB_BOARD_comu
+			SET BOARD_TITLE          =  #{boardTitle}
+			  , BOARD_CONTENTS       =  #{boardContents}
+			WHERE BOARD_NO = #{boardNo}
+			
+		
+		]]>
+	</update>
+	
+	<update id="updateBoard4" parameterType="board">
+		<![CDATA[
+		/*	updateBoard	*/
+		
+		
+			UPDATE TB_BOARD_PRODUCQUS
+			SET BOARD_TITLE          =  #{boardTitle}
+			  , BOARD_CONTENTS       =  #{boardContents}
+			WHERE BOARD_NO = #{boardNo}
+			
+		
+		]]>
+	</update>
+	
+	
+
+	<update id="updateBoardHits" parameterType="board">
+		<![CDATA[
+		
+		/*	updateBoardHits	*/
+			UPDATE TB_BOARD
+			SET BOARD_HITS          =  BOARD_HITS + 1
+			WHERE BOARD_NO = #{boardNo}
+			
+		
+		]]>
+	</update>
+	
+	<update id="updateBoardHits2" parameterType="board">
+		<![CDATA[
+		
+		/*	updateBoardHits	*/
+			UPDATE TB_BOARD_user
+			SET BOARD_HITS          =  BOARD_HITS + 1
+			WHERE BOARD_NO = #{boardNo}
+			
+		
+		]]>
+	</update>
+	
+	<update id="updateBoardHits3" parameterType="board">
+		<![CDATA[
+		
+		/*	updateBoardHits	*/
+			UPDATE TB_BOARD_comu
+			SET BOARD_HITS          =  BOARD_HITS + 1
+			WHERE BOARD_NO = #{boardNo}
+			
+		
+		]]>
+	</update>
+	
+	<update id="updateBoardHits4" parameterType="board">
+		<![CDATA[
+		
+		/*	updateBoardHits	*/
+			UPDATE TB_BOARD_PRODUCQUS
+			SET BOARD_HITS          =  BOARD_HITS + 1
+			WHERE BOARD_NO = #{boardNo}
+			
+		
+		]]>
+	</update>
+	
+	
+
+	<delete id="deleteBoard" parameterType="map">
+		<![CDATA[
+		/*	deleteBoard	*/
+		
+	
+			DELETE
+			FROM  TB_BOARD
+			WHERE 1=1
+			AND BOARD_NO = #{boardNo}
+			
+			
+		]]>
+	</delete>
+	
+	<delete id="deleteBoard3" parameterType="map">
+		<![CDATA[
+		/*	deleteBoard	*/
+		
+	
+			DELETE
+			FROM  TB_BOARD_user
+			WHERE 1=1
+			AND BOARD_NO = #{boardNo}
+			
+			
+		]]>
+	</delete>
+	
+	<delete id="deleteBoard4" parameterType="map">
+		<![CDATA[
+		/*	deleteBoard	*/
+		
+	
+			DELETE
+			FROM  TB_BOARD_comu
+			WHERE 1=1
+			AND BOARD_NO = #{boardNo}
+			
+			
+		]]>
+	</delete>
+	
+	<delete id="deleteBoard5" parameterType="map">
+		<![CDATA[
+		/*	deleteBoard	*/
+		
+	
+			DELETE
+			FROM  TB_BOARD_PRODUCQUS
+			WHERE 1=1
+			AND BOARD_NO = #{boardNo}
+			
+			
+		]]>
+	</delete>
+	
+	
+
+	<delete id="deleteBoard2" parameterType="map">
+		<![CDATA[
+		/*	deleteBoard2	*/
+		
+	
+			DELETE
+			FROM  TB_BOARD
+			WHERE 1=1
+			AND USER_CODE = (SELECT USER_CODE FROM TB_COM_USER WHERE ID = #{loginId})
+			
+			
+		]]>
+	</delete>
+	
+	
+</mapper>

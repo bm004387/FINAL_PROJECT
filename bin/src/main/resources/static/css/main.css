@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .maincont{
 	width: 100%;
 	height: 700px
@@ -5,4 +6,31 @@
 .maincont img{
 	width: 100%;
 	height: 700px;
+=======
+.header{
+	height: 200px;
+	background: gray;
+}
+.topcont{
+	margin-top: 50px;
+	width: 100%;
+	height: 700px;
+}
+.topcont img{
+	width: 100%;
+	height: 700px;
+}
+.ctcont{
+	margin: 50px 0;
+}
+.ctcontleft{
+	border-radius: 20px;
+}
+.notice li{
+	width: 50%;
+}
+
+.notice li button{
+	width: 100%;
+>>>>>>> branch 'master' of https://github.com/bm004387/FINAL_PROJECT.git
 }

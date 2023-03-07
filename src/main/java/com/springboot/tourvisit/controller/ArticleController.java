@@ -29,6 +29,10 @@ public class ArticleController {
 	public String home() {
 		return "main";
 	}
+	@RequestMapping("/article/about.do")
+	public String about() {
+		return "about/about";
+	}
 	
 	// 게시글 등록 폼
 	@GetMapping("/article/write.do")

@@ -62,14 +62,20 @@
 	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <img src="images/flower_01.jpg" class="d-block w-100" alt="...">
-	    </div>
-	    <div class="carousel-item">
-	      <img src="images/flower_02.jpg" class="d-block w-100" alt="...">
-	    </div>
-	    <div class="carousel-item">
-	      <img src="images/yuna_flower1.jpg" class="d-block w-100" alt="...">
-	    </div>
+		      <img src="images/img2.jpg" class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="images/img3.jpg" class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="images/img4.png" class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="images/img1.jfif" class="d-block w-100" alt="...">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="images/img6.jpg" class="d-block w-100" alt="...">
+		    </div>
 	  </div>
 	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -97,7 +103,7 @@
 		      <img src="images/flower_01.jpg" class="d-block w-100" alt="...">
 		    </div>
 		    <div class="carousel-item">
-		      <img src="images/flower_02.jpg" class="d-block w-100" alt="...">
+		      <img src="images/img6.jpg" class="d-block w-100" alt="...">
 		    </div>
 		    <div class="carousel-item">
 		      <img src="images/yuna_flower1.jpg" class="d-block w-100" alt="...">
@@ -113,21 +119,39 @@
 		  </button>
 		</div>
 		<div class="col notice">
-			<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 			  <li class="nav-item" role="presentation">
-			    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">공지사항</button>
+			    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">공지사항</button>
 			  </li>
 			  <li class="nav-item" role="presentation">
-			    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">자주묻는질문</button>
+			    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">자주묻는 질문</button>
 			  </li>
 			</ul>
-			<div class="tab-content" id="myTabContent">
-			  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
-			  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
-			  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
-			  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">.공지</div>
-			  
-			  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">자주..</div>
+			<div class="tab-content" id="pills-tabContent">
+			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+				  <ul class="ntcList">
+				  	<li>공지1<span>2023-03-07</span></li>
+				  	<li>공지2<span>2023-03-07</span></li>
+				  	<li>공지3<span>2023-03-07</span></li>
+				  	<li>공지4<span>2023-03-07</span></li>
+				  	<li>공지4<span>2023-03-07</span></li>
+				  	<li>공지4<span>2023-03-07</span></li>
+				  	<li>공지4<span>2023-03-07</span></li>
+				  	<li>공지4<span>2023-03-07</span></li>
+				  </ul>
+			  </div>
+			  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+			  	<ul class="faqList">
+				  	<li>자주묻는 질문1<span>2023-03-07</span></li>
+				  	<li>자주묻는 질문2<span>2023-03-07</span></li>
+				  	<li>자주묻는 질문3<span>2023-03-07</span></li>
+				  	<li>자주묻는 질문4<span>2023-03-07</span></li>
+				  	<li>자주묻는 질문4<span>2023-03-07</span></li>
+				  	<li>자주묻는 질문4<span>2023-03-07</span></li>
+				  	<li>자주묻는 질문4<span>2023-03-07</span></li>
+				  	<li>자주묻는 질문4<span>2023-03-07</span></li>
+				  </ul>
+			  </div>
 			</div>
 		</div>
 	</div>

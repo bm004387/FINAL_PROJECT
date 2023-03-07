@@ -16,15 +16,17 @@
 	<ul class="nav justify-content-end">
 	  <li class="nav-item">
 	    <a class="nav-link active" aria-current="page" href="login.do">로그인</a>
-	    <a class="nav-link active" aria-current="page" href="http://localhost:9008/apitest/apitest.jsp">API테스트</a>
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link" href="#">회원가입</a>
 	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link active" aria-current="page" href="http://localhost:9008/apitest/apitest.jsp">API테스트</a>
+	  </li>
 	</ul>
 	<nav class="navbar navbar-expand-lg bg-light">
 	  <div class="container-fluid">
-	    <a class="navbar-brand" href="#">Navbar scroll</a>
+	    <a class="navbar-brand" href="#"><img src="images/logo.png" style="width: 150px;"/></a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
@@ -162,7 +164,7 @@
 	<hr>
 	<div class="btcont">
 		<div>
-			<img src="images/img1.jfif">e
+			<img src="images/img1.jfif">
 		</div>
 		<div>
 			<img src="#">
@@ -181,9 +183,13 @@
 		</div>
 	</div>
 </div>
+<div class="container">
+	<div class="footer">
+		
+	</div>
+</div>
 </body>
 </html>
-
 
 
 

@@ -3,3 +3,24 @@
 	width: 100%;
 	height: 500px;
 }
+
+.fa-map-marked-alt:before{
+	font-size: 100px;
+	
+}
+
+.fa-taxi:before{
+	font-size: 100px;
+	
+}
+
+
+.fa-plane:before{
+	font-size: 100px;
+	
+}
+
+.fa-hotel:before{
+	font-size: 100px;
+	
+}

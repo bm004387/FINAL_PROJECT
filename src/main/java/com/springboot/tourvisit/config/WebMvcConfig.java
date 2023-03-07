@@ -3,7 +3,9 @@ package com.springboot.tourvisit.config;
 import java.io.File;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -19,8 +21,14 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
-                .addResourceLocations("file:src/main/resources/templates/", "file:src/main/resources/static/") // 정적 데이터 접근
+                .addResourceLocations( "file:src/main/resources/static/") // 정적 데이터 접근
                 .addResourceLocations("file:///"+ Constants.getUploadImagesPath() + File.separator); // 물리적 파일 접근
     }
+	
+	 @Override
+	    public void addCorsMappings(CorsRegistry registry) {
+	        registry.addMapping("/**")
+	                .allowedOrigins("*");
+	}
 	
 }

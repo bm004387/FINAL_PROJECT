@@ -20,7 +20,7 @@
 	    <a class="nav-link" href="#">회원가입</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link active" aria-current="page" href="http://localhost:9008/apitest/apitest.jsp">API테스트</a>
+	    <a class="nav-link active" aria-current="page" href="apitest.do">API테스트</a>
 	  </li>
 	</ul>
 	<nav class="navbar navbar-expand-lg bg-light">

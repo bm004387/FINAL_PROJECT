@@ -157,6 +157,30 @@
 		</div>
 	</div>
 </div>
+<div class="container">
+	<h3>이달의 추천 여행지</h3>
+	<hr>
+	<div class="btcont">
+		<div>
+			<img src="images/img1.jfif">
+		</div>
+		<div>
+			<img src="#">
+		</div>
+		<div>
+			<img src="#">
+		</div>
+		<div>
+			<img src="#">
+		</div>
+		<div>
+			<img src="#">
+		</div>
+		<div>
+			<img src="#">
+		</div>
+	</div>
+</div>
 </body>
 </html>
 

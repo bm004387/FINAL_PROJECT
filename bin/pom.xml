@@ -41,6 +41,7 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-jdbc</artifactId>
 </dependency>
+
 	
 		<!-- JSTL 설정 -->
 		<dependency>

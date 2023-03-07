@@ -162,7 +162,7 @@
 	<hr>
 	<div class="btcont">
 		<div>
-			<img src="images/img1.jfif">
+			<img src="images/img1.jfif">e
 		</div>
 		<div>
 			<img src="#">

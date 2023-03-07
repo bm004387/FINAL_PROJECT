@@ -18,8 +18,6 @@
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
-
-
 	<!-- JSON 사용하기 위해 추가 -->
 	<dependency>
     <groupId>com.googlecode.json-simple</groupId>

@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tour Visit</title>
+<<<<<<< HEAD
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css">
 
@@ -61,6 +62,9 @@
 	  </div>
 	</nav>
 </div>
+=======
+<jsp:include page="include/header.jsp"></jsp:include>
+>>>>>>> branch 'master' of https://github.com/bm004387/FINAL_PROJECT.git
 <div class="topcont">
 	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	  <div class="carousel-inner">

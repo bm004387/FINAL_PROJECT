@@ -5,19 +5,34 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+
+<script src="js/bootstrap.bundle.js"></script>
 </head>
 <body>
 <div class="container header">
+	<ul class="nav justify-content-end">
+	  <li class="nav-item">
+	    <a class="nav-link active" aria-current="page" href="login.do">로그인</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="#">회원가입</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link active" aria-current="page" href="http://localhost:9008/apitest/apitest.jsp">API테스트</a>
+	  </li>
+	</ul>
 	<nav class="navbar navbar-expand-lg bg-light">
 	  <div class="container-fluid">
-	    <a class="navbar-brand" href="#">Navbar scroll</a>
+	    <a class="navbar-brand" href="#"><img src="images/logo.png" style="width: 150px;"/></a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
 	    <div class="collapse navbar-collapse" id="navbarScroll">
 	      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 	        <li class="nav-item">
-	          <a class="nav-link active" aria-current="page" href="#">Home</a>
+	          <a class="nav-link active" href="/article/about.do" style="cursor: pointer;">about</a>
 	        </li>
 	        <li class="nav-item">
 	          <a class="nav-link" href="#">Link</a>
@@ -33,9 +48,6 @@
 	            <li><a class="dropdown-item" href="#">Something else here</a></li>
 	          </ul>
 	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link disabled">Link</a>
-	        </li>
 	      </ul>
 	      <form class="d-flex" role="search">
 	        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -45,5 +57,3 @@
 	  </div>
 	</nav>
 </div>
-</body>
-</html>

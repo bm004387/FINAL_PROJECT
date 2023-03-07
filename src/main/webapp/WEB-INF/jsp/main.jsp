@@ -84,10 +84,10 @@
 <div class="container">
 	<div class="bestcont row">
 		<div class="bestTour col">
-			
+			<h3>Best Tour</h3>
 		</div>
 		<div class="suggest col">
-			
+			<h3>추전 여행지</h3>
 		</div>
 	</div>
 	<div class="ctcont row">

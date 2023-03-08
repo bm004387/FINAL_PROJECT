@@ -6,10 +6,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/main.css">
+
 
 <script src="js/bootstrap.bundle.js"></script>
-
+<style type="text/css">
+.header{
+	height: 200px;
+	background: gray;
+}
+</style>
 </head>
 <body>
 <div class="container header">

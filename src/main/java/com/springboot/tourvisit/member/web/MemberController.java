@@ -133,7 +133,7 @@ public class MemberController {
 			
 			model.addAttribute("message", "회원가입 되셨습니다");
 			model.addAttribute("memberVO", memberVO);
-			model.addAttribute("returnURL", "/selectMemberList.do");
+			model.addAttribute("returnURL", "/");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

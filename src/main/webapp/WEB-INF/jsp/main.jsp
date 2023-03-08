@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tour Visit</title>
-<<<<<<< HEAD
 <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script>
@@ -24,37 +23,9 @@
             }
         });
     </script>
-    <style>
-#cookie{
-	width: 700px;
-	height: 500px;
-	position: absolute;
-	z-index: 99999;
-	top: 50px;
-	left: 50px;
-}
-#cookie img{
-	width: 100%;
-	height: 100%;
-}
-.closeWrap{
-	text-align: right;
-	background: #000;
-	vertical-align: middle;
-	color: #fff;
-	font-weight: bold;
-	padding-right: 10px;
-}
-.closeWrap input{
-	vertical-align: middle;
-}
-</style>
-=======
-
->>>>>>> branch 'master' of https://github.com/bm004387/FINAL_PROJECT.git
 <jsp:include page="include/header.jsp"></jsp:include>
 <div id="cookie">
-   	<img src="${context}/img/cookieImg.jpg" alt="공지사항이미지" width="300px" height="300px"> 
+   	<img src="images/img1.jfif" alt="공지사항이미지" width="300px" height="300px"> 
     <p class="closeWrap">
         <input type="checkbox" name="expiresChk" id="expiresChk">
         <label for="expiresChk">3일 동안 이 창 열지 않기</label>

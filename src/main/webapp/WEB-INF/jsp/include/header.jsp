@@ -6,9 +6,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/main.css">
+
 
 <script src="js/bootstrap.bundle.js"></script>
+<style type="text/css">
+.header{
+	height: 200px;
+	background: gray;
+}
+</style>
 </head>
 <body>
 <div class="container header">
@@ -25,7 +31,7 @@
 	</ul>
 	<nav class="navbar navbar-expand-lg bg-light">
 	  <div class="container-fluid">
-	    <a class="navbar-brand" href="#"><img src="images/logo.png" style="width: 150px;"/></a>
+	    <a class="navbar-brand" href="/"><img src="images/logo.png" style="width: 150px;"/></a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>

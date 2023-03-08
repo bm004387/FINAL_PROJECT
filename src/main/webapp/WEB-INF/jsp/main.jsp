@@ -7,24 +7,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tour Visit</title>
 
+<link rel="stylesheet" href="css/main.css">
+
+<script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script>
+        $(function(){
+            if($.cookie('popup') == 'none'){
+                $("#cookie").hide();
+            }
+            var $expiresChk = $("#expiresChk");
+            $(".closeBtn").on("click", closePop );
+            function closePop(){
+                if($expiresChk.is(":checked")){
+                    $.cookie("popup","none",{expires:1, path:"/"});
+                }
+                $("#cookie").fadeOut("fast");
+            }
+        });
+    </script>
+    <style>
+a{
+	cursor: pointer;	
+}
+</style>
 <jsp:include page="include/header.jsp"></jsp:include>
+<div id="cookie">
+   	<a><img src="images/cookie.jfif" alt="공지사항이미지"></a> 
+    <p class="closeWrap">
+        <input type="checkbox" name="expiresChk" id="expiresChk">
+        <label for="expiresChk">오늘 하루 이 창 열지 않기</label>
+        <button class="closeBtn">닫기</button>
+    </p>
+</div>
 <div class="topcont">
 	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-		      <img src="images/img2.jpg" class="d-block w-100" alt="...">
+		      <a><img src="images/img2.jpg" class="d-block w-100" alt="..."></a>
 		    </div>
 		    <div class="carousel-item">
-		      <img src="images/img3.jpg" class="d-block w-100" alt="...">
+		      <a><img src="images/img3.jpg" class="d-block w-100" alt="..."></a>
 		    </div>
 		    <div class="carousel-item">
-		      <img src="images/img4.png" class="d-block w-100" alt="...">
+		      <a><img src="images/img4.png" class="d-block w-100" alt="..."></a>
 		    </div>
 		    <div class="carousel-item">
-		      <img src="images/img1.jfif" class="d-block w-100" alt="...">
+		      <a><img src="images/img1.jfif" class="d-block w-100" alt="..."></a>
 		    </div>
 		    <div class="carousel-item">
-		      <img src="images/img6.jpg" class="d-block w-100" alt="...">
+		      <a><img src="images/img6.jpg" class="d-block w-100" alt="..."></a>
 		    </div>
 	  </div>
 	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -80,26 +112,26 @@
 			<div class="tab-content" id="pills-tabContent">
 			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
 				  <ul class="ntcList">
-				  	<li>공지1<span>2023-03-07</span></li>
-				  	<li>공지2<span>2023-03-07</span></li>
-				  	<li>공지3<span>2023-03-07</span></li>
-				  	<li>공지4<span>2023-03-07</span></li>
-				  	<li>공지4<span>2023-03-07</span></li>
-				  	<li>공지4<span>2023-03-07</span></li>
-				  	<li>공지4<span>2023-03-07</span></li>
-				  	<li>공지4<span>2023-03-07</span></li>
+				  	<li><a>공지1</a><span>2023-03-07</span></li>
+				  	<li><a>공지1</a><span>2023-03-07</span></li>
+				  	<li><a>공지1</a><span>2023-03-07</span></li>
+				  	<li><a>공지1</a><span>2023-03-07</span></li>
+				  	<li><a>공지1</a><span>2023-03-07</span></li>
+				  	<li><a>공지1</a><span>2023-03-07</span></li>
+				  	<li><a>공지1</a><span>2023-03-07</span></li>
+				  	<li><a>공지1</a><span>2023-03-07</span></li>
 				  </ul>
 			  </div>
 			  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
 			  	<ul class="faqList">
-				  	<li>자주묻는 질문1<span>2023-03-07</span></li>
-				  	<li>자주묻는 질문2<span>2023-03-07</span></li>
-				  	<li>자주묻는 질문3<span>2023-03-07</span></li>
-				  	<li>자주묻는 질문4<span>2023-03-07</span></li>
-				  	<li>자주묻는 질문4<span>2023-03-07</span></li>
-				  	<li>자주묻는 질문4<span>2023-03-07</span></li>
-				  	<li>자주묻는 질문4<span>2023-03-07</span></li>
-				  	<li>자주묻는 질문4<span>2023-03-07</span></li>
+				  	<li><a>자주묻는 질문1</a><span>2023-03-07</span></li>
+				  	<li><a>자주묻는 질문1</a><span>2023-03-07</span></li>
+				  	<li><a>자주묻는 질문1</a><span>2023-03-07</span></li>
+				  	<li><a>자주묻는 질문1</a><span>2023-03-07</span></li>
+				  	<li><a>자주묻는 질문1</a><span>2023-03-07</span></li>
+				  	<li><a>자주묻는 질문1</a><span>2023-03-07</span></li>
+				  	<li><a>자주묻는 질문1</a><span>2023-03-07</span></li>
+				  	<li><a>자주묻는 질문1</a><span>2023-03-07</span></li>
 				  </ul>
 			  </div>
 			</div>

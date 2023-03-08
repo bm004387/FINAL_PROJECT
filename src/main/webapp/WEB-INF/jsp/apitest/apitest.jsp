@@ -11,68 +11,7 @@
 <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 
 	<script type="text/javascript">
-	$(document).ready(function(){
-		$.ajax({
-			url:'api.do',
-			type: 'GET',
-			contentType:'application/json;charset=utf-8',
-			dataType:'json',
-			success: function(data){
-				var myItem = data.response.body.items.item;
-				makeList(myItem);
-			},
-			error: function(xhr, status, error){
-				console.log("상태값 : " + xhr.status + "\tHttp 에러메시지 : " + xhr.responseText);
-			}
-		});
-		
-		function makeList(tour){
-			$("#table-body").empty();
-			if(tour.length==0){
-				let str = '';
-				str += `
-					<tr class="table-info">
-						<td>정보를 받아오지 못했습니다</td>
-					</tr>
-				`;
-				$("#table-body").append(str);
-			}
-			else{
-				$(tour).each(function(index, user){
-					let list = `<tr>
-						<td>${'${tour.addr1}'}</td>
-						<td>${'${tour.addr2}'}</td>
-						<td>${'${tour.areacode}'}</td>
-						<td>${'${tour.booktour}'}</td>
-						<td>${'${tour.cat1}'}</td>
-						<td>${'${tour.cat2}'}</td>
-						<td>${'${tour.cat3}'}</td>
-						<td>${'${tour.contentid}'}</td>
-						<td>${'${tour.contenttypeid}'}</td>
-						<td>${'${tour.createdtime}'}</td>
-						<td>${'${tour.firstimage}'}</td>
-						<td>${'${tour.firstimage2}'}</td>
-						<td>${'${tour.mapx}'}</td>
-						<td>${'${tour.mapy}'}</td>
-						<td>${'${tour.mlevel}'}</td>
-						<td>${'${tour.modifiedtime}'}</td>
-						<td>${'${tour.readcount}'}</td>
-						<td>${'${tour.sigungucode}'}</td>
-						<td>${'${tour.tel}'}</td>
-						<td>${'${tour.title}'}</td>
-						<td>${'${tour.zipcode}'}</td>
-						
-						<td colspan="2" class="text-right">
-							<a href="#">저장버튼으로 이용?</a>
-							<a href="#">임시 버튼</a>
-						</td>
-					</tr>
-					`;
-					$("#table-body").append(list);
-				});	
-			}
-		}
-	})
+	
 </script>
 
 <h2 class="user-list">관광지정보</h2>
@@ -105,6 +44,7 @@
 	</thead>
 	<tbody id="table-body"></tbody>
 </table>
+<button onclick="location.href='api.do';">api 값 추출하기 테스트</button>
 
 
 </body>

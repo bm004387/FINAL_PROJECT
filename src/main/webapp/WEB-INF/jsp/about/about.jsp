@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tour Visit 회사소개</title>
@@ -38,30 +38,18 @@
  });
 });
 </script>
-
-	
-	</head>
-	<body>
+	<jsp:include page="../include/header.jsp"></jsp:include>
 		      <img class="img-fluid w-100"  src="/images/about01.png"  alt="메인이미지1">
 			<p>국내의 다양한 볼거리와 체험이<br>가능한 관광 웹사이트입니다.</p>
 	 	<div class="content">
-		<svg>
 			<i class="fas fa-taxi">
 				<h1>최상의 교통편 정보 제공</h1>
 			</i>
-		</svg>
-		<svg>
 			<i class="fas fa-plane">
 				<h1>항공기 티켓팅 할인 혜택</h1>
 			</i>
-		</svg>
-		<svg>
 		<i class="fas fa-hotel">
 			<h1>맞춤형 다양한 숙박시설</h1>
 		</i>
-		</svg>
 		</div>
-		      <img class="img-fluid w-100" style="margin-top:300px"src="/images/about02.png" alt="메인이미지2">
-		
-	</body>
-	</html>
+		      <img class="img-fluid w-100" style="margin-top:100px"src="/images/about02.png" alt="메인이미지2">

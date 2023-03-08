@@ -6,9 +6,8 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <title>메인화면</title>
-<link rel="stylesheet" href="../css/common.css">
-</head>
-<body>
+
+<jsp:include page="../include/header.jsp"></jsp:include>
 	<div class="container">
 		<!-- 1. 게시글 등록 -->
 		<div class="btn-wrapper">
@@ -33,5 +32,3 @@
 			</form>
 		</div>
 	</div>
-</body>
-</html>

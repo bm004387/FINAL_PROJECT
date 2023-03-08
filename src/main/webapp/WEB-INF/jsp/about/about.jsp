@@ -61,7 +61,7 @@
 		</i>
 		</svg>
 		</div>
-		      <img class="img-fluid w-100" style="margin-top:500px"src="/images/about02.png" alt="메인이미지2">
+		      <img class="img-fluid w-100" style="margin-top:300px"src="/images/about02.png" alt="메인이미지2">
 		
 	</body>
 	</html>

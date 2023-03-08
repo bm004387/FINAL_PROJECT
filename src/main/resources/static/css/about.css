@@ -4,15 +4,11 @@
 	}
 
 
-.fa-map-marked-alt:before{
-	font-size: 180px;
-	margin: 0 auto;
 	
-}
 
 .fa-taxi:before{
 	font-size: 180px;
-	margin: 0;
+	margin: 0 auto;
 
 }
 
@@ -33,14 +29,14 @@
 p{
 	margin:170px;
 	margin-top: 250px;
-	margin-bottom: 360px;
+	margin-bottom: 200px;
 	font-size: 86px;
 	font-weight: bold;
 }
 
 h1{
 	font-size: 60px;
-	margin-top: 60px;
+	margin-top: 40px;
 		font-weight: bold;
 	
 }

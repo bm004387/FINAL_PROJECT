@@ -6,7 +6,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tour Visit</title>
+<script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script>
+        $(function(){
+            if($.cookie('popup') == 'none'){
+                $("#cookie").hide();
+            }
+            var $expiresChk = $("#expiresChk");
+            $(".closeBtn").on("click", closePop );
+            function closePop(){
+                if($expiresChk.is(":checked")){
+                    $.cookie("popup","none",{expires:3, path:"/"});
+                }
+                $("#cookie").fadeOut("fast");
+            }
+        });
+    </script>
+    <style>
+#cookie{
+	width: 700px;
+	height: 500px;
+	position: absolute;
+	z-index: 99999;
+	top: 50px;
+	left: 50px;
+}
+#cookie img{
+	width: 100%;
+	height: 100%;
+}
+.closeWrap{
+	text-align: right;
+	background: #000;
+	vertical-align: middle;
+	color: #fff;
+	font-weight: bold;
+	padding-right: 10px;
+}
+.closeWrap input{
+	vertical-align: middle;
+}
+</style>
 <jsp:include page="include/header.jsp"></jsp:include>
+<div id="cookie">
+   	<img src="${context}/img/cookieImg.jpg" alt="공지사항이미지" width="300px" height="300px"> 
+    <p class="closeWrap">
+        <input type="checkbox" name="expiresChk" id="expiresChk">
+        <label for="expiresChk">3일 동안 이 창 열지 않기</label>
+        <button class="closeBtn">닫기</button>
+    </p>
+</div>
 <div class="topcont">
 	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	  <div class="carousel-inner">

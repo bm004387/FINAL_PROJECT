@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tour Visit</title>
+<<<<<<< HEAD
 <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script>
@@ -48,6 +49,9 @@
 	vertical-align: middle;
 }
 </style>
+=======
+
+>>>>>>> branch 'master' of https://github.com/bm004387/FINAL_PROJECT.git
 <jsp:include page="include/header.jsp"></jsp:include>
 <div id="cookie">
    	<img src="${context}/img/cookieImg.jpg" alt="공지사항이미지" width="300px" height="300px"> 

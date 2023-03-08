@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+
+    <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,28 +8,31 @@
 <title>Insert title here</title>
 </head>
 <body>
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$.ajax({
-			url:'https://apis.data.go.kr/B551011/KorService/areaBasedList?serviceKey=Lte9EaFEKl77Nf7DNWMbLTbLKPzbziOIHqfdh9EfekbiV9YBUQBtp9HchlcWxDH7IJ0YFxO7TQWh5VKTnmCi%2BQ%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json&listYN=Y&arrange=C',
+			url:'api.do',
 			type: 'GET',
 			contentType:'application/json;charset=utf-8',
 			dataType:'json',
 			success: function(data){
-				makeList(data);
+				var myItem = data.response.body.items.item;
+				makeList(myItem);
 			},
 			error: function(xhr, status, error){
-				console.log("»óÅÂ°ª : " + xhr.status + "\tHttp ¿¡·¯¸Ş½ÃÁö : " + xhr.responseText);
+				console.log("ìƒíƒœê°’ : " + xhr.status + "\tHttp ì—ëŸ¬ë©”ì‹œì§€ : " + xhr.responseText);
 			}
 		});
 		
 		function makeList(tour){
 			$("#table-body").empty();
 			if(tour.length==0){
-				let str = `
+				let str = '';
+				str += `
 					<tr class="table-info">
-						<td>Á¤º¸¸¦ ¹Ş¾Æ¿ÀÁö ¸øÇß½À´Ï´Ù</td>
+						<td>ì •ë³´ë¥¼ ë°›ì•„ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤</td>
 					</tr>
 				`;
 				$("#table-body").append(str);
@@ -59,8 +63,8 @@
 						<td>${'${tour.zipcode}'}</td>
 						
 						<td colspan="2" class="text-right">
-							<a href="#">ÀúÀå¹öÆ°À¸·Î ÀÌ¿ë?</a>
-							<a href="#">ÀÓ½Ã ¹öÆ°</a>
+							<a href="#">ì €ì¥ë²„íŠ¼ìœ¼ë¡œ ì´ìš©?</a>
+							<a href="#">ì„ì‹œ ë²„íŠ¼</a>
 						</td>
 					</tr>
 					`;
@@ -71,32 +75,32 @@
 	})
 </script>
 
-<h2 class="user-list">°ü±¤ÁöÁ¤º¸</h2>
+<h2 class="user-list">ê´€ê´‘ì§€ì •ë³´</h2>
 
 <table class="user-table">
 	<thead>
 		<tr class="table-info">
-			<td>ÁÖ¼Ò1</td>
-			<td>ÁÖ¼Ò2</td>
-			<td>Áö¿ªÄÚµå</td>
-			<td>Ã¥?</td>
-			<td>ÄÚµå1</td>
-			<td>ÄÚµå2</td>
-			<td>ÄÚµå3</td>
-			<td>°ü±¤ÁöÄÚµå</td>
-			<td>°ü±¤ÁöÁ¾·ùÄÚµå</td>
-			<td>»ı¼º½Ã°£</td>
-			<td>ÀÌ¹ÌÁö1</td>
-			<td>ÀÌ¹ÌÁö2</td>
-			<td>XÁÂÇ¥</td>
-			<td>YÁÂÇ¥</td>
+			<td>ì£¼ì†Œ1</td>
+			<td>ì£¼ì†Œ2</td>
+			<td>ì§€ì—­ì½”ë“œ</td>
+			<td>ì±…?</td>
+			<td>ì½”ë“œ1</td>
+			<td>ì½”ë“œ2</td>
+			<td>ì½”ë“œ3</td>
+			<td>ê´€ê´‘ì§€ì½”ë“œ</td>
+			<td>ê´€ê´‘ì§€ì¢…ë¥˜ì½”ë“œ</td>
+			<td>ìƒì„±ì‹œê°„</td>
+			<td>ì´ë¯¸ì§€1</td>
+			<td>ì´ë¯¸ì§€2</td>
+			<td>Xì¢Œí‘œ</td>
+			<td>Yì¢Œí‘œ</td>
 			<td>M LEVEL?</td>
-			<td>¼öÁ¤½Ã°£</td>
-			<td>Á¶È¸Ä«¿îÆ®</td>
-			<td>½Ã±º±¸ÄÚµå</td>
-			<td>ÀüÈ­¹øÈ£</td>
-			<td>Á¦¸ñ</td>
-			<td>¿ìÆí¹øÈ£</td>
+			<td>ìˆ˜ì •ì‹œê°„</td>
+			<td>ì¡°íšŒì¹´ìš´íŠ¸</td>
+			<td>ì‹œêµ°êµ¬ì½”ë“œ</td>
+			<td>ì „í™”ë²ˆí˜¸</td>
+			<td>ì œëª©</td>
+			<td>ìš°í¸ë²ˆí˜¸</td>
 		</tr>
 	</thead>
 	<tbody id="table-body"></tbody>

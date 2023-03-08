@@ -21,7 +21,7 @@
 	    <a class="nav-link" href="#">회원가입</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link active" aria-current="page" href="http://localhost:9008/apitest/apitest.jsp">API테스트</a>
+	    <a class="nav-link active" aria-current="page" href="apitest.do">API테스트</a>
 	  </li>
 	</ul>
 	<nav class="navbar navbar-expand-lg bg-light">
@@ -33,7 +33,7 @@
 	    <div class="collapse navbar-collapse" id="navbarScroll">
 	      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 	        <li class="nav-item">
-	          <a class="nav-link active" href="/article/about.do" style="cursor: pointer;">about</a>
+	          <a class="nav-link active" href="/about/about.do" style="cursor: pointer;">about</a>
 	        </li>
 	        <li class="nav-item">
 	          <a class="nav-link" href="#">Link</a>

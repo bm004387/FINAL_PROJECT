@@ -34,6 +34,10 @@ public class ArticleController {
 		return "about/about";
 	}
 	
+	@RequestMapping("/faq/faq.do")
+	public String faq() {
+		return "faq/faq";
+	}
 
 	
 	// 게시글 등록 폼

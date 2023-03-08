@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -87,7 +88,7 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
         String mbos = bos1.toString("UTF-8");
         byte[] b = mbos.getBytes("UTF-8");
         String s = new String(b, "UTF-8");
-        System.out.println(s);
+        System.out.println("문자열 JSON :" + s);
         
         
         
@@ -95,30 +96,30 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
       
         
         Object obj = parser.parse(s);
-        System.out.println(obj.toString()); // JSON 전체
+        System.out.println("Object 변환 JSON " + obj.toString()); // JSON 전체
         JSONObject jsonbody = (JSONObject)obj; //json object 로 변경
        JSONObject jsonbody2 = (JSONObject) jsonbody.get("response");
        JSONObject jsonbody3 = (JSONObject) jsonbody2.get("body");
        JSONObject jsonbody4 = (JSONObject) jsonbody3.get("items");
-     //  JSONObject jsonbody5 = (JSONObject) jsonbody4.get("item"); 실패
+      // JSONObject jsonbody5 = (JSONObject) jsonbody4.get("item"); //실패,jsonArray 로 받기 시도
+       
+       JSONArray jsonArrayitem = new JSONArray();
+       jsonArrayitem = (JSONArray) jsonbody4.get("item");
+       System.out.println("item Array 확인 " + jsonArrayitem);
+      // jsonArrayitem.put("item",jsonbody5);
        // System.out.println("Body만 나오는지 확인 " +jsonbody3); // body 안에 pageNo,totalCount,items
       // System.out.println("items만 나오는지 확인 " +jsonbody4); // items 출력 확인
-     //   System.out.println("item만 나오는지 확인 " +jsonbody5); // item은 출력 안됨
-        /*
-        JSONObject jsonMain = (JSONObject)obj; //전체 json
-       Object objsecond = jsonMain.get("body");
-       JSONObject jsonSecond = (JSONObject)objsecond;
-        Object objThird = jsonSecond.get("items");
-        JSONObject jsonThird = (JSONObject)objThird;
+      //  System.out.println("item만 나오는지 확인 " +jsonbody5); // item은 출력 안됨
         
+      
+     
         
-        
-       /* 
-        if(jsonArr.size() > 0) {
-        	for(int i=0; i<jsonArr.size();i++) {
-        		JSONObject jsonObj = (JSONObject)jsonArr.get(i);
-        		System.out.println((String)jsonObj.get("items.item.contenttypeid"));
-        		/*System.out.println((String)jsonObj.get("booktour"));
+       
+        if(jsonArrayitem.size() > 0) {
+        	for(int i=0; i<jsonArrayitem.size();i++) {
+        		JSONObject jsonObj = (JSONObject) jsonArrayitem.get(i);
+        		System.out.println((long)jsonObj.get("readcount"));
+        		System.out.println((String)jsonObj.get("booktour"));
         		System.out.println((String)jsonObj.get("createdtime"));
         		System.out.println((String)jsonObj.get("homepage"));
         		System.out.println((String)jsonObj.get("modifiedtime"));
@@ -139,9 +140,9 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
         		System.out.println((String)jsonObj.get("mapy"));
         		System.out.println((String)jsonObj.get("mlevel"));
         		System.out.println((String)jsonObj.get("overview"));
-        		System.out.println((String)jsonObj.get("contentid"));
+        		System.out.println((String)jsonObj.get("contentid")); 
         	}
-        }*/
+        }
         
        
        

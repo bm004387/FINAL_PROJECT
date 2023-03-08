@@ -115,7 +115,7 @@ function kakaoLogout() {
 <body>
 <div class="container"  style="display: flex; align-items: center;">
 	<form id="loginForm" name="loginForm" class="form-control">
-		<h2 class="form-signin-heading">로그인 페이지</h2>
+		<h2 class="form-signin-heading">로그인</h2>
 		
 		<label for="memberId">아이디</label>
 		<input type="text" id="memberId" name="memberId" class="form-control" placeholder="Please enter your ID" required autofocus>

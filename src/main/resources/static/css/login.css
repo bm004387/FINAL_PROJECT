@@ -5,6 +5,7 @@
     font-style: normal;
 }
 #loginForm{
+	margin-top: 50px !important;
 	background: none !important;
 	border: none !important;
 }
@@ -16,6 +17,7 @@
 #loginForm label{
 	margin: 10px 0;
 	font-family: 'Dovemayo_gothic';
+	font-size: 25px;
 }
 #loginForm input{
 	background-color: transparent;
@@ -25,6 +27,7 @@
 }
 button{
 	margin-top: 20px !important;
+	font-family: 'Dovemayo_gothic' !important;
 }
 .backstretch{
 	opacity: 0.8 !important;

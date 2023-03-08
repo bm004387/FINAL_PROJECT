@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var ="context"><%=request.getContextPath()%></c:set>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +25,7 @@
 	    <a class="nav-link active" aria-current="page" href="login.do">로그인</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" href="#">회원가입</a>
+	    <a class="nav-link" onclick="javascript:fn_signUp();">회원가입</a>
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link active" aria-current="page" href="apitest.do">API테스트</a>

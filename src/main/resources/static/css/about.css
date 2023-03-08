@@ -1,42 +1,46 @@
 *{
 	color: #ffffff;
-	text-stroke: 4px navy;
+		font-size: 110px;
+	
 	}
 
 
 .fa-taxi:before{
-	font-size: 180px;
+	font-size: 130px;
 	margin: 0 auto;
 }
 
 
 .fa-plane:before{
-	font-size: 180px;
+	font-size: 130px;
 	margin: 0 auto;
 }
 
 .fa-hotel:before{
-	
-	font-size: 180px;
+	font-size: 130px;
 	margin: 0 auto;
 }
 
 p{
-	margin:170px;
-	margin-top: 250px;
+	margin:200px;
+	margin-top: 200px;
 	margin-bottom: 200px;
-	font-size: 86px;
+	font-size: 50px;
 	font-weight: bold;
 }
 
 h1{
-	font-size: 60px;
+	font-size: 35px;
 	margin-top: 40px;
 		font-weight: bold;
 	
 }
 
+.fa, .fas {
+	margin: 50px;
+	
+}
 .content{
   text-align: center;
-  margin-left: -250px;
+  margin-left: -50px;
 }

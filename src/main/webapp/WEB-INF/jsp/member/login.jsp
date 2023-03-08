@@ -8,6 +8,7 @@
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v10.0&appId=1070012790582141" nonce="SiOBIhLG"></script>
 
+<jsp:include page="../include/header.jsp"></jsp:include>
 <script>
         $(function(){
 
@@ -111,8 +112,8 @@ function kakaoLogout() {
 	}
 
 </script>
-<body style="display: flex; align-items: center;">
-<div class="container">
+<body>
+<div class="container"  style="display: flex; align-items: center;">
 	<form id="loginForm" name="loginForm" class="form-control">
 		<h2 class="form-signin-heading">로그인 페이지</h2>
 		

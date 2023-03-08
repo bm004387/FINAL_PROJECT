@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+#loginForm{
+	background: none !important;
+	border: none !important;
+}
+#loginForm h2{
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Dovemayo_gothic';
+}
+#loginForm label{
+	margin: 10px 0;
+	font-family: 'Dovemayo_gothic';
+}
+#loginForm input{
+	background-color: transparent;
+	border-bottom: 2px solid blue;
+	border: none;
+	font-weight: bold;
+}
 button{
 	margin-top: 20px !important;
+}
+.backstretch{
+	opacity: 0.8 !important;
 }

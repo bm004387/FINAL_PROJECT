@@ -7,7 +7,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tour Visit</title>
 
+<link rel="stylesheet" href="css/main.css">
+
+<script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script>
+        $(function(){
+            if($.cookie('popup') == 'none'){
+                $("#cookie").hide();
+            }
+            var $expiresChk = $("#expiresChk");
+            $(".closeBtn").on("click", closePop );
+            function closePop(){
+                if($expiresChk.is(":checked")){
+                    $.cookie("popup","none",{expires:1, path:"/"});
+                }
+                $("#cookie").fadeOut("fast");
+            }
+        });
+    </script>
+    <style>
+
+</style>
 <jsp:include page="include/header.jsp"></jsp:include>
+<div id="cookie">
+   	<img src="images/cookie.jfif" alt="공지사항이미지"> 
+    <p class="closeWrap">
+        <input type="checkbox" name="expiresChk" id="expiresChk">
+        <label for="expiresChk">오늘 하루 이 창 열지 않기</label>
+        <button class="closeBtn">닫기</button>
+    </p>
+</div>
 <div class="topcont">
 	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	  <div class="carousel-inner">

@@ -34,7 +34,7 @@ public class ArticleController {
 		return "about/about";
 	}
 	
-	@RequestMapping("/faq/faq.do")
+	@RequestMapping("/faq.do")
 	public String faq() {
 		return "faq/faq";
 	}

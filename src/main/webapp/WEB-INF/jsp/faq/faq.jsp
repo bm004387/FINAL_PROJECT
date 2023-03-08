@@ -12,6 +12,8 @@
 	<script src="/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+<jsp:include page="../include/header.jsp"></jsp:include>
+<div class="container">
 <div class="accordion accordion-flush" id="accordionFlushExample">
 
 <img class="img-fluid"  src="/images/faq01.png" style="width: 600px" height="50px"  alt="메인이미지1">
@@ -149,6 +151,7 @@
 		※단, 여행 출발 전 해당 항공사의 마일리지 적립카드가 반드시 발급되어져 있어야만 합니다.</div>
     </div>
   </div>
+</div>
 </div>
 </body>
 </html>

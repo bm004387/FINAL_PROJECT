@@ -46,7 +46,10 @@
 	          <a class="nav-link active" href="/about.do" style="cursor: pointer;">회사소개</a>
 	        </li>
 	        <li class="nav-item">
-	           <a class="nav-link active" href="/faq/faq.do" style="cursor: pointer;">FAQ</a>
+	           <a class="nav-link active" href="/faq.do" style="cursor: pointer;">FAQ</a>
+	        </li>
+	        <li class="nav-item">
+	           <a class="nav-link active" href="/board.do" style="cursor: pointer;">게시판</a>
 	        </li>
 	      </ul>
 	      <form class="d-flex" role="search">

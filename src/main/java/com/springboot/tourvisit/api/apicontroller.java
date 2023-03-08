@@ -4,39 +4,25 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
-import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-
+import com.springboot.tourvisit.api.ApiVO;
+import com.springboot.tourvisit.impl.ArticleService;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
+import com.springboot.tourvisit.api.ApiService;
+
+@RequiredArgsConstructor
 @Controller
 public class apicontroller{
 	@RequestMapping("apitest.do")
@@ -53,6 +39,7 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
 		
 		PrintWriter out = response.getWriter();
     
+		final ApiService apiService = null;
 		
    
          String BASE_URL = "https://apis.data.go.kr/B551011/KorService/";
@@ -118,7 +105,59 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
         if(jsonArrayitem.size() > 0) {
         	for(int i=0; i<jsonArrayitem.size();i++) {
         		JSONObject jsonObj = (JSONObject) jsonArrayitem.get(i);
-        		System.out.println((long)jsonObj.get("readcount"));
+        		ApiVO vo = null;
+        	
+        		
+        		//long readcount = (long)jsonObj.get("readcount");
+        		String contentid = (String)jsonObj.get("contentid");
+        		vo.setContentid(contentid); 
+        		String booktour = (String)jsonObj.get("booktour");
+        		vo.setContentid(contentid); 
+        		String createdtime = (String)jsonObj.get("createdtime");
+        		vo.setContentid(contentid); 
+        		String homepage = (String)jsonObj.get("homepage");
+        		vo.setContentid(contentid); 
+        		String modifiedtime = (String)jsonObj.get("modifiedtime");
+        		vo.setContentid(contentid); 
+        		String tel = (String)jsonObj.get("tel");
+        		vo.setContentid(contentid); 
+        		String telname = (String)jsonObj.get("telname");
+        		vo.setContentid(contentid); 
+        		String title = (String)jsonObj.get("title");
+        		vo.setContentid(contentid); 
+        		String firstimage = (String)jsonObj.get("firstimage");
+        		vo.setContentid(contentid); 
+        		String firstimage2 = (String)jsonObj.get("firstimage2");
+        		vo.setContentid(contentid); 
+        		String areacode = (String)jsonObj.get("areacode");
+        		vo.setContentid(contentid); 
+        		String sigungucode = (String)jsonObj.get("sigungucode");
+        		vo.setContentid(contentid); 
+        		String cat1 = (String)jsonObj.get("cat1");
+        		vo.setContentid(contentid); 
+        		String cat2 = (String)jsonObj.get("cat2");
+        		vo.setContentid(contentid); 
+        		String cat3 = (String)jsonObj.get("cat3");
+        		vo.setContentid(contentid); 
+        		String addr1 = (String)jsonObj.get("addr1");
+        		vo.setContentid(contentid); 
+        		String addr2 = (String)jsonObj.get("addr2");
+        		vo.setContentid(contentid); 
+        		String zipcode = (String)jsonObj.get("zipcode");
+        		vo.setContentid(contentid); 
+        		String mapx = (String)jsonObj.get("mapx");
+        		vo.setContentid(contentid); 
+        		String mapy = (String)jsonObj.get("mapy");
+        		vo.setContentid(contentid); 
+        		String mlevel = (String)jsonObj.get("mlevel");
+        		vo.setContentid(contentid); 
+        		String overview = (String)jsonObj.get("overview");
+        		vo.setContentid(contentid); 
+        		
+        		
+        		
+        		apiService.insert(vo);
+        	/*	System.out.println((long)jsonObj.get("readcount"));
         		System.out.println((String)jsonObj.get("booktour"));
         		System.out.println((String)jsonObj.get("createdtime"));
         		System.out.println((String)jsonObj.get("homepage"));
@@ -140,7 +179,7 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
         		System.out.println((String)jsonObj.get("mapy"));
         		System.out.println((String)jsonObj.get("mlevel"));
         		System.out.println((String)jsonObj.get("overview"));
-        		System.out.println((String)jsonObj.get("contentid")); 
+        		System.out.println((String)jsonObj.get("contentid")); */
         	}
         }
         

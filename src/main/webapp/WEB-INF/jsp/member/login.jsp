@@ -8,7 +8,7 @@
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v10.0&appId=1070012790582141" nonce="SiOBIhLG"></script>
 
-<jsp:include page="../include/header.jsp"></jsp:include>
+
 <script>
         $(function(){
 
@@ -112,6 +112,7 @@ function kakaoLogout() {
 	}
 
 </script>
+<jsp:include page="../include/header.jsp"></jsp:include>
 <body>
 <div class="container"  style="display: flex; align-items: center;">
 	<form id="loginForm" name="loginForm" class="form-control">
@@ -125,20 +126,25 @@ function kakaoLogout() {
 		
 		<button class="btn btn-lg btn-primary btn-block form-control" type="button" onclick="javascript:fn_signIn();">로그인</button>
 		<button class="btn btn-lg btn-info btn-block form-control" type="button" onclick="javascript:fn_signUp();">회원가입</button>
-		<ul>
-			<li><a>Forget ID</a></li>
-			<li><a>Forget Password</a></li>
+		<ul class="findForm">
+			<li><a>Find ID</a></li><span>|</span>
+			<li><a>Find Password</a></li>
 		</ul>
-		
-		<ul>
+		<ul class="orLogin">
+			<h3>다른방법으로 로그인</h3><hr>
 			<li onclick="kakaoLogin();">
 		      <a href="javascript:void(0)">
-		          <span>카카오 로그인</span>
+		          <img alt="카카오 로그인" src="images/kakao_login_large_wide.png">
 		      </a>
 			</li>
 			<li onclick="kakaoLogout();">
 		      <a href="javascript:void(0)">
 		          <span>카카오 로그아웃</span>
+		      </a>
+			</li>
+			<li onclick="kakaoLogin();">
+		      <a href="javascript:void(0)">
+		          <img alt="카카오 로그인" src="images/google_login.png">
 		      </a>
 			</li>
 		</ul>

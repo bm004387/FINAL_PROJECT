@@ -4,10 +4,19 @@
     font-weight: normal;
     font-style: normal;
 }
+*{
+	list-style: none;
+	text-decoration: none;
+}
+a{
+	cursor: pointer;
+}
 #loginForm{
+	margin:0 auto;
 	margin-top: 50px !important;
 	background: none !important;
 	border: none !important;
+	max-width: 900px;
 }
 #loginForm h2{
 	text-align: center;
@@ -17,18 +26,58 @@
 #loginForm label{
 	margin: 10px 0;
 	font-family: 'Dovemayo_gothic';
+	font-weight:bold;
 	font-size: 25px;
 }
+
 #loginForm input{
 	background-color: transparent;
-	border-bottom: 2px solid blue;
 	border: none;
 	font-weight: bold;
 }
-button{
+#loginForm button{
 	margin-top: 20px !important;
 	font-family: 'Dovemayo_gothic' !important;
+	
+}
+.findForm{
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 5px;
+	font-weight:bold;
+	font-family: 'Dovemayo_gothic' !important;
+}
+.findForm span{
+	margin: 0 10px;
 }
 .backstretch{
 	opacity: 0.8 !important;
 }
+.orLogin{
+	margin: 50px 0;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.orLogin h3{
+	text-align: center;
+	font-weight:bold;
+	font-family: 'Dovemayo_gothic' !important;
+}
+.orLogin img{
+	width: 600px;
+	height: 90px;
+	border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+

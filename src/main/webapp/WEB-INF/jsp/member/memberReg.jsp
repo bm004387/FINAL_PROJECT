@@ -4,11 +4,11 @@
 		margin-top: 25px;
 	}
 </style>
+<jsp:include page="../include/header.jsp"></jsp:include>
 <div class="container">
 	<div>
 		<form id="insertForm" name="insertForm" method="post" enctype="multipart/form-data">
 			<div class="input-group text-center">
-				<img class="rg_i Q4LuWd" id="userImage" src="./defaultpic.png" data-atf="true" width="300" height="150" onerror="this.src='images/defaultpic.png'">
 				<label class="btn btn-default">
 				    Browse <input type="file" id="userImageAttachFile" name="userImageAttachFile" hidden onchange="setThumbnail(event);" />
 				</label>

@@ -1,9 +1,12 @@
 package com.springboot.tourvisit.board.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
@@ -23,6 +26,15 @@ public class BoardRepository {
 	public void insert(BoardVO vo) {
 		// em.persist : JPA를 통해 값을 입력할 때 활용합니다.
 		em.persist(vo);								
+	}
+	
+	public List<BoardVO> selectBoardList(BoardVO vo) throws Exception {
+		String jpql = "select a from BoardVO a order by bno desc";
+		TypedQuery<BoardVO> query = em.createQuery(jpql, BoardVO.class);
+		
+		List<BoardVO> boardList = query.getResultList();
+
+		return boardList;
 	}
 	
 	public BoardVO selectById(BoardVO vo) {

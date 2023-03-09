@@ -21,13 +21,13 @@
 						<th>수정일</th>
 					</tr>
 				</thead>
-				<c:forEach items="${boardList}" var="boardVO">
+				<c:forEach items="${boardList}" var="boardList">
 					<tr>
-						<td><c:out value="${boardVO.bno}" /></td>
-						<td><a class="move" href='<c:out value="${boardVO.bno}"/>'><c:out value="${boardVO.title}" /></a></td>
-						<td><c:out value="${boardVO.writer}" /></td>
-						<td><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.regDate}" /></td>
-						<td><fmt:formatDate pattern="yyyy-MM-dd" value="${boardVO.updateDate}" /></td>
+						<td><c:out value="${boardList.bno}" /></td>
+						<td><a class="move" href='<c:out value="${boardList.bno}"/>'><c:out value="${boardList.title}" /></a></td>
+						<td><c:out value="${boardList.writer}" /></td>
+						<td><fmt:formatDate pattern="yyyy-MM-dd" value="${boardList.regDate}" /></td>
+						<td><fmt:formatDate pattern="yyyy-MM-dd" value="${boardList.updateDate}" /></td>
 					</tr>
 				</c:forEach>
 			</table>

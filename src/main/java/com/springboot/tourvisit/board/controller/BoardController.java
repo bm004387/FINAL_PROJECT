@@ -1,6 +1,12 @@
 package com.springboot.tourvisit.board.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,8 +46,23 @@ public class BoardController {
 	}
 
 	// 게시판 홈 화면
-	@RequestMapping("/board.do")
-	public String board() {
+//	@RequestMapping("/board.do")
+//	public String board() {
+//		return "views/board";
+//	}
+	
+	@RequestMapping(value="/board.do")
+	public String selectBoardList(@ModelAttribute("boardVO")BoardVO vo, HttpServletRequest request, HttpSession session, Model model) throws Exception{
+		try {
+			// 목록 조회
+			List<BoardVO> boardList = boardService.selectBoardList(vo);
+		      System.out.println(boardList);
+			
+			model.addAttribute("boardList", boardList);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 		return "views/board";
 	}
 	

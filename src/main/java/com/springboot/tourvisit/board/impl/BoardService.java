@@ -1,5 +1,7 @@
 package com.springboot.tourvisit.board.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,6 +20,13 @@ public class BoardService {
 	
 	public BoardVO selectById(BoardVO vo) {
 		return BoardDAO.selectById(vo);
+	}
+	
+	public List<BoardVO> selectBoardList(BoardVO vo) throws Exception {
+		List<BoardVO> boardList = BoardDAO.selectBoardList(vo);
+		
+		
+		return boardList;
 	}
 
 	// select 쿼리처럼 조회하는 것이 아닌 insert, update, delete의 경우 @Transactional 애노테이션을 붙여 트랜잭션 처리를 해줘야함

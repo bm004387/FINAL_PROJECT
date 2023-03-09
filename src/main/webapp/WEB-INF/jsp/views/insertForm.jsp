@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <title>게시글 등록</title>
 <link rel="stylesheet" href="../css/common.css">
-<c:set var="data" value="${article.content}" />
+<c:set var="data" value="${board.content}" />
 </head>
 <body>
 	<div class="container">

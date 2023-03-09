@@ -1,4 +1,4 @@
-package com.springboot.tourvisit.controller;
+package com.springboot.tourvisit.board.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,22 +6,22 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.springboot.tourvisit.impl.ArticleService;
-import com.springboot.tourvisit.model.ArticleVO;
+import com.springboot.tourvisit.board.impl.BoardService;
+import com.springboot.tourvisit.board.model.BoardVO;
 
 import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-public class ArticleController {
+public class BoardController {
 
 	// @RequiredArgsConstructor : private final이 붙은 필드의 생성자를 자동으로 추가해주고, @Autowired를 통해 주입도 자동으로 해주는 롬복 애노테이션
-	private final ArticleService articleService;
+	private final BoardService boardService;
 
 	// 아래 모든 메소드에 request.setAttribute("article", articleService.selectById(vo))를 해주는것과 같은 역할
-	@ModelAttribute("article")
-	public ArticleVO getArticle(ArticleVO vo) {
-		return articleService.selectById(vo);
+	@ModelAttribute("board")
+	public BoardVO getArticle(BoardVO vo) {
+		return boardService.selectById(vo);
 	}
 	
 	// 홈 화면
@@ -53,14 +53,14 @@ public class ArticleController {
 	
 	// 게시글 등록
 	@PostMapping("/write.do")
-	public String insert(ArticleVO vo) {
-		articleService.insert(vo);
+	public String insert(BoardVO vo) {
+		boardService.insert(vo);
 		return "views/insertSuccess";
 	}
 	
 	// 게시글 조회
 	@RequestMapping("/read.do")
-	public String selectById(ArticleVO vo) {
+	public String selectById(BoardVO vo) {
 		return "views/readArticle";
 	}
 	
@@ -72,8 +72,8 @@ public class ArticleController {
 	
 	// 게시글 수정
 	@PostMapping("/modify.do")
-	public String update(ArticleVO vo, String title, String content) {
-		articleService.update(vo, title, content);
+	public String update(BoardVO vo, String title, String content) {
+		boardService.update(vo, title, content);
 		return "views/updateSuccess";
 	}
 	
@@ -85,8 +85,8 @@ public class ArticleController {
 	
 	// 게시글 삭제
 	@PostMapping("/delete.do")
-	public String delete(ArticleVO vo) {
-		articleService.delete(vo);
+	public String delete(BoardVO vo) {
+		boardService.delete(vo);
 		return "views/deleteSuccess";
 	}
 

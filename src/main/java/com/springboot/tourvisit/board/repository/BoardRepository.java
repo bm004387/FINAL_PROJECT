@@ -1,4 +1,4 @@
-package com.springboot.tourvisit.repository;
+package com.springboot.tourvisit.board.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -7,31 +7,31 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import com.springboot.tourvisit.model.ArticleVO;
+import com.springboot.tourvisit.board.model.BoardVO;
 
 import lombok.RequiredArgsConstructor;
 
 @Repository
 @RequiredArgsConstructor
-public class ArticleRepository {
+public class BoardRepository {
 	
 	// @PersistenceContext : JPA의 ORM을 처리해주는 EntityManager을 불러올 때 쓰는 애노테이션 입니다.
 	@PersistenceContext	
 	private final EntityManager em;
 	
 
-	public void insert(ArticleVO vo) {
+	public void insert(BoardVO vo) {
 		// em.persist : JPA를 통해 값을 입력할 때 활용합니다.
 		em.persist(vo);								
 	}
 	
-	public ArticleVO selectById(ArticleVO vo) {
+	public BoardVO selectById(BoardVO vo) {
 		
-		ArticleVO result = null;
+		BoardVO result = null;
 		try {
-			result = em.createQuery("select a from ArticleVO a where a.id = (select max(a.id) from ArticleVO a)",ArticleVO.class).getSingleResult();
-													// em.createQuery : JPA를 통해 쿼리문을 직접 입력할 때
-													// getSingleResult() : 값이 단 하나일 경우를 처리하는 메소드 (0개나 2개 이상일 경우를 예외처리 해줘야함) 
+			result = em.createQuery("select a from BoardVO a where a.id = (select max(a.id) from BoardVO a)",BoardVO.class).getSingleResult();
+					// em.createQuery : JPA를 통해 쿼리문을 직접 입력할 때
+					// getSingleResult() : 값이 단 하나일 경우를 처리하는 메소드 (0개나 2개 이상일 경우를 예외처리 해줘야함) 
 			//  * JPQL : SQL과 매우 유사한 문법 : 별칭은 필수로 작성 (as키워드는 생략 가능)
 			//    [예시]
 			//    select m from Member as m where m.age > 21
@@ -52,7 +52,7 @@ public class ArticleRepository {
 		return result;
 	}
 	
-	public void delete(ArticleVO vo) {
+	public void delete(BoardVO vo) {
 		em.remove(vo);								// em.remove : JPA를 통해 값을 제거할 때
 	}
 	

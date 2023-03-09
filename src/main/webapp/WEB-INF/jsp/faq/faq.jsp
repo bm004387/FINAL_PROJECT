@@ -15,9 +15,15 @@
 <jsp:include page="../include/header.jsp"></jsp:include>
 <div class="container">
 <div class="accordion accordion-flush" id="accordionFlushExample">
-
-<img class="img-fluid"  src="/images/faq01.png" style="width: 600px" height="50px"  alt="메인이미지1">
-
+<div>
+<img class="img-content01"  src="/images/faq01.png" alt="메인이미지1">
+</div>
+<div>
+<div>
+<img class="img-content03"  src="/images/faq03.png" alt="메인이미지3">
+</div>
+<img class="img-content02"  src="/images/faq02.png" alt="메인이미지2">
+</div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-heading-1">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">

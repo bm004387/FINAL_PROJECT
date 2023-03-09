@@ -18,7 +18,7 @@
 	<script>
         $(document).ready(function() {
             //문서 전체(body 태그)에 플러그인 적용함
-            $('body').vegas({
+            $('.content').vegas({
             slides: [
                 //초반이미지 나타나게 함. 주석처리하면 안 나타남
                 // {src: '/videos/sea.jpg'},
@@ -39,9 +39,9 @@
 });
 </script>
 	<jsp:include page="../include/header.jsp"></jsp:include>
-		      <img class="img-fluid w-100"  src="/images/about01.png"  alt="메인이미지1">
-			<p>국내의 다양한 볼거리와 체험이<br>가능한 관광 웹사이트입니다.</p>
+      <img class="img-fluid w-100"  src="/images/about01.png"  alt="메인이미지1">
 	 	<div class="content">
+			<p>국내의 다양한 볼거리와 체험이<br>가능한 관광 웹사이트입니다.</p>
 			<i class="fas fa-taxi">
 				<h1>최상의 교통편 정보 제공</h1>
 			</i>
@@ -52,4 +52,4 @@
 			<h1>맞춤형 다양한 숙박시설</h1>
 		</i>
 		</div>
-		      <img class="img-fluid w-100" style="margin-top:100px"src="/images/about02.png" alt="메인이미지2">
+      <img class="img-fluid w-100" src="/images/about02.png" alt="메인이미지2">

@@ -13,8 +13,8 @@ import lombok.Setter;
 
 //@SequenceGenetator : 시퀀스를 자동으로 생성해주는 JPA 애노테이션
 @SequenceGenerator(
-     name="IDX_SEQ_GEN",		// 시퀀스 생성기의 이름을 지정
-     sequenceName="IDX_SEQ",	// 시퀀스의 이름을 지정 (IDX_SEQ)
+     name="BOARD_SEQ_GEN",		// 시퀀스 생성기의 이름을 지정
+     sequenceName="BOARD_SEQ",	// 시퀀스의 이름을 지정 (IDX_SEQ)
      initialValue=1,			// 시퀀스의 초기값을 설정
      allocationSize=1		// 시퀀스의 증가량을 설정
      )
@@ -27,7 +27,7 @@ public class BoardVO {
 
 	@Id // PK 설정
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, // 시퀀스 생성기를 통해 시퀀스 만들고 ID에 자동으로 주입
-					generator = "IDX_SEQ_GEN")
+					generator = "BOARD_SEQ_GEN")
 	
 	@Column(name = "BOARD_ID")
 	private int id;

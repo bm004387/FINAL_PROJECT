@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <title>게시글 수정</title>
 <link rel="stylesheet" href="../css/common.css">
-<c:set var="data" value="${article.content}" />
+<c:set var="data" value="${board.content}" />
 </head>
 
 <body>
@@ -16,11 +16,11 @@
 		<div class="box-wrapper">
 			<form action="modify.do" method="post">
 				<p>
-					제목 : <br><input id="title_box" type="text" name="title" value="${article.title}">
+					제목 : <br><input id="title_box" type="text" name="title" value="${board.title}">
 				</p>
 				<p>
 					내용 : <br />
-					<textarea id="content_box" name="content" rows="5" cols="30">${article.content}</textarea>
+					<textarea id="content_box" name="content" rows="5" cols="30">${board.content}</textarea>
 				</p>
 				<input type="submit" value="게시글 수정">
 				<button type="button" onclick="javascript:history.go(-1);">취소</button>				

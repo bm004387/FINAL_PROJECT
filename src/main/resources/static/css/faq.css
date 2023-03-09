@@ -13,3 +13,125 @@ p{
 	margin: 50px;
 	text-align: center; 
 }
+
+  @media all and (min-width:320px) {
+  
+  .img-content01{
+		border-radius: 152px !important;
+		height: 145px  !important;
+		width: 261px  !important;
+		margin-top: 50px;
+		margin-left: 16px;
+		margin-bottom: 50px;
+	}
+	
+	.img-content02{
+		width: 43px  !important;
+		height: 42px  !important;
+		margin-top: -43px;
+		margin-left: 113px;
+		margin-bottom: 29px;
+		
+	}
+	
+		.img-content03{
+		width: 203px  !important;
+		height: 200px !important;
+		margin-top:-101px;
+		margin-left: 35px;
+		margin-bottom:-20px;
+	}
+  }
+  
+  
+  @media all and (min-width:768px) {
+  
+  .img-content01{
+		border-radius: 152px !important;
+		height: 171px !important;
+		width: 305px !important;
+		margin-top: 50px;
+		margin-left: 202px;
+		margin-bottom: 50px;
+	}
+	
+	.img-content02{
+		width: 59px !important;
+		height: 57px  !important;
+		margin-top:-61px;
+		margin-left: 321px;
+		margin-bottom: 73px;
+		
+	}
+	
+		.img-content03{
+		width: 487px  !important;
+		height: 256px !important;
+		margin-top:-128px;
+		margin-left: 108px;
+		margin-bottom: -20px;
+	}
+  }
+  
+  
+  
+  
+   @media all and (min-width:1024px) {
+    
+	.img-content01{
+		border-radius: 152px !important;
+		height: 207px  !important;
+		width: 370px  !important;
+		margin-top: 50px;
+		margin-left: 269px;
+		margin-bottom: 50px;
+	}
+	
+	.img-content02{
+		width: 78px !important;
+		height: 72px !important;
+		margin-top:-61px;
+		margin-left: 420px;
+		margin-bottom: 73px;
+		
+	}
+	
+		.img-content03{
+		width: 596px !important;
+		height: 281px important;
+		margin-top:-128px;
+		margin-left: 151px;
+		margin-bottom: -20px;
+	}
+  }
+  
+  
+  
+  
+  @media all and (min-width:1280px) {
+    
+	.img-content01{
+		border-radius: 152px !important;
+		width: 454px    !important;
+		height: 264px  !important;
+		margin-top: 50px;
+		margin-left: 348px;
+		margin-bottom: 50px;	
+	}
+	
+	.img-content02{
+		width: 117px !important;
+		height: 110px !important;
+		margin-top:-61px;
+		margin-left: 509px;
+		margin-bottom: 73px;
+	}
+	
+		.img-content03{
+		width: 795px !important;
+		height: 314px  !important;
+		margin-top:-128px;
+		margin-left: 177px;
+		margin-bottom: -20px;
+	}
+  }

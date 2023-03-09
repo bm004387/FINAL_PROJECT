@@ -10,21 +10,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.hibernate.annotations.DynamicInsert;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.springboot.tourvisit.api.ApiVO;
-import com.springboot.tourvisit.impl.ArticleService;
 
 import lombok.RequiredArgsConstructor;
 
 import com.springboot.tourvisit.api.ApiService;
 
+
 @RequiredArgsConstructor
 @Controller
 public class apicontroller{
+	
+	@Autowired
+	final ApiService apiService;
+	
 	@RequestMapping("apitest.do")
 	public String apitest(){
 		return "apitest/apitest";
@@ -38,15 +44,15 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
 		response.setContentType("text/html; charset=utf-8");
 		
 		PrintWriter out = response.getWriter();
-    
-		final ApiService apiService = null;
 		
+		
+		/* 초기 데이타 입력을 위해서 TourAPI 를 받아 1000건을 DB 에 입력함
    
          String BASE_URL = "https://apis.data.go.kr/B551011/KorService/";
          String apiUri = "areaBasedList";
          String serviceKey = "?serviceKey=Lte9EaFEKl77Nf7DNWMbLTbLKPzbziOIHqfdh9EfekbiV9YBUQBtp9HchlcWxDH7IJ0YFxO7TQWh5VKTnmCi%2BQ%3D%3D";
          String defaultQueryParam = "&MobileOS=ETC&MobileApp=AppTest&_type=json";
-         String numOfRows = "&numOfRows=10";
+         String numOfRows = "&numOfRows=1000";
          String pageNo = "&pageNo=1";
          String listYN = "&listYN=Y";
          String arrange = "&arrange=C";
@@ -105,85 +111,147 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
         if(jsonArrayitem.size() > 0) {
         	for(int i=0; i<jsonArrayitem.size();i++) {
         		JSONObject jsonObj = (JSONObject) jsonArrayitem.get(i);
-        		ApiVO vo = null;
+        		ApiVO vo = new ApiVO();
         	
         		
         		//long readcount = (long)jsonObj.get("readcount");
-        		String contentid = (String)jsonObj.get("contentid");
-        		vo.setContentid(contentid); 
-        		String booktour = (String)jsonObj.get("booktour");
-        		vo.setContentid(contentid); 
-        		String createdtime = (String)jsonObj.get("createdtime");
-        		vo.setContentid(contentid); 
-        		String homepage = (String)jsonObj.get("homepage");
-        		vo.setContentid(contentid); 
-        		String modifiedtime = (String)jsonObj.get("modifiedtime");
-        		vo.setContentid(contentid); 
-        		String tel = (String)jsonObj.get("tel");
-        		vo.setContentid(contentid); 
-        		String telname = (String)jsonObj.get("telname");
-        		vo.setContentid(contentid); 
-        		String title = (String)jsonObj.get("title");
-        		vo.setContentid(contentid); 
-        		String firstimage = (String)jsonObj.get("firstimage");
-        		vo.setContentid(contentid); 
-        		String firstimage2 = (String)jsonObj.get("firstimage2");
-        		vo.setContentid(contentid); 
-        		String areacode = (String)jsonObj.get("areacode");
-        		vo.setContentid(contentid); 
-        		String sigungucode = (String)jsonObj.get("sigungucode");
-        		vo.setContentid(contentid); 
-        		String cat1 = (String)jsonObj.get("cat1");
-        		vo.setContentid(contentid); 
-        		String cat2 = (String)jsonObj.get("cat2");
-        		vo.setContentid(contentid); 
-        		String cat3 = (String)jsonObj.get("cat3");
-        		vo.setContentid(contentid); 
-        		String addr1 = (String)jsonObj.get("addr1");
-        		vo.setContentid(contentid); 
-        		String addr2 = (String)jsonObj.get("addr2");
-        		vo.setContentid(contentid); 
-        		String zipcode = (String)jsonObj.get("zipcode");
-        		vo.setContentid(contentid); 
-        		String mapx = (String)jsonObj.get("mapx");
-        		vo.setContentid(contentid); 
-        		String mapy = (String)jsonObj.get("mapy");
-        		vo.setContentid(contentid); 
-        		String mlevel = (String)jsonObj.get("mlevel");
-        		vo.setContentid(contentid); 
-        		String overview = (String)jsonObj.get("overview");
-        		vo.setContentid(contentid); 
+        		
+        		
+        		String contentid = "";
+        		contentid = (String)jsonObj.get("contentid");
+        		if(contentid != null && !contentid.equals(""))
+        		{vo.setContentid(contentid); }else {contentid = "NOID";}
+        		
+        		
+        		String booktour =""; 
+        		booktour = (String)jsonObj.get("booktour");
+        		if(booktour != null && !booktour.equals(""))
+        		{vo.setBooktour(booktour);} else{booktour = "NOHOME";}
+        		
+        		String createdtime = "";
+        		createdtime = (String)jsonObj.get("createdtime");
+        		if(createdtime != null && !createdtime.equals(""))
+        		{vo.setCreatedtime(createdtime);} else{createdtime = "NOTIME";}
+        		
+        		String homepage = "";
+        		homepage = (String)jsonObj.get("homepage");
+        		if(homepage != null && !homepage.equals(""))
+        		{vo.setHomepage(homepage);} else{homepage = "NOHOME";}
+        		 
+        		
+        		String modifiedtime = "";
+        		modifiedtime = (String)jsonObj.get("modifiedtime");
+        		if(modifiedtime != null && !modifiedtime.equals(""))
+        		{vo.setModifiedtime(modifiedtime);} else{modifiedtime = "NOMODITIME";}
+        		
+        		String tel = "";
+        		tel = (String)jsonObj.get("tel");
+        		if(tel != null && !tel.equals(""))
+        		{vo.setTel(tel);} else{tel = "NOTEL";}
+        		
+        		String telname = "";
+        		telname = (String)jsonObj.get("telname");
+        		if(telname != null && !telname.equals(""))
+        		{vo.setTelname(telname);} else{telname = "NOTELNAME";}
+        		
+        		String title = "";
+        		title =	(String)jsonObj.get("title");
+        		if(title != null && !title.equals(""))
+        		{vo.setTitle(title);} else{title = "NOTITLE";}
+        		
+        		String firstimage = "";
+        		firstimage = (String)jsonObj.get("firstimage");
+        		if(firstimage != null && !firstimage.equals(""))
+        		{vo.setFirstimage(firstimage);} else{firstimage = "NOIMAGE";}
+        		
+        		String firstimage2 = "";
+        		firstimage2 = (String)jsonObj.get("firstimage2");
+        		if(firstimage2 != null && !firstimage2.equals(""))
+        		{vo.setFirstimage2(firstimage2);} else{firstimage2 = "NOIMAGE2";}
+        		
+        		String areacode = "";
+        		areacode = (String)jsonObj.get("areacode");
+        		if(areacode != null && !areacode.equals(""))
+        		{vo.setAreacode(areacode);} else{areacode = "NOAREACODE";}
+        		
+        		String sigungucode = "";
+        		sigungucode = (String)jsonObj.get("sigungucode");
+        		if(sigungucode != null && !sigungucode.equals(""))
+        		{vo.setSigungucode(sigungucode);} else{sigungucode = "NOSIGUNCODE";}
+        		
+        		String cat1 = "";
+        		cat1 = (String)jsonObj.get("cat1");
+        		if(cat1 != null && !cat1.equals(""))
+        		{vo.setCat1(cat1);} else{cat1 = "NOCAT1";}
+        		
+        		String cat2 = "";
+        		cat2 = (String)jsonObj.get("cat2");
+        		if(cat2 != null && !cat2.equals(""))
+        		{vo.setCat2(cat2);} else{cat2 = "NOCAT2";}
+        		
+        		String cat3 = "";
+        		cat3 = (String)jsonObj.get("cat3");
+        		if(cat3 != null && !cat3.equals(""))
+        		{vo.setCat3(cat3);} else{cat3 = "NOCAT3";}
+        		
+        		
+        		String addr1 = "";
+        		addr1 = (String)jsonObj.get("addr1");
+        		if(addr1 != null && !addr1.equals(""))
+        		{vo.setAddr1(addr1);} else{addr1 = "NOAddr1";}
+        		
+        		
+        		String addr2 = "";
+        		addr2 = (String)jsonObj.get("addr2");
+        		if(addr2 != null && !addr2.equals(""))
+        		{vo.setAddr2(addr2);} else{addr2 = "NOAddr2";}
+        		
+        		String zipcode = "";
+        		zipcode = (String)jsonObj.get("zipcode");
+        		if(zipcode != null && !zipcode.equals(""))
+        		{vo.setZipcode(zipcode);} else{zipcode = "NOZIPCODE";}
+        		
+        		String mapx = "";
+        		mapx = (String)jsonObj.get("mapx");
+        		if(mapx != null && !mapx.equals(""))
+        		{vo.setMapx(mapx);} else{mapx = "NOMAPX";}
+        		
+        		String mapy = "";
+        		mapy = (String)jsonObj.get("mapy");
+        		if(mapy != null && !mapy.equals(""))
+        		{vo.setMapy(mapy);} else{mapy = "NOMAPy";}
+        		
+        		String mlevel = "";
+        		mlevel = (String)jsonObj.get("mlevel");
+        		if(mlevel != null && !mlevel.equals(""))
+        		{vo.setMlevel(mlevel);} else{mlevel = "NOmlevel";}
+        		
+        		 
+        		String overview = "";
+        		overview = (String)jsonObj.get("overview");
+        		if(overview != null && !overview.equals(""))
+        		{vo.setOverview(overview);} else{overview = "NOoverview";}
+        		
+        		String contenttypeid = "";
+        		contenttypeid = (String)jsonObj.get("contenttypeid");
+        		if(contenttypeid != null && !contenttypeid.equals(""))
+        		{vo.setContenttypeid(contenttypeid);} else{contenttypeid = "NOcontenttypeid";}
+        		
+        		System.out.println(vo.toString());
         		
         		
         		
         		apiService.insert(vo);
-        	/*	System.out.println((long)jsonObj.get("readcount"));
-        		System.out.println((String)jsonObj.get("booktour"));
-        		System.out.println((String)jsonObj.get("createdtime"));
-        		System.out.println((String)jsonObj.get("homepage"));
-        		System.out.println((String)jsonObj.get("modifiedtime"));
-        		System.out.println((String)jsonObj.get("tel"));
-        		System.out.println((String)jsonObj.get("telname"));
-        		System.out.println((String)jsonObj.get("title"));
-        		System.out.println((String)jsonObj.get("firstimage"));
-        		System.out.println((String)jsonObj.get("firstimage2"));
-        		System.out.println((String)jsonObj.get("areacode"));
-        		System.out.println((String)jsonObj.get("sigungucode"));
-        		System.out.println((String)jsonObj.get("cat1"));
-        		System.out.println((String)jsonObj.get("cat2"));
-        		System.out.println((String)jsonObj.get("cat3"));
-        		System.out.println((String)jsonObj.get("addr1"));
-        		System.out.println((String)jsonObj.get("addr2"));
-        		System.out.println((String)jsonObj.get("zipcode"));
-        		System.out.println((String)jsonObj.get("mapx"));
-        		System.out.println((String)jsonObj.get("mapy"));
-        		System.out.println((String)jsonObj.get("mlevel"));
-        		System.out.println((String)jsonObj.get("overview"));
-        		System.out.println((String)jsonObj.get("contentid")); */
-        	}
-        }
+        			
+        	
+        		
         
-       
-       
-}
+				        	}
+				        }
+		 */
+				        
+				       
+				       
+				}
+			
 }

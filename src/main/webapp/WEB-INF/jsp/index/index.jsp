@@ -7,12 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tour Visit 회사소개</title>
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/about.css">
+	<link rel="stylesheet" href="/css/index.css">
 	<script src="/js/bootstrap.bundle.js"></script>
 	<script src="/js/bootstrap.bundle.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <script src="../js/vegas.min.js"></script>
 	<link rel="stylesheet" href="../css/vegas.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
 </head>
     <script>
     $(document).ready(function() {
@@ -39,14 +42,13 @@
 <body>
 
     <div id="content">
-            <strong>
-                <!-- 홈페이지에 들어가기 위한 링크 생성 -->
-                    <a href="/main.do" style="cursor: pointer;">홈페이지로 GO~!</a>
-                <h1>미래 건축을 선도하는 남율건설</h1>
-            </strong>
-        <p>
-          	  지나온 30년 앞으로 다가올 30년 <br> 미래를 만들어갑니다.
-        </p>
+        <p>다양한 맞춤형 여행 콘텐츠를 제공하는 관광 웹사이트
+                <h2> Tour Visit </h2>
+            </p>
+       
+        
+             <!-- 홈페이지에 들어가기 위한 링크 생성 -->
+                    <h1><a href="/main.do" style="cursor: pointer;">웹사이트 가기 👆</a></h1>
     </div>
 
 </body>

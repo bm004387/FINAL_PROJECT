@@ -21,7 +21,6 @@
             $('.content').vegas({
             slides: [
                 //초반이미지 나타나게 함. 주석처리하면 안 나타남
-                // {src: '/videos/sea.jpg'},
                 {
                     //video{}안에 배경 동영상과 옵션값 지정함
             video: {

@@ -31,10 +31,17 @@ public class BoardController {
 	}
 	
 	// 홈 화면
+	
 	@RequestMapping("/")
-	public String home() {
+	public String index() {
+		return "index/index";
+	}
+	
+	@RequestMapping("/main.do")
+	public String main() {
 		return "main";
 	}
+	
 	@RequestMapping("/about.do")
 	public String about() {
 		return "about/about";

@@ -1,5 +1,7 @@
 package com.springboot.tourvisit.api;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
@@ -54,6 +56,18 @@ public class ApiRepository {
 	
 	public void delete(ApiVO vo) {
 		em.remove(vo);								// em.remove : JPA를 통해 값을 제거할 때
+	}
+	
+	public List<ApiVO> getResultList() {
+	 List <ApiVO> result = null;
+	 System.out.println("ApiRepository");
+	 try {
+	  result =  (List<ApiVO>) em.createQuery("select a from ApiVO a",ApiVO.class).getResultList();
+	 }
+	 catch (NoResultException e) {
+		 System.out.println("No Result");
+	 }
+	  return result;
 	}
 	
 }

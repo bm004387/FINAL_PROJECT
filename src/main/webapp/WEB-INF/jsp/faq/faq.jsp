@@ -19,9 +19,9 @@
 <img class="img-content01"  src="/images/faq01.png" alt="메인이미지1">
 </div>
 <div>
-<div>
 <img class="img-content03"  src="/images/faq03.png" alt="메인이미지3">
 </div>
+<div>
 <img class="img-content02"  src="/images/faq02.png" alt="메인이미지2">
 </div>
   <div class="accordion-item">

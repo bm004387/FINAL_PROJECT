@@ -9,7 +9,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
-
 <script src="js/bootstrap.bundle.js"></script>
 <style type="text/css">
 .header{

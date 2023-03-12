@@ -53,11 +53,14 @@
 		<div class="page-header">
 			<h1>TOUR VISIT</h1>
 		</div>
-				<form action="/toursearch.do" method="post">
-				<label for="name">검색 : </label>
-				<input type="text" id="search" name="search">
-				<input type="submit" value="submit">
-				</form>
+				<form th:action="toursearch.do" method="get" id="searchForm">
+		        <input type="hidden" id="keyword" name="keyword" th:value="${kw}">
+		        
+		    </form>
+				<div class="input-group">
+                <input type="text" id="search_kw" class="form-control" th:value="${kw}">
+                <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
+            </div>
             
 		<div class="jumbotron">
 				<div class="row">
@@ -91,6 +94,14 @@
 				</c:forEach>
 		</div>
 	</div>
-
+<script type='text/javascript'>
+	
+			const btn_search = document.getElementById("btn_search");
+			btn_search.addEventListener('click', function() {
+			    document.getElementById('keyword').value = document.getElementById('search_kw').value;
+			   
+			    document.getElementById('searchForm').submit();
+			});
+	</script>
 </body>
 </html>

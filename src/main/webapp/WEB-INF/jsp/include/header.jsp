@@ -30,8 +30,8 @@
 	    <a class="nav-link" onclick="javascript:fn_signUp();">회원가입</a>
 	  </li>
 	  <li class="nav-item">
-	   <!-- TOURAPI 데이터 입력 완료로 주석처리   
-	   <a class="nav-link active" aria-current="page" href="apitest.do">API테스트</a> -->
+	   <!-- TOURAPI 데이터 입력 완료로 주석처리   -->
+	 <!--   <a class="nav-link active" aria-current="page" href="api.do">API테스트</a> --> 
 	   <a class="nav-link active" aria-current="page" href="tourList.do">여행 목록</a>
 	  </li>
 	</ul>

@@ -38,4 +38,12 @@ public class ApiService {
 		return apiDAO.getResultList();
 	}
 
+	public List<ApiVO> selectApisearchList(String keyword) {
+		
+		return apiDAO.searchtour(keyword);
+	}
+	
+	
+	
+
 }

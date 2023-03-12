@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.tourvisit.api.ApiVO;
@@ -41,7 +42,7 @@ public class apicontroller{
 	final ApiService apiService;
 	
 	@RequestMapping(value="tourList.do")
-	public String selectBoardList(@ModelAttribute("ApiVO")ApiVO vo, HttpServletRequest request, HttpSession session, Model model) throws Exception{
+	public String selecttourList(@ModelAttribute("ApiVO")ApiVO vo, HttpServletRequest request, HttpSession session, Model model) throws Exception{
 		try {
 			// 목록 조회
 			System.out.println("apicontroller");
@@ -56,9 +57,20 @@ public class apicontroller{
 		return "tour/tourListR";
 	}
 	
-	
+	@RequestMapping(value="toursearch.do")
+	public String selecttoursearchList(@ModelAttribute("ApiVO")ApiVO vo,@RequestParam(value = "keyword", defaultValue = "") String keyword, HttpServletRequest request, HttpSession session, Model model) throws Exception{
 		
+			System.out.println("검색값 확인"+keyword);
+			List<ApiVO> tourlist = apiService.selectApisearchList(keyword);
+		     
+			
+			model.addAttribute("tourlist", tourlist);
+		
+		
+		return "tour/toursearch";
+	}
 	
+
 	@RequestMapping("api.do")
 public void callDetail(HttpServletRequest request, HttpServletResponse response) throws IOException, Exception{
 			
@@ -68,8 +80,8 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
 		PrintWriter out = response.getWriter();
 		
 		
-		/* 초기 데이타 입력을 위해서 TourAPI 를 받아 1000건을 DB 에 입력함
-   
+		// 초기 데이타 입력을 위해서 TourAPI 를 받아 1000건을 DB 에 입력함
+   /*
          String BASE_URL = "https://apis.data.go.kr/B551011/KorService/";
          String apiUri = "areaBasedList";
          String serviceKey = "?serviceKey=Lte9EaFEKl77Nf7DNWMbLTbLKPzbziOIHqfdh9EfekbiV9YBUQBtp9HchlcWxDH7IJ0YFxO7TQWh5VKTnmCi%2BQ%3D%3D";
@@ -266,11 +278,11 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
         		apiService.insert(vo);
         			
         	
-        		
         
 				        	}
 				        }
-		 */
+    */
+		 
 				        
 				       
 				       

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,8 +21,12 @@
 				<p>
 					내용 : <br />
 					<textarea id="content_box" name="content" rows="5" cols="30">${param.content}</textarea>
-				</p>				
-							
+				</p>
+				<p>
+					작성자 : <br><input id="title_box" type="text" name="writer" value="${param.writer}">
+				</p>
+				<fmt:parseDate value="${regDate}" pattern="yyyy-MM-dd" var="regDate" type="both"></fmt:parseDate>
+				<fmt:formatDate pattern="yyyy-MM-dd" value="${regDate}"/>
 				<input type="submit" value="게시글 등록">
 				<button type="button" onclick="javascript:history.go(-1);">취소</button>								
 			</form>

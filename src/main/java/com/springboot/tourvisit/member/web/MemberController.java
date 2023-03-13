@@ -1,5 +1,7 @@
 package com.springboot.tourvisit.member.web;
 
+import java.lang.ProcessBuilder.Redirect;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.springboot.tourvisit.member.service.MemberService;
@@ -44,6 +47,14 @@ public class MemberController {
 		return "member/login";
 	}
 	
+	@RequestMapping(value={"/logout.do"})
+	public String logout(@ModelAttribute("memberVO")MemberVO memberVO,HttpServletRequest request, HttpSession session, Model model) throws Exception{
+		session.invalidate();
+		
+		return "redirect:main.do";
+		
+	}
+	
 	/**
 	 * 로그인 
 	 * @param memberVO
@@ -63,6 +74,8 @@ public class MemberController {
 			// 멤버의 정보가 있다면, 멤버의 이름을 리턴
 			if(resultVO != null) {
 				result = resultVO.getMemberName();
+				session = request.getSession();
+				session.setAttribute("resultVO", resultVO);
 			}
 			
 		}catch(Exception e) {

@@ -24,10 +24,15 @@
 <div class="container header">
 	<ul class="nav justify-content-end">
 	  <li class="nav-item">
+	  <c:if test="${resultVO == null}">
 	    <a class="nav-link active" aria-current="page" href="login.do">로그인</a>
+	   </c:if>
+	    <c:if test="${resultVO != null}">
+	    <a class="nav-link active" aria-current="page" href="logout.do">로그아웃</a>
+	   </c:if>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" onclick="javascript:fn_signUp();">회원가입</a>
+	   <!--   <a class="nav-link" onclick="javascript:fn_signUp();">회원가입</a> -->
 	  </li>
 	  <li class="nav-item">
 	   <!-- TOURAPI 데이터 입력 완료로 주석처리   -->

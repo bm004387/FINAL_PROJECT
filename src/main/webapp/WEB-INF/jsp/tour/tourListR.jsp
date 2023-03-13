@@ -78,11 +78,12 @@
 								<p class="card-text">연락처 : ${tourlist.telname}</p>
 								<p class="card-text">번호 : ${tourlist.tel}</p>
 								
-								<a href="#" class="btn mr-2"><i class="fas fa-link"></i>버튼 1</a>
-								<a href="#" class="btn mr-2"><i class="fas fa-link"></i>버튼 2</a>
-									
+									  
 					        </div>
-					      					     
+					        <div class="col">
+					      <button id ="buyBtn" type="button" class="btn btn-info btn-lg" onclick="fn_buy()" style="border-radius: 10px !important;"><i class="fa fa-credit-card fa-2x">&nbsp;바로구매</i></button>
+                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()" style="border-radius: 10px !important;"><i class="fa fa-shopping-cart fa-2x">&nbsp;장바구니</i></button>
+					      					 </div>    
 				        </div>
 				       
 					</div>

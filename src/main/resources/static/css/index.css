@@ -6,27 +6,60 @@ src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_O
 @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 
 
-
-h2{
-    color: white;
-    font-weight: lighter;
-    font-size: 92px;
-	font-family: 'Lemon', cursive !important;
-    text-shadow: 1px 1px 2px rgb(9, 255, 0);
-    
-}
-
-
-
 *{
 	text-align: center;
 	align-items: center;
 }
 
+
+@media all and (min-width:320px) {
+	
 #content{
-    /*position: absolute;*/
-    /*left: 10%;
-    top: 40%;*/
+    margin-top: 355px;
+    background: rgba(62, 56, 56, 0.5);
+}
+
+h1{
+	font-family: 'Jal_Onuel';
+    color: white;
+    font-size: 3em;
+    text-shadow: 1px 1px 2px rgb(9, 255, 0);
+    padding-bottom: 9px;
+}
+
+p{
+	font-family: 'Jal_Onuel';
+    padding-top: 20px;
+    margin-bottom: 17px;
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 2em;
+    text-shadow: 1px 1px 1px rgb(0, 115, 255);
+    margin-top: -18px;
+}
+
+a, a:visited{
+	font-family: 'Jal_Onuel';
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    font-size: 20px;
+	}  
+	
+h2{
+    color: white;
+    font-weight: lighter;
+    font-size: 41px;
+	font-family: 'Lemon', cursive !important;
+    text-shadow: 1px 1px 2px rgb(9, 255, 0);
+    margin-bottom: -29px;
+	}
+}
+  
+  
+@media all and (min-width:768px) {
+#content{
     margin-top: 355px;
     background: rgba(62, 56, 56, 0.5);
 }
@@ -39,7 +72,97 @@ h1{
     padding-bottom: 20px;
 }
 
+p{
+	font-family: 'Jal_Onuel';
+    padding-top: 20px;
+    margin-bottom: 4px;
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 2em;
+    text-shadow: 1px 1px 1px rgb(0, 115, 255);
+    margin-top: -18px;
+}
 
+a, a:visited{
+	font-family: 'Jal_Onuel';
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    font-size: 34px;
+	}  
+	
+h2{
+    color: white;
+    font-weight: lighter;
+    font-size: 71px;
+	font-family: 'Lemon', cursive !important;
+    text-shadow: 1px 1px 2px rgb(9, 255, 0);
+    margin-bottom: 17px;
+	}
+ }
+  
+  
+   @media all and (min-width:1024px) {
+    #content{
+    margin-top: 355px;
+    background: rgba(62, 56, 56, 0.5);
+}
+
+h1{
+	font-family: 'Jal_Onuel';
+    color: white;
+    font-size: 3em;
+    text-shadow: 1px 1px 2px rgb(9, 255, 0);
+    padding-bottom: 20px;
+}
+
+p{
+	font-family: 'Jal_Onuel';
+    padding-top: 20px;
+    margin-bottom: 4px;
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 2em;
+    text-shadow: 1px 1px 1px rgb(0, 115, 255);
+    margin-top: -18px;
+}
+
+a, a:visited{
+	font-family: 'Jal_Onuel';
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    font-size: 34px;
+	}  
+	
+h2{
+    color: white;
+    font-weight: lighter;
+    font-size: 71px;
+	font-family: 'Lemon', cursive !important;
+    text-shadow: 1px 1px 2px rgb(9, 255, 0);
+    margin-bottom: 17px;
+	}
+ }
+  
+  
+  
+  
+  @media all and (min-width:1280px) {
+    #content{
+    margin-top: 355px;
+    background: rgba(62, 56, 56, 0.5);
+}
+
+h1{
+	font-family: 'Jal_Onuel';
+    color: white;
+    font-size: 3em;
+    text-shadow: 1px 1px 2px rgb(9, 255, 0);
+    padding-bottom: 20px;
+}
 
 p{
 	font-family: 'Jal_Onuel';
@@ -58,11 +181,15 @@ a, a:visited{
     text-decoration: none;
     color: white;
     font-weight: normal;
-    font-size: 33px;
-}
-
-body{
-	width: 100%;
-	height: 100%;
+    font-size: 34px;
+	}  
 	
-}
+	h2{
+    color: white;
+    font-weight: lighter;
+    font-size: 91px;
+	font-family: 'Lemon', cursive !important;
+    text-shadow: 1px 1px 2px rgb(9, 255, 0);
+    margin-bottom: 17px;
+	}
+ }

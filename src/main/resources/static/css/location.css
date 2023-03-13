@@ -1,0 +1,34 @@
+#map{
+	max-width: 80%;
+    height: 400px; 
+    margin: 0 auto; 
+    padding: 50px;
+    background: #ffffff;
+    margin-top: 50px;
+    
+    
+}
+.lctx{
+	text-align: center !important;
+	font-size: 20px;
+}
+
+.mobile-link{
+	width: 150px !important;
+	height: 150px !important;
+}
+
+.container-fluid{
+	background-color: #fff !important;
+}
+
+.img-content01{
+	text-align: center !important;
+	width: 100%;
+	height: 100%;
+}
+
+h3{
+	font-weight: bold !important;
+}
+

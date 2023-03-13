@@ -30,7 +30,9 @@
 	    <a class="nav-link" onclick="javascript:fn_signUp();">회원가입</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link active" aria-current="page" href="apitest.do">API테스트</a>
+	   <!-- TOURAPI 데이터 입력 완료로 주석처리   -->
+	 <!--   <a class="nav-link active" aria-current="page" href="api.do">API테스트</a> --> 
+	   <a class="nav-link active" aria-current="page" href="tourList.do">여행 목록</a>
 	  </li>
 	</ul>
 	<nav class="navbar navbar-expand-lg bg-light">
@@ -47,9 +49,13 @@
 	        <li class="nav-item">
 	           <a class="nav-link active" href="/faq.do" style="cursor: pointer;">FAQ</a>
 	        </li>
+	          <li class="nav-item">
+	           <a class="nav-link active" href="/location.do" style="cursor: pointer;">찾아오시는길</a>
+	        </li>
 	        <li class="nav-item">
 	           <a class="nav-link active" href="/board.do" style="cursor: pointer;">게시판</a>
 	        </li>
+	        
 	      </ul>
 	      <form class="d-flex" role="search">
 	        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

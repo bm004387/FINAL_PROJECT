@@ -1,6 +1,9 @@
 package com.springboot.tourvisit.api;
 
+import java.util.List;
+
 import org.hibernate.annotations.DynamicInsert;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,8 +16,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ApiService {
 	
-	// @RequiredArgsConstructor : private final이 붙은 필드의 생성자를 자동으로 추가해주고, @Autowired를 통해 주입도 자동으로 해주는 롬복 애노테이션
-	private final ApiRepository apiDAO;
+	@Autowired
+	 final ApiRepository apiDAO = null;
 
 	
 	public ApiVO selectById(ApiVO vo) {
@@ -28,17 +31,19 @@ public class ApiService {
 		apiDAO.insert(vo);
 	}
 	
-	@Transactional
-	public void update(ApiVO vo, String title, String content) {
-		ApiVO selected = apiDAO.selectById(vo);
-		//selected.setTitle(title);
-		//selected.setContent(content);
+
+	public List<ApiVO> selectApiList() {
+		
+		System.out.println("ApiService");
+		return apiDAO.getResultList();
+	}
+
+	public List<ApiVO> selectApisearchList(String keyword) {
+		
+		return apiDAO.searchtour(keyword);
 	}
 	
-	@Transactional
-	public void delete(ApiVO vo) {
-		ApiVO selected = apiDAO.selectById(vo);
-		apiDAO.delete(selected);
-	}
+	
+	
 
 }

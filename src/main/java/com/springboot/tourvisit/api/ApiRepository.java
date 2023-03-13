@@ -1,10 +1,13 @@
 package com.springboot.tourvisit.api;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.springboot.tourvisit.api.ApiVO;
@@ -54,6 +57,26 @@ public class ApiRepository {
 	
 	public void delete(ApiVO vo) {
 		em.remove(vo);								// em.remove : JPA를 통해 값을 제거할 때
+	}
+	
+	public List<ApiVO> getResultList() {
+	 List <ApiVO> result = null;
+	 System.out.println("ApiRepository");
+	 try {
+	  result =  (List<ApiVO>) em.createQuery("select a from ApiVO a order by a.createdtime desc",ApiVO.class).getResultList();
+	 }
+	 catch (NoResultException e) {
+		 System.out.println("No Result");
+	 }
+	  return result;
+	}
+	
+	public List<ApiVO> searchtour(String keyword){
+		List<ApiVO> result = null;
+		result = (List<ApiVO>) em.createQuery("select a from ApiVO a where a.title LIKE :keyword",ApiVO.class)
+				.setParameter("keyword","%"+keyword+"%")
+				.getResultList();
+		return result;
 	}
 	
 }

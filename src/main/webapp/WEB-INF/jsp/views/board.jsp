@@ -26,8 +26,10 @@
 						<td><c:out value="${boardList.bno}" /></td>
 						<td><a class="move" href='<c:out value="${boardList.bno}"/>'><c:out value="${boardList.title}" /></a></td>
 						<td><c:out value="${boardList.writer}" /></td>
-						<td><fmt:formatDate pattern="yyyy-MM-dd" value="${boardList.regDate}" /></td>
-						<td><fmt:formatDate pattern="yyyy-MM-dd" value="${boardList.updateDate}" /></td>
+						<td><c:out value="${boardList.regDate}" /></td>
+						<td><c:out value="${boardList.updateDate}" /></td>
+						<fmt:parseDate value="${regDate}" pattern="yyyy-MM-dd" var="regDate" type="both"></fmt:parseDate>
+						<fmt:parseDate value="${updateDate}" pattern="yyyy-MM-dd" var="updateDate" type="both"></fmt:parseDate>
 					</tr>
 				</c:forEach>
 			</table>

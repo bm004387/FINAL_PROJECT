@@ -1,7 +1,6 @@
 package com.springboot.tourvisit.board.model;
 
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -45,9 +47,11 @@ public class BoardVO {
 	private String writer;
 	
 	@Column(name = "REGDATE")
-	private Date regDate;
+	@CreatedDate
+	private LocalDate regDate;
 	
 	@Column(name = "UPDATEDATE")
-	private Date updateDate;
+	@LastModifiedDate
+	private LocalDate updateDate;
 
 }

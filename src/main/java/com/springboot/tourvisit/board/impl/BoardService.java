@@ -1,5 +1,6 @@
 package com.springboot.tourvisit.board.impl;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -41,6 +42,7 @@ public class BoardService {
 		BoardVO selected = BoardDAO.selectById(vo);
 		selected.setTitle(title);
 		selected.setContent(content);
+		selected.setUpdateDate(LocalDate.now());
 	}
 	
 	@Transactional

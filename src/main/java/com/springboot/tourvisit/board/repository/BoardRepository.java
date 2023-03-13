@@ -1,5 +1,6 @@
 package com.springboot.tourvisit.board.repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -24,7 +25,8 @@ public class BoardRepository {
 	
 
 	public void insert(BoardVO vo) {
-		// em.persist : JPA를 통해 값을 입력할 때 활용합니다.
+		vo.setRegDate(LocalDate.now());
+		vo.setUpdateDate(LocalDate.now());
 		em.persist(vo);								
 	}
 	

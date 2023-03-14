@@ -7,17 +7,19 @@
 <meta charset="utf-8">
 <title>메인화면</title>
 <link rel="stylesheet" href="../css/common.css">
-<c:set var="data" value="${board.bno}" />
+
+<jsp:include page="../include/header.jsp"></jsp:include>
+<c:set var="detail" value="${detail}" />
 </head>
 <body>
 	<div class="container">
 		<div class="box-wrapper">	
 			<p>제목 : <br>
-			<input id="title_box" type="text" name="title" value="${board.title}">			
+			<input id="title_box" type="text" name="title" value="${detail.title}">			
 			</p>
 			
 			<p>글 내용 :
-			<div id="content_box">${board.content}</div>
+			<div id="content_box">${detail.content}</div>
 
 			</p>
 			<form action="/">

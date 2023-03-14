@@ -19,7 +19,7 @@ public class BoardService {
 	private final BoardRepository BoardDAO;
 
 	
-	public BoardVO selectById(BoardVO vo) {
+	public List<BoardVO> selectById(BoardVO vo) {
 		return BoardDAO.selectById(vo);
 	}
 	
@@ -39,16 +39,21 @@ public class BoardService {
 	
 	@Transactional
 	public void update(BoardVO vo, String title, String content) {
-		BoardVO selected = BoardDAO.selectById(vo);
-		selected.setTitle(title);
-		selected.setContent(content);
-		selected.setUpdateDate(LocalDate.now());
+		List<BoardVO> selected = BoardDAO.selectById(vo);
+		((BoardVO) selected).setTitle(title);
+		((BoardVO) selected).setContent(content);
+		((BoardVO) selected).setUpdateDate(LocalDate.now());
 	}
 	
 	@Transactional
 	public void delete(BoardVO vo) {
-		BoardVO selected = BoardDAO.selectById(vo);
-		BoardDAO.delete(selected);
+		List<BoardVO> selected = BoardDAO.selectById(vo);
+		BoardDAO.delete((BoardVO) selected);
+	}
+
+	@Transactional
+	public BoardVO detailView(Long bno) {
+		return BoardDAO.detailView(bno);
 	}
 
 }

@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <title>게시글 등록</title>
 <link rel="stylesheet" href="../css/common.css">
-<c:set var="data" value="${board.content}" />
+<c:set var="data" value="${boardList.content}" />
 </head>
 <body>
 	<div class="container">
@@ -25,8 +25,6 @@
 				<p>
 					작성자 : <br><input id="title_box" type="text" name="writer" value="${param.writer}">
 				</p>
-				<fmt:parseDate value="${regDate}" pattern="yyyy-MM-dd" var="regDate" type="both"></fmt:parseDate>
-				<fmt:formatDate pattern="yyyy-MM-dd" value="${regDate}"/>
 				<input type="submit" value="게시글 등록">
 				<button type="button" onclick="javascript:history.go(-1);">취소</button>								
 			</form>

@@ -7,16 +7,16 @@
 <meta charset="utf-8">
 <title>게시글 삭제</title>
 <link rel="stylesheet" href="../css/common.css">
-<c:set var="data" value="${board.content}" />
+<c:set var="data" value="${boardList.content}" />
 </head>
 <body>
 	<div class="container">
 		<div class="box-wrapper">
 			<p>제목 : <br>
-			<input id="title_box" type="text" name="title" value="${board.title}">			
+			<input id="title_box" type="text" name="title" value="${boardList.title}">			
 			</p>			
 			<p>글 내용 :
-			<div id="content_box">${board.content}</div>
+			<div id="content_box">${boardList.content}</div>
 			</p>			
 			<div class="subbtn-wrapper">
 			<form action="delete.do" method="post">

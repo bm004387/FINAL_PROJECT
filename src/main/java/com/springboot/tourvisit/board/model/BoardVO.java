@@ -35,7 +35,7 @@ public class BoardVO {
 					generator = "BOARD_SEQ_GEN")
 	
 	@Column(name = "BNO")
-	private int bno;
+	private Long bno;
 	
 	@Column(name = "TITLE")
 	private String title;

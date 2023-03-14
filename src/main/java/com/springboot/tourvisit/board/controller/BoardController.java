@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,7 +27,7 @@ public class BoardController {
 
 	// 아래 모든 메소드에 request.setAttribute("article", articleService.selectById(vo))를 해주는것과 같은 역할
 	@ModelAttribute("board")
-	public BoardVO getArticle(BoardVO vo) {
+	public List<BoardVO> getBoard(BoardVO vo) {
 		return boardService.selectById(vo);
 	}
 	
@@ -53,11 +54,6 @@ public class BoardController {
 	}
 
 	// 게시판 홈 화면
-//	@RequestMapping("/board.do")
-//	public String board() {
-//		return "views/board";
-//	}
-	
 	@RequestMapping(value="/board.do")
 	public String selectBoardList(@ModelAttribute("boardVO")BoardVO vo, HttpServletRequest request, HttpSession session, Model model) throws Exception{
 		try {
@@ -86,9 +82,9 @@ public class BoardController {
 		return "views/insertSuccess";
 	}
 	
-	// 게시글 조회
-	@RequestMapping("/read.do")
-	public String selectById(BoardVO vo) {
+	@GetMapping("/detail.do/bno={bno}")
+	public String detailView(@PathVariable("bno") Long bno, Model model) {
+		model.addAttribute("detail", boardService.detailView(bno));
 		return "views/readArticle";
 	}
 	

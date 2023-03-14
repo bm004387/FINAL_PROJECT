@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -24,7 +24,7 @@
 				<c:forEach items="${boardList}" var="boardList">
 					<tr>
 						<td><c:out value="${boardList.bno}" /></td>
-						<td><a class="move" href='<c:out value="${boardList.bno}"/>'><c:out value="${boardList.title}" /></a></td>
+						<td><a class="move" href="/detail.do/bno=${boardList.bno}"><c:out value="${boardList.title}" /></a></td>
 						<td><c:out value="${boardList.writer}" /></td>
 						<td><c:out value="${boardList.regDate}" /></td>
 						<td><c:out value="${boardList.updateDate}" /></td>

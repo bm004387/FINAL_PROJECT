@@ -80,7 +80,10 @@
 	  <li class="nav-item">
 	   <!-- TOURAPI 데이터 입력 완료로 주석처리   -->
 	 <!--   <a class="nav-link active" aria-current="page" href="api.do">API테스트</a> --> 
+	 
+	 <c:if test="${resultVO != null }">
 	   <a class="nav-link active" aria-current="page" href="tourList.do">여행 목록</a>
+	   </c:if>
 	  </li>
 	</ul>
 	<nav class="navbar navbar-expand-lg bg-light">

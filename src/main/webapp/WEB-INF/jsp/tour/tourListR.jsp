@@ -53,14 +53,19 @@
 		<div class="page-header">
 			<h1>TOUR VISIT</h1>
 		</div>
-				<form action="/toursearch.do" method="post">
-				<label for="name">검색 : </label>
-				<input type="text" id="search" name="search">
-				<input type="submit" value="submit">
-				</form>
+					<form action="toursearch.do" method="get" id="searchForm">
+		        <input type="hidden" id="keyword" name="keyword" value="${kw}">
+		        
+		    </form>
+				<div class="input-group">
+                <input type="text" id="search_kw" class="form-control" value="${kw}">
+                <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
+            </div>
             
 		<div class="jumbotron">
 				<div class="row">
+			<c:set var="resultVO" value="${resultVO}"></c:set>
+			<!--<c:out value="${resultVO.memberName}"></c:out>-->
 			
 				<c:forEach items="${tourlist}" var="tourlist" >
 					<div class="col-md-4">
@@ -72,7 +77,7 @@
 						
 					        
 					        <div class="card-body">
-					        	<h5 class="card-title">관광 이름 : ${tourlist.title}</h5>
+					        	<h7 class="card-title">관광 이름 : ${tourlist.title}</h7>
 					        	<p class="card-text">우편번호 : ${tourlist.zipcode}</p>
 								<p class="card-text">주소 : ${tourlist.addr1}</p>
 								<p class="card-text">연락처 : ${tourlist.telname}</p>
@@ -90,8 +95,25 @@
 				</div>
 				
 				</c:forEach>
+				
+				
 		</div>
 	</div>
-
+		<script type='text/javascript'>
+	
+			const btn_search = document.getElementById("btn_search");
+			btn_search.addEventListener('click', function() {
+			    document.getElementById('keyword').value = document.getElementById('search_kw').value;
+			   
+			    document.getElementById('searchForm').submit();
+			});
+	</script>
+	<script>
+		$(document).ready(function() {
+			function fn_buy(){
+				
+					}
+		}
+		</script>
 </body>
 </html>

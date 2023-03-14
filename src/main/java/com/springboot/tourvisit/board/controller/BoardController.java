@@ -43,6 +43,11 @@ public class BoardController {
 		return "main";
 	}
 	
+	@RequestMapping("/location.do")
+	public String location() {
+		return "location/location";
+	}
+	
 	@RequestMapping("/about.do")
 	public String about() {
 		return "about/about";

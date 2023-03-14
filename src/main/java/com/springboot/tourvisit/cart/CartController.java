@@ -32,7 +32,7 @@ public class CartController {
 		if(contentid!=null) {
 			System.out.println("여행상품 확인"+contentid);
 			System.out.println("사용자 확인"+memberid);
-			List<cartVO> cartList = tourcartservice.tourcartinsert(contentid,memberid);
+			List<cartVO> cartList = tourcartservice.tourcartinsert(contentid,memberid,"1000");
 		}else {
 			System.out.println("NULL 값 입니다");
 		}

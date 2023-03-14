@@ -76,6 +76,7 @@ public class MemberController {
 				result = resultVO.getMemberName();
 				session = request.getSession();
 				session.setAttribute("resultVO", resultVO);
+				session.setMaxInactiveInterval(-1);
 			}
 			
 		}catch(Exception e) {

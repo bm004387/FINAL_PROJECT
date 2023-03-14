@@ -18,8 +18,8 @@ public class TourcartService {
 	 final tourcartRepository tourcarDAO = null;
 
 	@Transactional
-	public List<cartVO> tourcartinsert(String contentid, String memberid) {
-		tourcarDAO.insert(contentid,memberid);
+	public List<cartVO> tourcartinsert(String contentid, String memberid,String price) {
+		tourcarDAO.insert(contentid,memberid,price);
 		return null;
 	}
 

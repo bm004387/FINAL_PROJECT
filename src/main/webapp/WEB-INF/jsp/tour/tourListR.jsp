@@ -65,11 +65,15 @@
 		<div class="jumbotron">
 				<div class="row">
 			<c:set var="resultVO" value="${resultVO}"></c:set>
-			<!--<c:out value="${resultVO.memberName}"></c:out>-->
+			
 			
 				<c:forEach items="${tourlist}" var="tourlist" >
+				
 					<div class="col-md-4">
-
+				<form id="cart" name="cart" method="post" action="tourcartinsert.do">
+				<input type="hidden" name="contentid" value=${tourlist.contentid}>
+				<input type="hidden" name="memberid" value=${resultVO.memberName}>
+				</form>
 						<div class="col">
 							<div class="card" style="width: 18rem;">
 							
@@ -86,8 +90,9 @@
 									  
 					        </div>
 					        <div class="col">
-					      <button id ="buyBtn" type="button" class="btn btn-info btn-lg" onclick="fn_buy()" style="border-radius: 10px !important;"><i class="fa fa-credit-card fa-2x">&nbsp;바로구매</i></button>
-                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()" style="border-radius: 10px !important;"><i class="fa fa-shopping-cart fa-2x">&nbsp;장바구니</i></button>
+					      <button id ="buyBtn" type="button" class="btn btn-info btn-lg"  style="border-radius: 10px !important;"><i class="fa fa-credit-card fa-2x">&nbsp;바로구매</i></button>
+                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg"  style="border-radius: 10px !important;"><i class="fa fa-shopping-cart fa-2x">&nbsp;장바구니</i></button>
+                      
 					      					 </div>    
 				        </div>
 				       
@@ -99,7 +104,8 @@
 				
 		</div>
 	</div>
-		<script type='text/javascript'>
+		
+	<script type='text/javascript'>
 	
 			const btn_search = document.getElementById("btn_search");
 			btn_search.addEventListener('click', function() {
@@ -107,13 +113,18 @@
 			   
 			    document.getElementById('searchForm').submit();
 			});
+			
+			
 	</script>
 	<script>
-		$(document).ready(function() {
-			function fn_buy(){
-				
-					}
-		}
-		</script>
+	 $(document).ready(function(){
+	const cartBtn = document.getElementById("cartBtn");
+	cartBtn.addEventListener('click', function() {
+	   
+	   
+	    document.getElementById('cart').submit();
+	});
+	})
+	</script>
 </body>
 </html>

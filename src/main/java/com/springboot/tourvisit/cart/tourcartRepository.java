@@ -5,6 +5,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @Repository
@@ -15,12 +16,21 @@ public class tourcartRepository {
 		@PersistenceContext	
 		private final EntityManager em;
 	
-	public void insert(String contentid, String memberid) {
+	public void insert(String contentid, String memberid,String price) {
 	
+		System.out.println("카트 인서트");
+		System.out.println(contentid);
+		System.out.println(memberid);
+		System.out.println(price);
+		
+		
 		cartVO vo = null;
+		vo = new cartVO();
 		vo.setContentid(contentid);
 		vo.setMemberid(memberid);
-		vo.setPrice("1000");
+		vo.setPrice(price);
+		System.out.println(vo.toString());
+		
 		
 		// em.persist : JPA를 통해 값을 입력할 때 활용합니다.
 				em.persist(vo);	

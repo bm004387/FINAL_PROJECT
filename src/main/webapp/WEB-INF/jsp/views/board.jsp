@@ -8,17 +8,21 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <title>메인화면</title>
+<link rel="stylesheet" href="../css/board.css">
 
 <jsp:include page="../include/header.jsp"></jsp:include>
 	<div class="container">
+	<div class="boardheader">
+		<h1>공지사항</h1>
+	</div>
 		<table width="100%" class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr>
-						<th>#번호</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>작성일</th>
-						<th>수정일</th>
+						<th width="8%">#번호</th>
+						<th width="62%">제목</th>
+						<th width="10%">작성자</th>
+						<th width="10%">작성일</th>
+						<th width="10%">수정일</th>
 					</tr>
 				</thead>
 				<c:forEach items="${boardList}" var="boardList">

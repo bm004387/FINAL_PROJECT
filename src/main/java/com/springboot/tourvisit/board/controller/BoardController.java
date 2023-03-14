@@ -90,25 +90,27 @@ public class BoardController {
 	@GetMapping("/detail.do/bno={bno}")
 	public String detailView(@PathVariable("bno") Long bno, Model model) {
 		model.addAttribute("detail", boardService.detailView(bno));
-		return "views/readArticle";
+		return "views/detailView";
 	}
 	
 	// 게시글 수정 폼
-	@GetMapping("/modify.do")
-	public String updateForm() {
+	@GetMapping("/modify.do/bno={bno}")
+	public String updateForm(@PathVariable("bno") Long bno, Model model) {
+		
+		model.addAttribute("detail", boardService.detailView(bno));
 		return "views/updateForm";
 	}
 	
 	// 게시글 수정
-	@PostMapping("/modify.do")
-	public String update(BoardVO vo, String title, String content) {
-		boardService.update(vo, title, content);
+	@PostMapping("/modifySuccess.do")
+	public String update(Long bno) {
 		return "views/updateSuccess";
 	}
 	
 	// 게시글 삭제 폼
 	@GetMapping("/delete.do")
-	public String deleteForm() {
+	public String deleteForm(Long bno) {
+		boardService.detailView(bno);
 		return "views/deleteForm";
 	}
 	

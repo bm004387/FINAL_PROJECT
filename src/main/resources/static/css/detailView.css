@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#title_box {	
+	width : 400px;
+	height : auto;
+	border : 2px solid rgb(11, 127, 173);
+}
+
+#content_box {	
+	width : 400px;
+	height : 300px;
+	border : 2px solid rgb(11, 127, 173);
+}
+
+.subbtn-wrapper {	
+	display : inline-block;
+}

@@ -6,21 +6,24 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>게시글 수정</title>
+<title>게시글 수정 - ${detail.title}</title>
 <link rel="stylesheet" href="../css/common.css">
-<c:set var="data" value="${board.content}" />
+<c:set var="detail" value="${detail}" />
 </head>
 
 <body>
 	<div class="container">
 		<div class="box-wrapper">
-			<form action="modify.do" method="post">
+			<form action="/modifySuccess.do" method="post">
 				<p>
-					제목 : <br><input id="title_box" type="text" name="title" value="${board.title}">
+					제목 : <br><input id="title_box" type="text" name="title" value="${detail.title}">
 				</p>
 				<p>
 					내용 : <br />
-					<textarea id="content_box" name="content" rows="5" cols="30">${board.content}</textarea>
+					<textarea id="content_box" name="content" rows="5" cols="30">${detail.content}</textarea>
+				</p>
+				<p>
+					작성자 : <br><input id="title_box" type="text" name="writer" value="${detail.writer}">
 				</p>
 				<input type="submit" value="게시글 수정">
 				<button type="button" onclick="javascript:history.go(-1);">취소</button>				

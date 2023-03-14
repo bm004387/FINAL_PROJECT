@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
@@ -30,6 +31,7 @@ public class BoardRepository {
 		em.persist(vo);								
 	}
 	
+	// 게시글 목록 조회
 	public List<BoardVO> selectBoardList(BoardVO vo) throws Exception {
 		String jpql = "select a from BoardVO a order by bno desc";
 		TypedQuery<BoardVO> query = em.createQuery(jpql, BoardVO.class);
@@ -59,6 +61,7 @@ public class BoardRepository {
 		em.remove(vo);								// em.remove : JPA를 통해 값을 제거할 때
 	}
 
+	// 게시글 상세조회
 	public BoardVO detailView(Long bno) {
 		
 		String jpql = "select a from BoardVO a where a.bno = :bno";
@@ -66,9 +69,21 @@ public class BoardRepository {
 		query.setParameter("bno", bno);
 		
 		BoardVO detail = query.getSingleResult();
-//		return (List<BoardVO>) em.createQuery("",BoardVO.class).getResultList();
 		
 		return detail;
 	}
 	
+//	public BoardVO modifyView(BoardVO vo, Long bno, String title, String writer,String content) {
+//		
+//		String jpql = "UPDATE BoardVO a SET a.TITLE = :title, a.CONTENT = :content, a.WRITER = :writer, WHERE a.BNO = :bno;";
+//		Query query = em.createNamedQuery(jpql);
+//		query.setParameter("bno", bno);
+//		query.setParameter("title", title);
+//		query.setParameter("writer", writer);
+//		query.setParameter("content", content);
+//		
+//		BoardVO modify = (BoardVO) query.getResultList();
+//		System.out.println(modify);
+//		return modify;
+//	}	
 }

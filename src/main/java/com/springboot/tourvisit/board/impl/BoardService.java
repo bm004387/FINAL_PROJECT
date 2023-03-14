@@ -38,11 +38,11 @@ public class BoardService {
 	}
 	
 	@Transactional
-	public void update(BoardVO vo, String title, String content) {
-		List<BoardVO> selected = BoardDAO.selectById(vo);
-		((BoardVO) selected).setTitle(title);
-		((BoardVO) selected).setContent(content);
-		((BoardVO) selected).setUpdateDate(LocalDate.now());
+	public void update(Long bno, String title, String content) {
+		BoardVO selected = BoardDAO.detailView(bno);
+		selected.setTitle(title);
+		selected.setContent(content);
+		selected.setUpdateDate(LocalDate.now());
 	}
 	
 	@Transactional
@@ -55,5 +55,14 @@ public class BoardService {
 	public BoardVO detailView(Long bno) {
 		return BoardDAO.detailView(bno);
 	}
+//
+//	@Transactional
+//	public BoardVO modifyView(Long vo, String title, String content) {
+//		BoardVO selected = BoardDAO.detailView(vo);
+//		selected.setTitle(title);
+//		selected.setContent(content);
+//		selected.setUpdateDate(LocalDate.now());
+//		return null;
+//	}
 
 }

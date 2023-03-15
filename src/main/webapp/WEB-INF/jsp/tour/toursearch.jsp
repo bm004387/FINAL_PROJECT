@@ -64,10 +64,16 @@
             
 		<div class="jumbotron">
 				<div class="row">
+			<c:set var="resultVO" value="${resultVO}"></c:set>
 			
-				<c:forEach items="${tourlist}" var="tourlist" >
+			
+				<c:forEach items="${tourlist}" var="tourlist" varStatus="status">
+				
 					<div class="col-md-4">
-
+				<form id="cart${status.index}" name="cart${status.index}" method="post" action="tourcartinsert.do">
+				<input type="hidden" name="contentid" value=${tourlist.contentid}>
+				<input type="hidden" name="memberid" value=${resultVO.memberId}>
+				
 						<div class="col">
 							<div class="card" style="width: 18rem;">
 							
@@ -75,26 +81,36 @@
 						
 					        
 					        <div class="card-body">
-					        	<h5 class="card-title">관광 이름 : ${tourlist.title}</h5>
+					        	<h7 class="card-title">관광 이름 : ${tourlist.title}</h7>
 					        	<p class="card-text">우편번호 : ${tourlist.zipcode}</p>
 								<p class="card-text">주소 : ${tourlist.addr1}</p>
 								<p class="card-text">연락처 : ${tourlist.telname}</p>
 								<p class="card-text">번호 : ${tourlist.tel}</p>
 								
-								<button id ="buyBtn" type="button" class="btn btn-info btn-lg" onclick="fn_buy()" style="border-radius: 10px !important;"><i class="fa fa-credit-card fa-2x">&nbsp;바로구매</i></button>
-                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()" style="border-radius: 10px !important;"><i class="fa fa-shopping-cart fa-2x">&nbsp;장바구니</i></button>
-								
+									  
 					        </div>
-					      					     
+					        <div class="col">
+                      <button id ="cartBtn" form="cart${status.index}" type="submit" class="btn btn-warning btn-lg"  style="border-radius: 10px !important;"><i class="fa fa-shopping-cart fa-2x">&nbsp;장바구니</i></button>
+                      </form>
+                      <form id="cartbuy" name="cartbuy" method="post" action="#">
+				<input type="hidden" name="contentid" value=${tourlist.contentid}>
+				<input type="hidden" name="memberid" value=${resultVO.memberId}>
+				
+					      <button id ="buyBtn" form="cartbuy" type="submit" class="btn btn-info btn-lg"  style="border-radius: 10px !important;"><i class="fa fa-credit-card fa-2x">&nbsp;바로구매</i></button>
+					      </form>
+					      					 </div>    
 				        </div>
 				       
 					</div>
 				</div>
 				
 				</c:forEach>
+				
+				
 		</div>
 	</div>
-<script type='text/javascript'>
+		
+	<script type='text/javascript'>
 	
 			const btn_search = document.getElementById("btn_search");
 			btn_search.addEventListener('click', function() {
@@ -102,6 +118,9 @@
 			   
 			    document.getElementById('searchForm').submit();
 			});
+			
+			
 	</script>
+	
 </body>
 </html>

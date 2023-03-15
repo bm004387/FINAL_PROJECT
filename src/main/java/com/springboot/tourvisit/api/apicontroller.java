@@ -82,7 +82,7 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
 		
 		
 		// 초기 데이타 입력을 위해서 TourAPI 를 받아 1000건을 DB 에 입력함
-   /*
+   
          String BASE_URL = "https://apis.data.go.kr/B551011/KorService/";
          String apiUri = "areaBasedList";
          String serviceKey = "?serviceKey=Lte9EaFEKl77Nf7DNWMbLTbLKPzbziOIHqfdh9EfekbiV9YBUQBtp9HchlcWxDH7IJ0YFxO7TQWh5VKTnmCi%2BQ%3D%3D";
@@ -91,6 +91,7 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
          String pageNo = "&pageNo=1";
          String listYN = "&listYN=Y";
          String arrange = "&arrange=C";
+         String contentTypeId = "&contentTypeId=15"; //숙박 등 여러가지 정보 받아오니 지저분해 축제항목만 받아오도록 함
         
         String addr ="";
         addr += BASE_URL;
@@ -101,6 +102,7 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
         addr += pageNo;
         addr += listYN;
         addr += arrange;
+        addr += contentTypeId;
         
         URL url = new URL(addr);
         
@@ -282,7 +284,7 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
         
 				        	}
 				        }
-    */
+    
 		 
 				        
 				       

@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 
 <script src="/js/bootstrap.bundle.js"></script>
+
 <style type="text/css">
 .header{
 	height: 200px;
@@ -80,9 +81,7 @@
 	   <!-- TOURAPI 데이터 입력 완료로 주석처리   -->
 	 <!--   <a class="nav-link active" aria-current="page" href="api.do">API테스트</a> --> 
 	 
-	 <c:if test="${resultVO != null }">
-	   <a class="nav-link active" aria-current="page" href="tourList.do">여행 목록</a>
-	   </c:if>
+	
 	  </li>
 	</ul>
 	<nav class="navbar navbar-expand-lg bg-light">
@@ -105,7 +104,27 @@
 	        <li class="nav-item">
 	           <a class="nav-link active" href="/board.do" style="cursor: pointer;">게시판</a>
 	        </li>
-	        
+	         
+	   
+	   <c:if test="${resultVO != null }">
+	   <div class="dropdown">
+		  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+		     여행 상품 메뉴
+		  </button>
+		   <form id="cart" name="cart" method="post" action="tourcartlist.do">
+				
+				<input type="hidden" name="memberid" value=${resultVO.memberId}>
+		  <ul class="dropdown-menu">
+		    <li><a class="dropdown-item" href="tourList.do">여행 상품 목록</a></li>
+		    <li><button id ="cartBtn" form="cart" type="submit" class="" >카트리스트</button></li>
+		    <li><a class="dropdown-item" href="#">Something else here</a></li>
+		    <!--  <li><a class="dropdown-item" href="api.do">데이터 업데이트</a></li> -->
+		  </ul>
+		 
+				</form>
+		</div>
+	   </c:if>
+			
 	      </ul>
 	      <form class="d-flex" role="search">
 	        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

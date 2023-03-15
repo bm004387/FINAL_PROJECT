@@ -67,13 +67,13 @@
 			<c:set var="resultVO" value="${resultVO}"></c:set>
 			
 			
-				<c:forEach items="${tourlist}" var="tourlist" >
+				<c:forEach items="${tourlist}" var="tourlist" varStatus="status">
 				
 					<div class="col-md-4">
-				<form id="cart" name="cart" method="post" action="tourcartinsert.do">
+				<form id="cart${status.index}" name="cart${status.index}" method="post" action="tourcartinsert.do">
 				<input type="hidden" name="contentid" value=${tourlist.contentid}>
-				<input type="hidden" name="memberid" value=${resultVO.memberName}>
-				</form>
+				<input type="hidden" name="memberid" value=${resultVO.memberId}>
+				
 						<div class="col">
 							<div class="card" style="width: 18rem;">
 							
@@ -90,9 +90,14 @@
 									  
 					        </div>
 					        <div class="col">
-					      <button id ="buyBtn" type="button" class="btn btn-info btn-lg"  style="border-radius: 10px !important;"><i class="fa fa-credit-card fa-2x">&nbsp;바로구매</i></button>
-                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg"  style="border-radius: 10px !important;"><i class="fa fa-shopping-cart fa-2x">&nbsp;장바구니</i></button>
-                      
+                      <button id ="cartBtn" form="cart${status.index}" type="submit" class="btn btn-warning btn-lg"  style="border-radius: 10px !important;"><i class="fa fa-shopping-cart fa-2x">&nbsp;장바구니</i></button>
+                      </form>
+                      <form id="cartbuy" name="cartbuy" method="post" action="#">
+				<input type="hidden" name="contentid" value=${tourlist.contentid}>
+				<input type="hidden" name="memberid" value=${resultVO.memberId}>
+				
+					      <button id ="buyBtn" form="cartbuy" type="submit" class="btn btn-info btn-lg"  style="border-radius: 10px !important;"><i class="fa fa-credit-card fa-2x">&nbsp;바로구매</i></button>
+					      </form>
 					      					 </div>    
 				        </div>
 				       
@@ -116,15 +121,6 @@
 			
 			
 	</script>
-	<script>
-	 $(document).ready(function(){
-	const cartBtn = document.getElementById("cartBtn");
-	cartBtn.addEventListener('click', function() {
-	   
-	   
-	    document.getElementById('cart').submit();
-	});
-	})
-	</script>
+	
 </body>
 </html>

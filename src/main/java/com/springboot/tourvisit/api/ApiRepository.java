@@ -63,7 +63,7 @@ public class ApiRepository {
 	 List <ApiVO> result = null;
 	 System.out.println("ApiRepository");
 	 try {
-	  result =  (List<ApiVO>) em.createQuery("select a from ApiVO a order by a.createdtime desc",ApiVO.class).getResultList();
+	  result =  (List<ApiVO>) em.createQuery("select a from ApiVO a where a.contenttypeid='15' order by a.createdtime desc",ApiVO.class).getResultList();
 	 }
 	 catch (NoResultException e) {
 		 System.out.println("No Result");

@@ -22,5 +22,10 @@ public class TourcartService {
 		tourcarDAO.insert(contentid,memberid,price);
 		return null;
 	}
+	
+	public Object tourcartselect(String memberid) {
+		return tourcarDAO.getResultList(memberid);
+		 
+	}
 
 }

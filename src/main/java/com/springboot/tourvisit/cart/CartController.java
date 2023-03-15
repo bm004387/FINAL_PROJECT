@@ -40,7 +40,19 @@ public class CartController {
 			//model.addAttribute("tourlist", tourlist);
 		
 		
-		return null;
+		return "tour/tourListR";
+	}
+	
+	@RequestMapping(value="tourcartlist.do")
+	public String tourcartlist(@ModelAttribute("ApiVO")ApiVO vo,@RequestParam(value = "memberid", defaultValue = "") String memberid, HttpServletRequest request, HttpSession session, Model model) throws Exception{
+		
+		Object cartlist = tourcartservice.tourcartselect(memberid);
+			
+		model.addAttribute("cartlist", cartlist);
+			//model.addAttribute("tourlist", tourlist);
+		
+		
+		return "tour/tourListR";
 	}
 	
 }

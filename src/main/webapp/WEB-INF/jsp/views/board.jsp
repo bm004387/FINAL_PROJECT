@@ -15,6 +15,10 @@
 	<div class="boardheader">
 		<h1>공지사항</h1>
 	</div>
+		<form action="/write.do">
+			<input type="submit" value="게시글 등록" style="width:300px"  width="3000px" /><br>
+			<br>
+		</form>
 		<table width="100%" class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr>
@@ -38,26 +42,5 @@
 				</c:forEach>
 			</table>
 		
-		<!-- 1. 게시글 등록 -->
-		<div class="btn-wrapper">
-			<form action="/write.do">
-				<input type="submit" value="게시글 등록" style="width:300px"  width="3000px" /><br>
-				<br>
-			</form>
-			<!-- 2. 게시글 조회 -->
-			<form action="/read.do">
-				<input type="submit" value="최근 게시글 보기" style="width:300px"  width="3000px"  /><br>
-				<br>
-			</form>
-			<!-- 3. 게시글 수정 -->
-			<form action="/modify.do/bno=${bno}">
-				<input type="submit" value="최근 게시글 수정" style="width:300px"  width="3000px"  /><br>
-				<br>
-			</form>
-			<!-- 4. 게시글 삭제 -->
-			<form action="/delete.do">
-				<input type="submit" value="최근 게시글 삭제" style="width:300px"  /><br>
-				<br>
-			</form>
-		</div>
+			
 	</div>

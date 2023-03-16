@@ -108,12 +108,11 @@ public class BoardController {
 	}
 	
 	
-	// 게시글 삭제 폼
-	@GetMapping("/delete.do")
-	public String deleteForm(Long bno) {
-		boardService.detailView(bno);
-		return "views/deleteForm";
-	}
+//	// 게시글 삭제 폼
+//	@GetMapping("/delete.do")
+//	public String deleteForm(Long bno) {
+//		return "views/deleteForm";
+//	}
 	
 	// 게시글 삭제
 	@PostMapping("/delete.do")

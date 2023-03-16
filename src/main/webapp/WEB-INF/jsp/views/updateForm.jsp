@@ -9,6 +9,11 @@
 <title>게시글 수정 - ${detail.title}</title>
 <link rel="stylesheet" href="../css/common.css">
 <c:set var="detail" value="${detail}" />
+<script type="text/javascript">
+	function btn() {
+		alert('${detail.title}글을 수정하시겠습니까?')
+	}
+</script>
 </head>
 
 <body>
@@ -25,7 +30,7 @@
 				<p>
 					작성자 : <br><input id="title_box" type="text" name="writer" value="${detail.writer}">
 				</p>
-				<input type="submit" value="게시글 수정">
+				<input type="submit" onclick="javascript:btn()" value="게시글 수정">
 				<button type="button" onclick="javascript:history.go(-1);">취소</button>				
 			</form>		
 		</div>

@@ -8,6 +8,12 @@
 <meta charset="utf-8">
 <title>게시글 - ${detail.title }</title>
 <link rel="stylesheet" href="../css/detailView.css">
+<script type="text/javascript">
+	function del() {
+		alert("정말 게시글을 삭제하시겠습니까?");
+		window.location.href="/deleteSuccess.jsp";
+	}
+</script>
 
 <c:set var="detail" value="${detail}" />
 <jsp:include page="../include/header.jsp"></jsp:include>
@@ -25,6 +31,8 @@
 			<form action="/modify.do/bno=${detail.bno}">
 				<input type="submit" value="수정하기">
 			</form>
-			<button type="button" onclick="delete()" class="btn btn-primary">삭제</button>
+			<form action="/delete.do" method="post">
+				<input type="submit" onclick="javascript:del()" value="삭제">
+			</form>
 		</div>
 	</div>

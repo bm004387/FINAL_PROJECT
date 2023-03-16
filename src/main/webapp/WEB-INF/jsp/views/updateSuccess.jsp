@@ -8,18 +8,10 @@
 <title>게시글 수정</title>
 <link rel="stylesheet" href="../css/common.css">
 <script>
-      alert( '요청 처리가 완료되었습니다!' );
+      alert( '수정되었습니다!' );
+      window.location.href = "/board.do";
 </script>
 </head>
 <body>
-	<div class="container">
-		<div class="success-wrapper">
-			* 게시글이 제대로 수정 처리 되었습니다 <br>
-			<br>
-			<form action="/board.do">
-				<input type="submit" value="처음으로">
-			</form>
-		</div>
-	</div>
 </body>
 </html>

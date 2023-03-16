@@ -48,7 +48,7 @@ public class BoardService {
 	@Transactional
 	public void delete(BoardVO vo) {
 		BoardVO selected = BoardDAO.selectById(vo);
-		BoardDAO.delete((BoardVO) selected);
+		BoardDAO.delete(selected);
 	}
 
 	@Transactional

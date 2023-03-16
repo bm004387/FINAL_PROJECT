@@ -113,6 +113,9 @@ a{
 	        <li class="nav-item">
 	           <a class="nav-link active" href="/board.do" style="cursor: pointer;">게시판</a>
 	        </li>
+	        <li class="nav-item">
+	           <a class="nav-link active" href="/react.do" style="cursor: pointer;">게시판</a>
+	        </li>
 	         
 	   
 	   <c:if test="${resultVO != null }">

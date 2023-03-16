@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.springboot.tourvisit.board.impl.BoardService;
 import com.springboot.tourvisit.board.model.BoardVO;
@@ -29,6 +30,13 @@ public class BoardController {
 	@ModelAttribute("board")
 	public BoardVO getBoard(BoardVO vo) {
 		return boardService.selectById(vo);
+	}
+	
+	@GetMapping("/react.do")
+	public RedirectView react() {
+		RedirectView redirectView = new RedirectView();
+       redirectView.setUrl("http://192.168.0.149:3000");
+       return redirectView;
 	}
 	
 	// 홈 화면

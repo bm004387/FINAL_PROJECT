@@ -14,6 +14,7 @@
 		alert('${detail.title}글을 수정하시겠습니까?')
 	}
 </script>
+<jsp:include page="../include/header.jsp"></jsp:include>
 </head>
 
 <body>

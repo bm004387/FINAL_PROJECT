@@ -28,11 +28,13 @@
 			<form action="/board.do">
 				<input type="submit" value="목록으로">
 			</form>
-			<form action="/modify.do/bno=${detail.bno}">
-				<input type="submit" value="수정하기">
-			</form>
-			<form action="/delete.do" method="post">
-				<input type="submit" onclick="javascript:del()" value="삭제">
-			</form>
+			<!--<c:if test="${resultVO.memberId == 'admin'}">-->
+				<form action="/modify.do/bno=${detail.bno}">
+					<input type="submit" value="수정하기">
+				</form>
+				<form action="/delete.do" method="post">
+					<input type="submit" onclick="javascript:del()" value="삭제">
+				</form>
+			<!--</c:if>-->
 		</div>
 	</div>

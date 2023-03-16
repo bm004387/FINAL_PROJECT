@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -110,18 +111,14 @@ a{
 			  </li>
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
+				  	<c:forEach items="${boardList}" var="boardList">
 			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
 				  <ul class="ntcList">
-				  	<li><a>공지1</a><span>2023-03-07</span></li>
-				  	<li><a>공지1</a><span>2023-03-07</span></li>
-				  	<li><a>공지1</a><span>2023-03-07</span></li>
-				  	<li><a>공지1</a><span>2023-03-07</span></li>
-				  	<li><a>공지1</a><span>2023-03-07</span></li>
-				  	<li><a>공지1</a><span>2023-03-07</span></li>
-				  	<li><a>공지1</a><span>2023-03-07</span></li>
-				  	<li><a>공지1</a><span>2023-03-07</span></li>
+				  		<li><a class="move" href="/detail.do/bno=${boardList.bno}"><c:out value="${boardList.title}" /></a><span><c:out value="${boardList.regDate}" /></span></li>
+				  		
 				  </ul>
 			  </div>
+				  	</c:forEach>
 			  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
 			  	<ul class="faqList">
 				  	<li><a>자주묻는 질문1</a><span>2023-03-07</span></li>

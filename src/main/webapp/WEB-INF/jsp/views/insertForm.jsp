@@ -8,24 +8,24 @@
 <head>
 <meta charset="utf-8">
 <title>게시글 등록</title>
-<link rel="stylesheet" href="../css/common.css">
 <c:set var="data" value="${boardList.content}" />
+<jsp:include page="../include/header.jsp"></jsp:include>
 </head>
 <body>
 	<div class="container">
 		<div class="box-wrapper">
 		<form action="write.do" method="post">	   			
 				<p>
-					제목 : <br><input id="title_box" type="text" name="title" value="${param.title}">
+					제목 : <br><input class="form-control" id="title_box" type="text" name="title" value="${param.title}">
 				</p>
 				<p>
 					내용 : <br />
-					<textarea id="content_box" name="content" rows="5" cols="30">${param.content}</textarea>
+					<textarea class="form-control" id="content_box" name="content" rows="5" cols="30">${param.content}</textarea>
 				</p>
 				<p>
-					작성자 : <br><input id="title_box" type="text" name="writer" value="${param.writer}">
+					작성자 : <br><input class="form-control" id="title_box" type="text" name="writer" value="${param.writer}">
 				</p>
-				<input type="submit" value="게시글 등록">
+				<input class="form-control" type="submit" value="게시글 등록">
 				<button type="button" onclick="javascript:history.go(-1);">취소</button>								
 			</form>
 			

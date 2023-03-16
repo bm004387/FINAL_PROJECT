@@ -7,7 +7,7 @@
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
-<title>메인화면</title>
+<title>TourVisit 공지사항</title>
 <link rel="stylesheet" href="../css/board.css">
 
 <jsp:include page="../include/header.jsp"></jsp:include>
@@ -15,16 +15,17 @@
 	<div class="boardheader">
 		<h1>공지사항</h1>
 	</div>
-		<form action="/write.do">
-			<input type="submit" value="게시글 등록" style="width:300px"  width="3000px" /><br>
-			<br>
+	<!-- <c:if test="${resultVO.memberId == 'admin'}"> -->
+		<form action="/write.do" class="insertBtn">
+			<button type="submit" class="btn btn-primary">게시글 등록</button>
 		</form>
+	<!-- </c:if> -->
 		<table width="100%" class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr>
-						<th width="8%">#번호</th>
-						<th width="62%">제목</th>
-						<th width="10%">작성자</th>
+						<th width="5%">#번호</th>
+						<th width="67%">제목</th>
+						<th width="8%">작성자</th>
 						<th width="10%">작성일</th>
 						<th width="10%">수정일</th>
 					</tr>

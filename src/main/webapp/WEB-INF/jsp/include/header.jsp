@@ -11,12 +11,21 @@
 <script src="/js/bootstrap.bundle.js"></script>
 
 <style type="text/css">
+@font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 .header{
 	height: 200px;
 	background: gray;
 }
 .d-flex{
 	margin-bottom: 0 !important;
+}
+a{
+	font-family: 'Dovemayo_gothic';
 }
 </style>
 <!-- Channel Plugin Scripts -->

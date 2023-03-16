@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="../css/common.css">
 <script>
       alert( '수정되었습니다!' );
-      window.location.href = "/board.do";
+      history.back();
 </script>
 </head>
 <body>

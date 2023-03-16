@@ -39,7 +39,15 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/main.do")
-	public String main() {
+	public String main(@ModelAttribute("boardVO")BoardVO vo, HttpServletRequest request, HttpSession session, Model model) throws Exception {
+		try {
+			// 목록 조회
+			List<BoardVO> boardList = boardService.selectBoardList(vo);
+			
+			model.addAttribute("boardList", boardList);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		return "main";
 	}
 	
@@ -64,7 +72,6 @@ public class BoardController {
 		try {
 			// 목록 조회
 			List<BoardVO> boardList = boardService.selectBoardList(vo);
-		      System.out.println(boardList);
 			
 			model.addAttribute("boardList", boardList);
 		}catch(Exception e) {

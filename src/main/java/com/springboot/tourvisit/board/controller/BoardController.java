@@ -27,7 +27,7 @@ public class BoardController {
 
 	// 아래 모든 메소드에 request.setAttribute("article", articleService.selectById(vo))를 해주는것과 같은 역할
 	@ModelAttribute("board")
-	public List<BoardVO> getBoard(BoardVO vo) {
+	public BoardVO getBoard(BoardVO vo) {
 		return boardService.selectById(vo);
 	}
 	
@@ -96,16 +96,17 @@ public class BoardController {
 	// 게시글 수정 폼
 	@GetMapping("/modify.do/bno={bno}")
 	public String updateForm(@PathVariable("bno") Long bno, Model model) {
-		
 		model.addAttribute("detail", boardService.detailView(bno));
 		return "views/updateForm";
 	}
 	
 	// 게시글 수정
 	@PostMapping("/modifySuccess.do")
-	public String update(Long bno) {
+	public String update(BoardVO bno, String title, String content) {
+		boardService.update(bno, title, content);
 		return "views/updateSuccess";
 	}
+	
 	
 	// 게시글 삭제 폼
 	@GetMapping("/delete.do")

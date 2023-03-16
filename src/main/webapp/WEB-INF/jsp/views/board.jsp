@@ -50,7 +50,7 @@
 				<br>
 			</form>
 			<!-- 3. 게시글 수정 -->
-			<form action="/modify.do">
+			<form action="/modify.do/bno=${bno}">
 				<input type="submit" value="최근 게시글 수정" style="width:300px"  width="3000px"  /><br>
 				<br>
 			</form>

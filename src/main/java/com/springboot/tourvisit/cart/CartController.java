@@ -15,6 +15,7 @@ import com.springboot.tourvisit.api.ApiService;
 import com.springboot.tourvisit.api.ApiVO;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -46,13 +47,13 @@ public class CartController {
 	@RequestMapping(value="tourcartlist.do")
 	public String tourcartlist(@ModelAttribute("ApiVO")ApiVO vo,@RequestParam(value = "memberid", defaultValue = "") String memberid, HttpServletRequest request, HttpSession session, Model model) throws Exception{
 		
-		Object cartlist = tourcartservice.tourcartselect(memberid);
+		List<cartDTO> cartlist = tourcartservice.tourcartselect(memberid);
 			
 		model.addAttribute("cartlist", cartlist);
 			//model.addAttribute("tourlist", tourlist);
 		
 		
-		return "tour/tourListR";
+		return "tour/tourcart";
 	}
 	
 }

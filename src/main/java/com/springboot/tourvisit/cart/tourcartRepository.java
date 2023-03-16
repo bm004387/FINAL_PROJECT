@@ -1,7 +1,9 @@
 package com.springboot.tourvisit.cart;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -44,7 +46,7 @@ public class tourcartRepository {
 		
 	}
 	
-	public Query getResultList(String memberid) {
+	public List<cartDTO> getResultList(String memberid) {
 		
 		System.out.println("카트 리스트 작성");
 	
@@ -55,17 +57,14 @@ public class tourcartRepository {
 		 cartRVO = null;
 		
 		// Query cartRVO1 =  (Query) em.createQuery("select a.id, a.contentid,b.title,b.firstimage,a.price from cartVO a,ApiVO b where a.contentid=b.contentid and a.memberid=:memberid").setParameter("memberid",memberid).getResultList();
-		 Query cartRVO1 =  (Query) em.createQuery("select a.id, a.contentid,b.title,b.firstimage,a.price from cartVO a,ApiVO b where a.contentid=b.contentid and a.memberid=:memberid").setParameter("memberid", memberid);
-		 List list = cartRVO1.getResultList();
+		 TypedQuery<cartDTO> cartRVO1 =  em.createQuery("select new com.springboot.tourvisit.cart.cartDTO(a.id, a.contentid,b.title,b.firstimage,a.price) from cartVO a,ApiVO b where a.contentid=b.contentid and a.memberid=:memberid",cartDTO.class).setParameter("memberid", memberid);
 		 
-	        for (Object o : list) {
-	            if (o instanceof Object[]) {
-	                System.out.println(Arrays.toString((Object[]) o));
-	            } else {
-	                System.out.println(o);
-	            }
-	        }
-		return cartRVO1;
+		 List <cartDTO> list = cartRVO1.getResultList();
+		 
+		 
+	        System.out.println("카트레포지토리:"+list.toString());
+	        
+		return list;
 		
 	}
 

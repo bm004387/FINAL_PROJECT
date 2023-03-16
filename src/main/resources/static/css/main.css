@@ -48,16 +48,22 @@ h3{
     justify-content: center;
     align-items: center;
 	border-radius: 15px;
-	background: aqua;
-    margin: 20px;
+	height: 380px;
+}
+.bestTour img{
+	width: 100%;
+	height: 100%;
 }
 .suggest{
 	display: flex;
     justify-content: center;
     align-items: center;
 	border-radius: 15px;
-	background: blue;
-    margin: 20px;
+	height: 380px;
+}
+.suggest img{
+	width: 100%;
+	height: 100%;
 }
 .ctcont{
 	margin: 50px 0;
@@ -108,8 +114,6 @@ h3{
 	width: calc((100% - 60px) / 3);
 	height: 50%;
 	border-radius: 20px;
-	border: 1px solid silver;
-	padding: 30px;
 	margin: 10px 
 }
 .btcont img{

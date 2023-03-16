@@ -73,10 +73,11 @@ a{
 <div class="container">
 	<div class="bestcont row">
 		<div class="bestTour col">
-			<h3>Best Tour</h3>
+			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
 		</div>
 		<div class="suggest col">
-			<h3>추전 여행지</h3>
+			<!-- <img src="images/recommend.jpg"> -->
+			<img src="images/recommend.jpg" class="img-thumbnail" alt="...">
 		</div>
 	</div>
 	<div class="ctcont row">
@@ -111,14 +112,13 @@ a{
 			  </li>
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
-				  	<c:forEach items="${boardList}" var="boardList">
 			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
 				  <ul class="ntcList">
+				  	<c:forEach items="${boardList}" var="boardList" end="7">
 				  		<li><a class="move" href="/detail.do/bno=${boardList.bno}"><c:out value="${boardList.title}" /></a><span><c:out value="${boardList.regDate}" /></span></li>
-				  		
+				  	</c:forEach>
 				  </ul>
 			  </div>
-				  	</c:forEach>
 			  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
 			  	<ul class="faqList">
 				  	<li><a>자주묻는 질문1</a><span>2023-03-07</span></li>
@@ -140,22 +140,22 @@ a{
 	<hr>
 	<div class="btcont">
 		<div>
-			<img src="images/img1.jfif">
+			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
 		</div>
 		<div>
-			<img src="#">
+			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
 		</div>
 		<div>
-			<img src="#">
+			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
 		</div>
 		<div>
-			<img src="#">
+			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
 		</div>
 		<div>
-			<img src="#">
+			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
 		</div>
 		<div>
-			<img src="#">
+			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
 		</div>
 	</div>
 </div>

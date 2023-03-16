@@ -95,7 +95,7 @@ a{
 	</ul>
 	<nav class="navbar navbar-expand-lg bg-light">
 	  <div class="container-fluid">
-	    <a class="navbar-brand" href="/"><img src="/images/logo.png" style="width: 150px;"/></a>
+	    <a class="navbar-brand" href="/main.do"><img src="/images/logo.png" style="width: 150px;"/></a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>

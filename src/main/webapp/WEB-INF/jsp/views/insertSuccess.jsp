@@ -8,17 +8,11 @@
 <title>게시글 등록</title>
 <link rel="stylesheet" href="../css/common.css">
 <script>
-      alert( '요청 처리가 완료되었습니다!' );
+	alert( '공지사항 글이 작성되었습니다!' );
+	location.href="/board.do"
 </script>
 </head>
 <body>
-	<div class="container">
-		<div class="success-wrapper">
-			게시글을 등록했습니다! <br><br>
-			<form action="/board.do">
-				<input type="submit" value="처음으로">
-			</form>
-		</div>
-	</div>
+	
 </body>
 </html>

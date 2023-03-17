@@ -38,14 +38,14 @@ a{
     <p class="closeWrap">
         <input type="checkbox" name="expiresChk" id="expiresChk">
         <label for="expiresChk">오늘 하루 이 창 열지 않기</label>
-        <button class="closeBtn">닫기</button>
+        <button class="closeBtn btn btn-secondary">닫기</button>
     </p>
 </div>
 <div class="topcont">
 	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-		      <a><img src="images/img2.jpg" class="d-block w-100" alt="..."></a>
+		      <a><img src="images/img9.jfif" class="d-block w-100" alt="..."></a>
 		    </div>
 		    <div class="carousel-item">
 		      <a><img src="images/img3.jpg" class="d-block w-100" alt="..."></a>
@@ -73,24 +73,24 @@ a{
 <div class="container">
 	<div class="bestcont row">
 		<div class="bestTour col">
-			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
+			<a href="#"><img src="images/besttour.jpg" class="img-thumbnail" alt="..."></a>
 		</div>
 		<div class="suggest col">
 			<!-- <img src="images/recommend.jpg"> -->
-			<img src="images/recommend.jpg" class="img-thumbnail" alt="...">
+			<a href="#"><img src="images/recommend.jpg" class="img-thumbnail" alt="..."></a>
 		</div>
 	</div>
 	<div class="ctcont row">
 		<div id="carouselExampleFade" class="carousel slide carousel-fade col" data-bs-ride="carousel">
 		  <div class="carousel-inner ctcontleft">
 		    <div class="carousel-item active">
-		      <img src="images/flower_01.jpg" class="d-block w-100" alt="...">
+		      <a href="#"><img src="images/img2.png" class="d-block w-100" alt="..."></a>
 		    </div>
 		    <div class="carousel-item">
-		      <img src="images/img6.jpg" class="d-block w-100" alt="...">
+		      <a href="#"><img src="images/img6.jpg" class="d-block w-100" alt="..."></a>
 		    </div>
 		    <div class="carousel-item">
-		      <img src="images/yuna_flower1.jpg" class="d-block w-100" alt="...">
+		      <a href="#"><img src="images/img3.jfif" class="d-block w-100" alt="..."></a>
 		    </div>
 		  </div>
 		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -114,7 +114,7 @@ a{
 			<div class="tab-content" id="pills-tabContent">
 			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
 				  <ul class="ntcList">
-				  	<c:forEach items="${boardList}" var="boardList" end="7">
+				  	<c:forEach items="${boardList}" var="boardList" end="8">
 				  		<li><a class="move" href="/detail.do/bno=${boardList.bno}"><c:out value="${boardList.title}" /></a><span><c:out value="${boardList.regDate}" /></span></li>
 				  	</c:forEach>
 				  </ul>

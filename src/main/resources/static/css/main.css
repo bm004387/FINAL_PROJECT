@@ -5,7 +5,7 @@
     font-style: normal;
 }
 #cookie{
-	width: 1200px;
+	width: 1100px;
 	height: 500px;
 	position: absolute;
 	z-index: 99999;
@@ -23,15 +23,19 @@
 	color: #fff;
 	font-weight: bold;
 	padding-right: 10px;
+	display: flex;
+    justify-content: right;
+    align-items: center;
 }
-.closeWrap input{
-	vertical-align: middle;
+.closeWrap button{
+	border-radius: 10px;
+	padding: 3px 10px;
+    margin: 5px;
 }
 h3{
 	font-family: 'Dovemayo_gothic';
 }
 .topcont{
-	margin-top: 50px;
 	width: 100%;
 	height: 700px;
 }
@@ -48,8 +52,14 @@ h3{
 	display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 	border-radius: 15px;
 	height: 380px;
+}
+.bestTour a{
+	position: absolute;
+    width: 100%;
+    height: 100%;
 }
 .bestTour img{
 	width: 100%;
@@ -59,9 +69,15 @@ h3{
 	display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 	border-radius: 15px;
 	padding-right: 0 !important;
 	height: 380px;
+}
+.suggest a{
+	position: absolute;
+    width: 100%;
+    height: 100%;
 }
 .suggest img{
 	width: 100%;
@@ -72,13 +88,20 @@ h3{
 }
 .ctcontleft{
 	border-radius: 20px;
-	height: 405px;
+	height: 100%;
 }
 .ctcontleft > .carousel-item{
 	height: 100%;
 }
 .ctcontleft img{
 	height: 100%;
+}
+.ctcont > .carousel{
+	height: 450px;
+}
+.notice{
+	overflow-y: hidden;
+	height: 450px;
 }
 .notice li{
 	width: 50%;
@@ -88,7 +111,8 @@ h3{
 	width: 100%;
 }
 .ntcList{
-	padding-left: 0; 
+	padding-left: 0;
+    margin-bottom: 0;
 }
 .ntcList li{
 	width: 100%;
@@ -130,6 +154,12 @@ h3{
 }
 
 @media screen and (max-width: 1399px){
+	#cookie{
+		width: 1000px;
+		height: 450px;
+		top: 40px;
+		left: 40px;
+	}
 	.container{
 		max-width: 1099px !important;
 	}
@@ -148,11 +178,29 @@ h3{
 	.suggest{
 		height: 350px;
 	}
-	.ctcontleft{
-		height: 360px;
+	.ctcont > .carousel{
+		height: 350px;
+	}
+	.notice{
+		height: 350px;
+	}
+	.ntcList li{
+	padding: 7px;
 	}
 }
 @media screen and (max-width: 1199px){
+	#cookie{
+		width: 800px;
+		height: 350px;
+		top: 30px;
+		left: 30px;
+	}
+	.closeWrap{
+	font-size: 14px;
+	}
+	.closeWrap button{
+		font-size: 14px;
+	}
 	.container{
 		max-width: 981px !important;
 	}
@@ -171,8 +219,26 @@ h3{
 	.suggest{
 		height: 320px;
 	}
+	.ctcont > .carousel{
+		height: 320px;
+	}
+	.notice{
+		height: 320px;
+	}
 }
 @media screen and (max-width: 991px){
+	#cookie{
+		width: 700px;
+		height: 300px;
+		top: 30px;
+		left: 30px;
+	}
+	.closeWrap{
+		font-size: 12px;
+	}
+	.closeWrap button{
+		font-size: 12px;
+	}
 	.container{
 		max-width: 891px !important;
 	}
@@ -182,8 +248,20 @@ h3{
 	.topcont img{
 		height: 600px;
 	}
+	.ctcont > .carousel{
+		height: 280px;
+	}
+	.notice{
+		height: 280px;
+	}
 }
 @media screen and (max-width: 768px){
+	#cookie{
+		width: 500px;
+		height: 200px;
+		top: 30px;
+		left: 30px;
+	}
 	.topcont{
 		height: 500px;
 	}
@@ -199,13 +277,32 @@ h3{
 	.suggest{
 		height: 280px;
 	}
+	.ctcont > .carousel{
+		height: 240px;
+	}
+	.notice{
+		height: 240px;
+	}
+	.ntcList li{
+		font-size: 14px;
+		padding: 5px; 
+	}
+	.notice li button{
+		font-size: 14px;
+	}
 }
 @media screen and (max-width: 576px){
+	#cookie{
+		width: 300px;
+		height: 150px;
+		top: 60px;
+		left: 10px;
+	}
 	.topcont{
-		height: 400px;
+		height: 300px;
 	}
 	.topcont img{
-		height: 400px;
+		height: 300px;
 	}
 	.bestcont{
 		height: 200px; 
@@ -216,6 +313,20 @@ h3{
 	.suggest{
 		height: 200px;
 	}
+	.ctcont > .carousel{
+		height: 190px;
+	}
+	.notice{
+		height: 190px;
+	}
+	.ntcList li{
+		font-size: 10px;
+		padding: 3px; 
+	}
+	.notice li button{
+		font-size: 10px;
+	}
+}
 }
 
 

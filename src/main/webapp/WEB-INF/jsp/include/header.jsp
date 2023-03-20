@@ -40,6 +40,13 @@ a{
 	text-decoration: none;
 	cursor: pointer;
 }
+
+#cartlistBtn{
+	border:none;
+	background-color:white;
+	margin-left:0.5rem;
+	font-family: 'Dovemayo_gothic';
+}
 </style>
 <!-- Channel Plugin Scripts -->
 <script>
@@ -117,7 +124,7 @@ a{
 						<input type="hidden" name="memberid" value=${resultVO.memberId}>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="tourList.do">여행 상품 목록</a></li>
-								<li><button id ="cartBtn" form="cart" type="submit" class="" >카트리스트</button></li>
+								<li><button id ="cartlistBtn" form="cart" type="submit" class="" >카트리스트</button></li>
 								<li><a class="dropdown-item" href="#">Something else here</a></li>
 								<c:if test="${resultVO.memberId=='admin'}">
 									<li><a class="dropdown-item" href="api.do">데이터 업데이트</a></li>

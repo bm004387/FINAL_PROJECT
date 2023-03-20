@@ -28,7 +28,7 @@
                   <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
                     
-                    <h6 class="mb-0 text-muted">${status.count} items</h6>
+                   
                   </div>
                    <c:forEach items="${cartlist}" var="cartlist" varStatus="status">
                   <hr class="my-4">
@@ -40,30 +40,24 @@
                         class="img-fluid rounded-3" alt="image">
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-3">
-                      <h6 class="text-muted">축제</h6>
+                      <h6 class="text-muted">상품이름</h6>
                       <h6 class="text-black mb-0">${cartlist.title}</h6>
                     </div>
-                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                      <button class="btn btn-link px-2"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                        <i class="fas fa-minus"></i>
-                      </button>
-
-                      <input id="form1" min="0" name="quantity" value="1" type="number"
-                        class="form-control form-control-sm" />
-
-                      <button class="btn btn-link px-2"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                        <i class="fas fa-plus"></i>
-                      </button>
-                    </div>
+                    
+                   
+                 
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h6 class="mb-0">${cartlist.price}</h6>
+                    
+                    <h6 class="text-muted">상품가격</h6>
+                    
+                      <h6 id="price1" class="mb-0">${cartlist.price} 원</h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                       <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
                     </div>
                   </div>
+                  <c:set var="totalprice" value="${totalprice + cartlist.price}" />
+                  <c:set var="count" value="${status.count}" />
                   </c:forEach>
 
                   <hr class="my-4">
@@ -80,8 +74,8 @@
                   <hr class="my-4">
 
                   <div class="d-flex justify-content-between mb-4">
-                    <h5 class="text-uppercase">items 3</h5>
-                    <h5>€ 132.00</h5>
+                    <h5 class="text-uppercase">items <c:out value="${count}"/></h5>
+                    <h5><c:out value="${totalprice}"/></h5>
                   </div>
 
                   <h5 class="text-uppercase mb-3">Shipping</h5>
@@ -90,11 +84,11 @@
 
                   <div class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Total price</h5>
-                    <h5>€ 137.00</h5>
+                    <h5>￦ <c:out value="${totalprice}"/></h5>
                   </div>
 
                   <button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark">Register</button>
+                    data-mdb-ripple-color="dark">주문하기</button>
 
                 </div>
               </div>
@@ -106,4 +100,5 @@
   </div>
 </section>
 </body>
+
 </html>

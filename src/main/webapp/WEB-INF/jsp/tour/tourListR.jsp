@@ -44,6 +44,14 @@
   text-decoration: underline;
 }
 
+.input-group{
+	margin-bottom:1rem;
+	width:25%
+}
+.input-group form-control{
+	width:25%;
+}
+
 </style>
 
 <body>

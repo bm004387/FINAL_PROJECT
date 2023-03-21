@@ -7,47 +7,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/header.css">
 
 <script src="/js/bootstrap.bundle.js"></script>
 
-<style type="text/css">
-@font-face {
-    font-family: 'Dovemayo_gothic';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-#navbarNav{
-	justify-content: space-between;
-}
-#navbarNav li{
-    display: flex;
-    align-items: center;
-	margin: 10px;
-	font-size: 20px;
-}
-#navbarNav li a{
-	color: #000; 
-}
-.header{
-	height: 200px;
-}
-.d-flex{
-	margin-bottom: 0 !important;
-}
-a{
-	font-family: 'Dovemayo_gothic';
-	text-decoration: none;
-	cursor: pointer;
-}
-
-#cartlistBtn{
-	border:none;
-	background-color:white;
-	margin-left:0.5rem;
-	font-family: 'Dovemayo_gothic';
-}
-</style>
 <!-- Channel Plugin Scripts -->
 <script>
    (function() {
@@ -95,8 +58,8 @@ a{
 <body>
 <div class="container header">
 	<nav class="navbar navbar-expand-lg bg-light">
-	  <div class="container-fluid" style="background: #fff; z-index: 10; display: flex; flex-direction: column;">
-	    <a class="navbar-brand" href="/main.do"><img src="/images/logo1.png" style="width: 350px;"/></a>
+	  <div class="container-fluid hdnav">
+	    <a class="navbar-brand logo" href="/main.do"><img src="/images/logo1.png"/></a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>

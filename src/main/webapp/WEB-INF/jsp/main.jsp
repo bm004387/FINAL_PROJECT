@@ -108,7 +108,7 @@ a{
 			    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">공지사항</button>
 			  </li>
 			  <li class="nav-item" role="presentation">
-			    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">자주묻는 질문</button>
+			    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">FAQ</button>
 			  </li>
 			</ul>
 			<div class="tab-content" id="pills-tabContent">

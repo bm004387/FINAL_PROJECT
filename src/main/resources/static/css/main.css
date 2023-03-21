@@ -131,7 +131,6 @@ h3{
 }
 .btcont{
 	width: 100%;
-	height: 1000px !important;
 	display: flex;
     flex-wrap: wrap;
     margin: 100px 0;
@@ -185,7 +184,10 @@ h3{
 		height: 350px;
 	}
 	.ntcList li{
-	padding: 7px;
+		padding: 7px;
+	}
+	.faqList li{
+		padding: 7px;
 	}
 }
 @media screen and (max-width: 1199px){
@@ -263,10 +265,10 @@ h3{
 		left: 30px;
 	}
 	.topcont{
-		height: 500px;
+		height: 430px;
 	}
 	.topcont img{
-		height: 500px;
+		height: 430px;
 	}
 	.bestcont{
 		height: 280px; 
@@ -289,6 +291,10 @@ h3{
 	}
 	.notice li button{
 		font-size: 14px;
+	}
+	.faqList li{
+		font-size: 14px;
+		padding: 5px;
 	}
 }
 @media screen and (max-width: 576px){
@@ -325,6 +331,10 @@ h3{
 	}
 	.notice li button{
 		font-size: 10px;
+	}
+	.faqList li{
+		font-size: 10px;
+		padding: 3px; 
 	}
 }
 }

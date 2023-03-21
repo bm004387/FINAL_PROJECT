@@ -53,5 +53,10 @@ public class ReactBoard {
 	@Column(name = "RT_UPDATEDATE")
 	@LastModifiedDate
 	private LocalDate updateDate;
+	
+//	@Column(name = "counts")
+//	private Integer counts;
+
+
 
 }

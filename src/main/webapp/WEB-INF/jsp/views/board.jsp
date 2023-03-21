@@ -15,11 +15,11 @@
 	<div class="boardheader">
 		<h1>공지사항</h1>
 	</div>
-	<!-- <c:if test="${resultVO.memberId == 'admin'}"> -->
-		<form action="/write.do" class="insertBtn">
-			<button type="submit" class="btn btn-primary">게시글 등록</button>
-		</form>
-	<!-- </c:if> -->
+		<c:if test="${resultVO.memberId == 'admin'}">
+			<form action="/write.do" class="insertBtn">
+				<button type="submit" class="btn btn-primary">게시글 등록</button>
+			</form>
+	 	</c:if>
 		<table width="100%" class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr>

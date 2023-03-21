@@ -35,7 +35,7 @@ public class ReactBoard {
 					generator = "RT_BOARD_SEQ_GEN")
 	
 	@Column(name = "RT_BNO")
-	private Long bno;
+	private Integer bno;
 	
 	@Column(name = "RT_TITLE")
 	private String title;

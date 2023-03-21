@@ -25,11 +25,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .addResourceLocations("file:///"+ Constants.getUploadImagesPath() + File.separator); // 물리적 파일 접근
     }
 	
-	 @Override
-	    public void addCorsMappings(CorsRegistry registry) {
-	        registry.addMapping("/**").allowedOrigins("*");
-	                
-	}
+	public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedMethods("*")
+                .allowCredentials(false)
+                .maxAge(3000);
+    }
 	 
 	 
 	

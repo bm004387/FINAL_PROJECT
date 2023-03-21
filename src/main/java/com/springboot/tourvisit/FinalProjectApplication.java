@@ -12,10 +12,12 @@ public class FinalProjectApplication implements WebMvcConfigurer{
 	public static void main(String[] args) {
 		SpringApplication.run(FinalProjectApplication.class, args);
 	}
-	@Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowedOrigins("*");
-                
-}
+	public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedMethods("*")
+                .allowCredentials(false)
+                .maxAge(3000);
+    }
 	
 }

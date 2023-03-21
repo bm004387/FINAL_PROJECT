@@ -29,4 +29,9 @@ public class TourcartService {
 		 
 	}
 
+	public List<cartDTO> tourpayinsert(String memberid) {
+		
+		return tourcarDAO.insert(memberid);
+	}
+
 }

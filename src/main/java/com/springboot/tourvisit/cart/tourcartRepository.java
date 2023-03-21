@@ -68,4 +68,12 @@ public class tourcartRepository {
 		
 	}
 
+	public List<cartDTO> insert(String memberid) {
+		
+		TypedQuery<cartDTO> cartRVO1 =  em.createQuery("insert into tourpayend a(select a from member a where a.memberid = :memberid",cartDTO.class).setParameter("memberid", memberid);
+		//cartRVO1.insert();
+		
+		return null;
+	}
+
 }

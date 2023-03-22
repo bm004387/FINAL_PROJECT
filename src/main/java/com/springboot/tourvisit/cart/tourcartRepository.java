@@ -10,6 +10,9 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.springboot.tourvisit.api.ApiVO;
@@ -17,10 +20,13 @@ import com.springboot.tourvisit.api.ApiVO;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
+
 @Repository
 @RequiredArgsConstructor
 public class tourcartRepository {
 
+	private final ModelMapper mapper;
+	
 	// @PersistenceContext : JPA의 ORM을 처리해주는 EntityManager을 불러올 때 쓰는 애노테이션 입니다.
 		@PersistenceContext	
 		private final EntityManager em;
@@ -68,12 +74,48 @@ public class tourcartRepository {
 		
 	}
 
-	public List<cartDTO> insert(String memberid) {
+	
+	public void insert(@Param("memberid") String memberid) {
 		
-		TypedQuery<cartDTO> cartRVO1 =  em.createQuery("insert into tourpayend a(select a from member a where a.memberid = :memberid",cartDTO.class).setParameter("memberid", memberid);
-		//cartRVO1.insert();
 		
-		return null;
+		TypedQuery<payDTO> cartRVO1 =  em.createQuery("select new com.springboot.tourvisit.cart.payDTO(a.contentid,a.memberid,a.price) from cartVO a where a.memberid=:memberid",payDTO.class).setParameter("memberid",memberid);
+		 //Query query =  em.createQuery("select a.contentid,a.memberid,a.price from cartVO a where a.memberid=:memberid").setParameter("memberid", memberid);
+		List<payDTO> list =  cartRVO1.getResultList();
+		 System.out.println(list.toString());
+		 
+		 
+		 for (int i = 0; i < list.size(); i++) {
+			
+			 tourpayendVO payvo = mapper.map(list.get(i), tourpayendVO.class);
+			 em.persist(payvo);
+		}
+	
+		deletecart(memberid);
+			 
+		
+		
+		 //System.out.println(payvo.toString());
+		 
+		 //payvo.forEach(em::persist);
+		 
+		 // em.persist(payvo);
+		
+		//list.forEach(em::persist);
+		 
+		 //List<tourpayendVO> list = cartRVO1.getResultList();
+		
 	}
+	
+	 
+	 public void deletecart(@Param("memberid") String memberid) {
+		
+		 String jpql="delete from cartVO m where m.memberid=:memberid";
+			Query query = em.createQuery(jpql).setParameter("memberid", memberid);
+			int rows = query.executeUpdate();
+			System.out.println(rows);
+		 
+		 //em.deleteAllBymemberid(memberid).setParameter("memberid",memberid);
+		 
+	 }
 
 }

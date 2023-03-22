@@ -2,6 +2,7 @@ package com.springboot.tourvisit.config;
 
 import java.io.File;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,7 +33,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .allowCredentials(false)
                 .maxAge(3000);
     }
-	 
-	 
+	@Bean
+	   public ModelMapper modelMapper() {
+	      ModelMapper modelMapper = new ModelMapper();
+	      return modelMapper;
+	   }
+	
 	
 }

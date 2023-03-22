@@ -29,9 +29,12 @@ public class TourcartService {
 		 
 	}
 
-	public List<cartDTO> tourpayinsert(String memberid) {
-		
-		return tourcarDAO.insert(memberid);
+	@Transactional
+	public List<tourpayendVO> tourpayinsert(String memberid) {
+		tourcarDAO.insert(memberid);
+		return null;
 	}
+
+	
 
 }

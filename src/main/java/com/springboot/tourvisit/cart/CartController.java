@@ -58,7 +58,7 @@ public class CartController {
 	@RequestMapping(value="tourcartpay.do")
 	public String tourcartpay(@RequestParam(value = "memberid", defaultValue = "") String memberid, HttpServletRequest request, HttpSession session, Model model) throws Exception{
 		
-		List<cartDTO> cartlist = tourcartservice.tourpayinsert(memberid);
+		List<tourpayendVO> cartlist = tourcartservice.tourpayinsert(memberid);
 			
 		//model.addAttribute("cartlist", cartlist);
 			//model.addAttribute("tourlist", tourlist);

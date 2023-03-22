@@ -106,7 +106,7 @@ thead > tr > th:nth-child(5){
 }
 @media screen and (max-width: 576px){
 	.table{
-		font-size: 12px;
+		font-size: 30px;
 	}
 	.insertBtn button{
 		font-size: 12px;
@@ -118,5 +118,6 @@ thead > tr > th:nth-child(5){
 	    display: none;
 	}
 	tr > td:nth-child(5){
-	display: none;}
+		display: none;
+	}
 }

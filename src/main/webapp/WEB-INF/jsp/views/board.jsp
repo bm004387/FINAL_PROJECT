@@ -13,21 +13,24 @@
 <jsp:include page="../include/header.jsp"></jsp:include>
 	<div class="container">
 	<div class="boardheader">
-		<h1>공지사항</h1>
-	</div>
-		<c:if test="${resultVO.memberId == 'admin'}">
+		<h1 class="title">
+			<span class="title-word title-word-1">공</span>
+		    <span class="title-word title-word-2">지</span>
+		    <span class="title-word title-word-3">사</span>
+		    <span class="title-word title-word-4">항</span>
 			<form action="/write.do" class="insertBtn">
 				<button type="submit" class="btn btn-primary">게시글 등록</button>
 			</form>
-	 	</c:if>
+		</h1>
+	</div>
 		<table width="100%" class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr>
-						<th width="5%">#번호</th>
-						<th width="67%">제목</th>
-						<th width="8%">작성자</th>
-						<th width="10%">작성일</th>
-						<th width="10%">수정일</th>
+						<th>번호</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+						<th>수정일</th>
 					</tr>
 				</thead>
 				<c:forEach items="${boardList}" var="boardList">

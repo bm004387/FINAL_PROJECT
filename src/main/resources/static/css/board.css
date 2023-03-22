@@ -6,14 +6,117 @@
     font-style: normal;
 }
 .insertBtn{
-	float: right;
-	margin: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 .boardheader h1{
 	font-family: 'Dovemayo_gothic';
 	text-align: center;
-	margin: 50px 20px 0;
+	margin: 50px 0;
 }
 .table{
 	text-align: center;
+}
+thead > tr > th:nth-child(1){
+    width: 5%;
+}
+thead > tr > th:nth-child(2){
+    width: 67%;
+}
+thead > tr > th:nth-child(3){
+    width: 8%;
+}
+thead > tr > th:nth-child(4){
+    width: 10%;
+}
+thead > tr > th:nth-child(5){
+    width: 10%;
+}
+.title-word {
+  animation: color-animation 1s linear infinite;
+  font-family: 'Dovemayo_gothic';
+}
+
+.title-word-1 {
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+
+.title-word-2 {
+  --color-1: #DBAD4A;
+  --color-2: #ACCFCB;
+  --color-3: #17494D;
+}
+
+.title-word-3 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #ACCFCB;
+}
+
+.title-word-4 {
+  --color-1: #3D8DAE;
+  --color-2: #DF8453;
+  --color-3: #E4A9A8;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
+@media screen and (max-width: 1199px){
+
+	thead > tr > th:nth-child(1){
+	   	width: 6%;
+	}
+	thead > tr > th:nth-child(2){
+	    width: 58%;
+	}
+}
+@media screen and (max-width: 991px){
+	.container{
+		max-width: 900px !important;
+	}
+	.boardheader h1{
+	margin: 10px 0;}
+	.insertBtn button{
+		font-size: 14px;
+	}
+	thead > tr > th:nth-child(1){
+	   	width: 5%;
+	}
+	thead > tr > th:nth-child(2){
+	    width: 35%;
+	}
+}
+@media screen and (max-width: 768px){
+	.table{
+		font-size: 14px;
+	}
+	thead > tr > th:nth-child(2){
+	    width: 25%;
+	}
+}
+@media screen and (max-width: 576px){
+	.table{
+		font-size: 12px;
+	}
+	.insertBtn button{
+		font-size: 12px;
+	}
+	.logo{
+		margin-left: -40px !important;
+	}
+	thead > tr > th:nth-child(5){
+	    display: none;
+	}
+	tr > td:nth-child(5){
+	display: none;}
 }

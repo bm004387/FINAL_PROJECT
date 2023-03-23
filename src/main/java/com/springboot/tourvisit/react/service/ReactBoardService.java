@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -48,7 +49,7 @@ public class ReactBoardService {
 //	}	
 	
 	public List<ReactBoard> getAllBoard(){
-		return reactBoardRepository.findAll();
+		return reactBoardRepository.findAll(Sort.by(Sort.Direction.DESC, "bno"));
 	}
 
 	public ReactBoard createBoard(ReactBoard reactBoard) {

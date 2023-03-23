@@ -55,6 +55,7 @@ public class CartController {
 		
 		return "tour/tourcart";
 	}
+	@ResponseStatus(value= HttpStatus.OK)
 	@RequestMapping(value="tourcartpay.do")
 	public String tourcartpay(@RequestParam(value = "memberid", defaultValue = "") String memberid, HttpServletRequest request, HttpSession session, Model model) throws Exception{
 		
@@ -64,7 +65,7 @@ public class CartController {
 			//model.addAttribute("tourlist", tourlist);
 		
 		
-		return null;
+		return "tour/tourcart";
 	}
 	
 }

@@ -83,12 +83,15 @@
 			<c:if test="${resultVO != null }">
 				<li class="dropdown">
 					<a class="dropdown-toggle"data-bs-toggle="dropdown" aria-expanded="false">여행 상품 메뉴 </a>
+					<form id="pay" name="pay" method="post" action="tourpaylist.do">
+						<input type="hidden" name="memberid" value=${resultVO.memberId}>
+						</form>
 					<form id="cart" name="cart" method="post" action="tourcartlist.do">
 						<input type="hidden" name="memberid" value=${resultVO.memberId}>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="tourList.do">여행 상품 목록</a></li>
 								<li><button id ="cartlistBtn" form="cart" type="submit" class="" >카트리스트</button></li>
-								<li><a class="dropdown-item" href="#">Something else here</a></li>
+								<li><button id ="paylistBtn" form="pay" type="submit" class="" >결제리스트</button></li>
 								<c:if test="${resultVO.memberId=='admin'}">
 									<li><a class="dropdown-item" href="api.do">데이터 업데이트</a></li>
 								</c:if>

@@ -104,12 +104,15 @@ thead > tr > th:nth-child(5){
 	    width: 25%;
 	}
 }
-@media screen and (max-width: 576px){
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
 	.table{
+		font-size: 14px;
+	}
+	.boardheader h1{
 		font-size: 30px;
 	}
-	.insertBtn button{
-		font-size: 12px;
+	thead > tr > th:nth-child(2){
+	    width: 15%;
 	}
 	.logo{
 		margin-left: -40px !important;
@@ -120,4 +123,5 @@ thead > tr > th:nth-child(5){
 	tr > td:nth-child(5){
 		display: none;
 	}
+	
 }

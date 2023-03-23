@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>게시글 수정 - ${detail.title}</title>
 <link rel="stylesheet" href="../css/common.css">
 <c:set var="detail" value="${detail}" />

@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>게시글 등록</title>
 <c:set var="data" value="${boardList.content}" />
 <jsp:include page="../include/header.jsp"></jsp:include>

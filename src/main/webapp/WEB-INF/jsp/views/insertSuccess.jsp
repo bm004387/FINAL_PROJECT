@@ -7,9 +7,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>게시글 등록</title>
+<c:set var="data" value="${boardList.content}" />
 <link rel="stylesheet" href="../css/common.css">
 <script>
-	alert( '공지사항 글이 작성되었습니다!' );
+	alert( '${param.title}글이 작성되었습니다!' );
 	location.href="/board.do"
 </script>
 </head>

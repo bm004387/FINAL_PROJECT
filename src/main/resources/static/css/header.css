@@ -33,11 +33,20 @@ a{
 }
 
 #cartlistBtn{
+	
+	border:none;
+	background-color:white;
+	margin-left:0.5rem;
+	font-family: 'Dovemayo_gothic';
+	
+}
+#paylistBtn{
 	border:none;
 	background-color:white;
 	margin-left:0.5rem;
 	font-family: 'Dovemayo_gothic';
 }
+
 @media screen and (max-width: 991px){
 	.header{
 		height: 100px;

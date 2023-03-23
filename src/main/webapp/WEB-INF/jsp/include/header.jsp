@@ -57,7 +57,7 @@
 </head>
 <body>
 <div class="container">
-	<nav class="navbar navbar-expand-lg bg-light" style="padding: 0;">
+	<nav class="navbar navbar-expand-lg bg-light">
 	  <div class="container-fluid hdnav">
 	    <a class="navbar-brand logo" href="/main.do"><img src="/images/logo1.png"/></a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,7 +100,7 @@
 				</li>
 			</c:if>
 		</ul>
-		<ul class="nav justify-content-end">
+		<ul class="nav justify-content-end loginForm">
 		  	<li class="nav-item">
 		  	<c:if test="${resultVO == null}">
 		    	<a class="nav-link active" aria-current="page" href="login.do">로그인</a>
@@ -108,13 +108,6 @@
 		    <c:if test="${resultVO != null}">
 		    	<a class="nav-link active" aria-current="page" href="logout.do">로그아웃</a>
 		   	</c:if>
-		  	</li>
-		  	<li class="nav-item">
-			   <!--   <a class="nav-link" onclick="javascript:fn_signUp();">회원가입</a> -->
-		 	</li>
-		  	<li class="nav-item">
-	 	     <!-- TOURAPI 데이터 입력 완료로 주석처리   -->
-			 <!--   <a class="nav-link active" aria-current="page" href="api.do">API테스트</a> --> 
 		  	</li>
 		</ul>
 	    </div>

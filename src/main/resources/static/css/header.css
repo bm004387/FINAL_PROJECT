@@ -55,10 +55,16 @@ a{
 		flex-direction: row !important;
 	}
 	.logo{
-		margin-left: -60px;
+		margin-left: -40px;
 	}
 }
 @media screen and (max-width: 576px){
+	.loginForm{
+		justify-content: flex-start !important;
+	}
+	.loginForm a{
+		padding: 0;
+	}
 	.header{
 		height: 80px;
 	}

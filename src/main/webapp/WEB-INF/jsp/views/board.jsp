@@ -7,6 +7,7 @@
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TourVisit 공지사항</title>
 <link rel="stylesheet" href="../css/board.css">
 
@@ -45,6 +46,5 @@
 					</tr>
 				</c:forEach>
 			</table>
-		
-			
 	</div>
+	<jsp:include page="../include/footer.jsp"></jsp:include>

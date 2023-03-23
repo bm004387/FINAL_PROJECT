@@ -117,8 +117,8 @@ public class BoardController {
 	
 	// 게시글 수정
 	@PostMapping("/modifySuccess.do")
-	public String update(BoardVO bno, String title, String content) {
-		boardService.update(bno, title, content);
+	public String update(BoardVO bno, String title, String content, String writer) {
+		boardService.update(bno, title, content, writer);
 		return "views/updateSuccess";
 	}
 	

@@ -38,10 +38,11 @@ public class BoardService {
 	}
 	
 	@Transactional
-	public void update(BoardVO bno, String title, String content) {
+	public void update(BoardVO bno, String title, String content, String writer) {
 		BoardVO selected = BoardDAO.selectById(bno);
 		selected.setTitle(title);
 		selected.setContent(content);
+		selected.setWriter(writer);
 		selected.setUpdateDate(LocalDate.now());
 	}
 	

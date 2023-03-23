@@ -15,7 +15,7 @@
 	margin: 20px 0;
 }
 .title-word {
-  animation: color-animation 1s linear infinite;
+  animation: color-animation 0.5s linear infinite;
   font-family: 'Dovemayo_gothic';
 }
 
@@ -47,6 +47,12 @@
   --color-2: #ACCFCB;
   --color-3: #17494D;
 }
+.title-word-6 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #ACCFCB;
+}
+
 
 @keyframes color-animation {
   0%    {color: var(--color-1)}

@@ -39,6 +39,13 @@ public class BoardController {
        return redirectView;
 	}
 	
+	@GetMapping("/spring.do")
+	public RedirectView spring() {
+		RedirectView redirectView = new RedirectView();
+       redirectView.setUrl("http://localhost:9005/board/list.do");
+       return redirectView;
+	}
+	
 	// 홈 화면
 	
 	@RequestMapping("/")

@@ -90,7 +90,7 @@ function dateFormat(date) {
 		            		 //결제 성공했을시 결제 정보 저장
 		            		//  location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
 		            		//location.href ="tourpayimportinsert.do?paymentInfo="+data;
-							
+		            		  location.href="tourList.do";
 		            	  },
 		            	  error : function(e){
 		            		  console.log(paymentInfo);

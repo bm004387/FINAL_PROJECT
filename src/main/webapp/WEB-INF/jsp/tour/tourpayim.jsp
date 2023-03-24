@@ -39,7 +39,7 @@
 
                   <div class="row mb-4 d-flex justify-content-between align-items-center">
                     <div class="col-md-2 col-lg-2 col-xl-2">
-                     <h6 class="text-muted">pay 결제 순서</h6>
+                     <h6 class="text-muted">pay 결제 ID</h6>
                       <h6 class="text-black mb-0">${payimlist.pay_id}</h6>
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-3">
@@ -51,7 +51,7 @@
                       <h6 class="text-black mb-0">${payimlist.pay_amount}</h6>
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-3">
-                      <h6 class="text-muted">iamport 결제 건수</h6>
+                      <h6 class="text-muted">iamport 결제 상품 번호</h6>
                       <h6 class="text-black mb-0">${payimlist.per_num}</h6>
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-3">

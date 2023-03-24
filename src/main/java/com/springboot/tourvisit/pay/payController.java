@@ -44,6 +44,7 @@ public class payController {
 		return "tour/tourpay";
 	}
 	
+	@ResponseStatus(value= HttpStatus.OK)
 	@RequestMapping(value="tourpayimportinsert.do")
 	public String tourpayiminsert(@RequestBody Map<String, String> vodata, HttpServletRequest request, HttpSession session, Model model) throws Exception{
 		
@@ -57,7 +58,7 @@ public class payController {
 		
 		tourpayservice.insert(vodata);
 		
-		return "tour/tourpay";
+		return "redirect:tourcartlist.do";
 	}
 	
 	@RequestMapping(value="payimport.do")

@@ -41,7 +41,7 @@ public class CartController {
 			//model.addAttribute("tourlist", tourlist);
 		
 		
-		return "tour/tourListR";
+		return "redirect:tourList.do";
 	}
 	
 	@RequestMapping(value="tourcartlist.do")
@@ -65,7 +65,7 @@ public class CartController {
 			//model.addAttribute("tourlist", tourlist);
 		
 		
-		return "tour/tourcart";
+		return "redirect:tourcartlist.do";
 	}
 	
 }

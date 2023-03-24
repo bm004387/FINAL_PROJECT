@@ -67,7 +67,7 @@ function dateFormat(date) {
 		        buyer_tel : phonenum,
 		        buyer_addr :address,
 		       // buyer_postcode : postnum,
-		        m_redirect_url :"tourlist.do"
+		        m_redirect_url :"tourList.do"
 		    }, function(rsp) {
 		        if ( rsp.success ) {
 		        	 var paymentInfo = {
@@ -78,9 +78,9 @@ function dateFormat(date) {
 		            		  paid_at : dateFormat(today)
 		              };
 		        	 //결제 성공했을시 결제 상품을 카트에서 결제완료 리스트로 이동
-		    		//location.href = "tourcartpay.do?memberid="+memberid;
+		    		location.href = "tourcartpay.do?memberid="+memberid;
 		        	 $.ajax({
-		            	  url : "tourcartpay.do?memberid="+memberid,
+		            	  url : "tourpayimportinsert.do",
 		            	  //method : "POST",
 		            	   type:"POST", 	  
 		            	  contentType: "application/json",
@@ -89,8 +89,8 @@ function dateFormat(date) {
 		            		  console.log(paymentInfo);
 		            		 //결제 성공했을시 결제 정보 저장
 		            		//  location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
-		            		location.href ="tourpayimportinsert.do";
-							
+		            		//location.href ="tourpayimportinsert.do?paymentInfo="+data;
+		            		  location.href="tourList.do";
 		            	  },
 		            	  error : function(e){
 		            		  console.log(paymentInfo);

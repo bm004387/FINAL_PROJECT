@@ -14,8 +14,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.springboot.tourvisit.api.ApiVO;
+import com.springboot.tourvisit.cart.tourpayendVO;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -52,6 +54,32 @@ public class tourpayRepository {
 	        
 		return list;
 		
+	}
+	
+	
+	public Object insert(Map<String, String> vodata) {
+		
+		payimportVO imvo = new payimportVO();
+		imvo.setImport_id(vodata.get("imp_uid"));
+		imvo.setPay_id(vodata.get("merchant_uid"));
+		imvo.setPay_amount(vodata.get("paid_amount"));
+		imvo.setPer_num(vodata.get("apply_num"));
+		imvo.setPer_time(vodata.get("paid_at"));
+		System.out.println(imvo.toString());
+		 
+		em.persist(imvo);
+		return imvo;
+		
+	}
+
+
+	public List<payimportVO> getResultList() {
+		
+		TypedQuery<payimportVO> payim = em.createQuery("select a from payimportVO a",payimportVO.class);
+		
+		List <payimportVO> paylist = payim.getResultList();
+		
+		return paylist;
 	}
 
 	

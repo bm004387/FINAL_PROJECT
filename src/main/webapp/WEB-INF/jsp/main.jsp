@@ -141,16 +141,16 @@ a{
 	<hr>
 	<div class="btcont">
 		<div>
-			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
+			<img src="http://tong.visitkorea.or.kr/cms/resource/53/2951253_image2_1.jpg" class="img-thumbnail" alt="피나클랜드 불꽃축제">
 		</div>
 		<div>
-			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
+			<img src="http://tong.visitkorea.or.kr/cms/resource/50/2944950_image2_1.jpg" class="img-thumbnail" alt="정월대보름 민속축제">
 		</div>
 		<div>
-			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
+			<img src="http://tong.visitkorea.or.kr/cms/resource/16/2943316_image2_1.jpg" class="img-thumbnail" alt="연천거리 문화축제">
 		</div>
 		<div>
-			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
+			<img src="http://tong.visitkorea.or.kr/cms/resource/07/2951407_image2_1.jpg" class="img-thumbnail" alt="서울 FCI 국제 도그쇼">
 		</div>
 		<div>
 			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">

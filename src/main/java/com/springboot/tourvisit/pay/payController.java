@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
+import org.modelmapper.ModelMapper;
 
 import com.springboot.tourvisit.api.ApiService;
 import com.springboot.tourvisit.api.ApiVO;
@@ -25,7 +26,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequiredArgsConstructor
 public class payController {
-
+	private final ModelMapper mapper;
 	@Autowired
 	final TourpayService tourpayservice;
 	
@@ -44,11 +45,17 @@ public class payController {
 	}
 	
 	@RequestMapping(value="tourpayimportinsert.do")
-	public String tourpayiminsert(@ModelAttribute("paymentInfo")tourpayendVO vo, HttpServletRequest request, HttpSession session, Model model) throws Exception{
+	public String tourpayiminsert(@RequestBody Map<String, String> vodata, HttpServletRequest request, HttpSession session, Model model) throws Exception{
 		
-		System.out.println(vo.toString());
-			//model.addAttribute("tourlist", tourlist);
+		System.out.println("vo 값 확인 (version:02)" + vodata.get("imp_uid"));
+		System.out.println("vo 값 확인 (version:02)" + vodata.get("merchant_uid"));
+		System.out.println("vo 값 확인 (version:02)" + vodata.get("paid_amount"));
+		System.out.println("vo 값 확인 (version:02)" + vodata.get("apply_num"));
+		System.out.println("vo 값 확인 (version:02)" + vodata.get("paid_at"));
 		
+		
+		
+		tourpayservice.insert(vodata);
 		
 		return "tour/tourpay";
 	}

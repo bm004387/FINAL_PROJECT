@@ -41,7 +41,11 @@ public class CartController {
 			//model.addAttribute("tourlist", tourlist);
 		
 		
+<<<<<<< HEAD
 		return "redirect:tourList.do";
+=======
+		return "tour/tourcart";
+>>>>>>> branch 'master' of https://github.com/bm004387/FINAL_PROJECT.git
 	}
 	
 	@RequestMapping(value="tourcartlist.do")

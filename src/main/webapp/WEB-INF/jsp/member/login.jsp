@@ -10,15 +10,22 @@
 
 
 <script>
-        $(function(){
+	$(function(){
+		$.backstretch([
+			"images/back1.webp"
+			,"images/back2.jpg"
+			,"images/back3.jpg"
+		], {duration: 3000, fade: 2000});
+	})
+	$(document).ready(function(){
+		$("#memberPw").keydown(function (key){
+			if(key.keyCode == 13){
+				fn_signIn();
+			}
 
-            $.backstretch([
-      	  "images/back1.webp"
-        , "images/back2.jpg"
-         , "images/back3.jpg"
-        ], {duration: 3000, fade: 2000});
-        })
-    </script>
+		});
+	});
+</script>
 
 <!-- 카카오 스크립트 -->
 <script>

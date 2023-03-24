@@ -48,6 +48,12 @@ a{
 }
 
 @media screen and (max-width: 991px){
+	.loginForm{
+		justify-content: flex-start !important;
+	}
+	.loginForm a{
+		padding: 0;
+	}
 	.header{
 		height: 100px;
 	}
@@ -56,6 +62,10 @@ a{
 	}
 	.logo{
 		margin-left: -40px;
+	}
+	#navbarNav li{
+		flex-direction: column;
+		align-items: flex-start;
 	}
 }
 @media screen and (max-width: 576px){

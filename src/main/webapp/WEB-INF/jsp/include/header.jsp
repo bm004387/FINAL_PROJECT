@@ -74,11 +74,14 @@
 	          <li class="nav-item">
 	           <a class="nav-link active" href="/location.do">찾아오시는길</a>
 	        </li>
-	        <li class="nav-item">
-	           <a class="nav-link active" href="/board.do">공지사항</a>
-	        </li>
-	        <li class="nav-item">
-	           <a class="nav-link active" href="/react.do">홍보게시판</a>
+	         <li class="nav-item dropdown">
+	          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">게시판</a>
+	          <ul class="dropdown-menu">
+	            <li><a class="dropdown-item" href="/board.do">공지사항</a></li>
+	            <li><a class="dropdown-item" href="/react.do">홍보게시판</a></li>
+	            <li><hr class="dropdown-divider"></li>
+	            <li><a class="dropdown-item" href="#">Something else here</a></li>
+	          </ul>
 	        </li>
 			<c:if test="${resultVO != null }">
 				<li class="dropdown">

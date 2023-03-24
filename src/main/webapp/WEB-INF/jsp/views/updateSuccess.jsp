@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../css/common.css">
 <script>
       alert( '수정되었습니다!' );
-      history.back();
+		location.href = document.referrer; 
 </script>
 </head>
 <body>

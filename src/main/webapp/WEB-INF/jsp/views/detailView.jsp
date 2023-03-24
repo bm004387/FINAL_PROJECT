@@ -8,10 +8,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>게시글 - ${detail.title }</title>
-<link rel="stylesheet" href="../css/detailView.css">
+<link rel="stylesheet" href="../css/crud.css">
 <script type="text/javascript">
 	function del() {
-		alert("정말 게시글을 삭제하시겠습니까?");
+		 if (confirm("정말 게시글을 삭제하시겠습니까???") == true){
+		      document.form.submit();
+		  }else{
+		      return false;
+		  }
 		window.location.href="/deleteSuccess.jsp";
 	}
 </script>
@@ -19,23 +23,42 @@
 <c:set var="detail" value="${detail}" />
 <jsp:include page="../include/header.jsp"></jsp:include>
 	<div class="container">
-		<div class="box-wrapper">	
-			<p>제목 : <br>
-				<input id="title_box" type="text" name="title" value="${detail.title}">			
-			</p>
-			<p>글 내용 :
-				<div id="content_box">${detail.content}</div>
-			</p>
-			<form action="/board.do">
-				<input type="submit" value="목록으로">
-			</form>
+		<div class="box-wrapper">
+			<h2 class="title">
+				<span class="title-word title-word-1">${detail.bno}</span>
+			    <span class="title-word title-word-2">번</span>
+			    <span class="title-word title-word-3">째</span>
+			    &nbsp;
+			    <span class="title-word title-word-4">공</span>
+			    <span class="title-word title-word-5">지</span>
+			    <span class="title-word title-word-6">사</span>
+			    <span class="title-word title-word-6">항</span>
+			</h2>
+			<table class="table table-striped">
+				<tr>
+					<th>제목 : </th>
+					<td><input class="form-control" id="title_box" type="text" name="title" value="${detail.title}" readonly></td>
+					<th>이름 : </th>
+					<td><input class="form-control" id="writer_box" type="text" name="writer" value="${detail.writer}" readonly></td>
+				</tr>
+				<tr>
+					<th>내용 : </th>
+					<td colspan="3"><textarea class="form-control" id="content_box" name="content" rows="20" cols="30" readonly>${detail.content}</textarea></td>
+				</tr>
+			</table>
+			<div class="btnForm">	
+				<form action="/board.do">
+					<button class="btn btn-primary" type="submit" >목록으로</button>
+				</form>
 				<c:if test="${resultVO.memberId == 'admin'}">
 					<form action="/modify.do/bno=${detail.bno}">
-						<input type="submit" value="수정하기">
+						<button class="btn btn-success" type="submit">게시글 수정</button>
 					</form>
-					<form action="/delete.do" method="post">
-						<input type="submit" onclick="javascript:del()" value="삭제">
+					<form action="/delete.do" method="post" onsubmit="return del()">
+						<button class="btn btn-danger" type="submit">게시글 삭제</button>
 					</form>
 				</c:if>
+			</div>
 		</div>
 	</div>
+<jsp:include page="../include/footer.jsp"></jsp:include>

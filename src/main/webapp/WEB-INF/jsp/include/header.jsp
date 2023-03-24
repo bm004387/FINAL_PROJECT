@@ -94,6 +94,7 @@
 								<li><button id ="paylistBtn" form="pay" type="submit" class="" >결제리스트</button></li>
 								<c:if test="${resultVO.memberId=='admin'}">
 									<li><a class="dropdown-item" href="api.do">데이터 업데이트</a></li>
+									<li><a class="dropdown-item" href="payimport.do">iamport 결제 리스트</a></li>
 								</c:if>
 						 	</ul>
 					</form>

@@ -53,6 +53,20 @@ public class payController {
 		return "tour/tourpay";
 	}
 	
+	@RequestMapping(value="payimport.do")
+	public String payimportlist(@RequestParam(value = "memberid", defaultValue = "") String memberid, HttpServletRequest request, HttpSession session, Model model) throws Exception{
+		
+		List<payimportVO> payimlist = tourpayservice.tourpayimselect();
+			
+		model.addAttribute("payimlist", payimlist);
+			//model.addAttribute("tourlist", tourlist);
+		
+		
+		return "tour/tourpayim";
+	}
+	
+	
+	
 	
 	
 }

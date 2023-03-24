@@ -24,6 +24,11 @@ public class TourpayService {
 		return tourpayDAO.getResultList(memberid);
 		 
 	}
+	
+	public List<payimportVO> tourpayimselect() {
+		return tourpayDAO.getResultList();
+		 
+	}
 
 	
 

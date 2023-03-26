@@ -14,22 +14,22 @@ p{
 	text-align: center; 
 }
 
-  @media all and (min-width:320px) {
+  @media all and (min-width:20px) {
   
   .img-content01{
 		border-radius: 152px !important;
 		height: 145px  !important;
 		width: 261px  !important;
 		margin-top: 50px;
-		margin-left: 16px;
-		margin-bottom: 50px;
+		margin-left: 106px !important;
+		margin-bottom: 53px !important;
 	}
 	
 	.img-content02{
 		width: 43px  !important;
 		height: 42px  !important;
 		margin-top: -43px;
-		margin-left: 113px;
+		margin-left: 206px  !important;
 		margin-bottom: 29px;
 		
 	}
@@ -38,7 +38,7 @@ p{
 		width: 203px  !important;
 		height: 200px !important;
 		margin-top:-101px;
-		margin-left: 35px;
+		margin-left: 129px;
 		margin-bottom:-20px;
 	}
   }
@@ -51,7 +51,7 @@ p{
 		height: 171px !important;
 		width: 305px !important;
 		margin-top: 50px;
-		margin-left: 202px;
+		margin-left: 202px !important;
 		margin-bottom: 50px;
 	}
 	
@@ -59,7 +59,7 @@ p{
 		width: 59px !important;
 		height: 57px  !important;
 		margin-top:-61px;
-		margin-left: 321px;
+		margin-left: 321px  !important;
 		margin-bottom: 73px;
 		
 	}
@@ -68,7 +68,7 @@ p{
 		width: 487px  !important;
 		height: 256px !important;
 		margin-top:-128px;
-		margin-left: 108px;
+		margin-left: 108px  !important;
 		margin-bottom: -20px;
 	}
   }
@@ -83,7 +83,7 @@ p{
 		height: 207px  !important;
 		width: 370px  !important;
 		margin-top: 50px;
-		margin-left: 269px;
+		margin-left: 269px  !important;
 		margin-bottom: 50px;
 	}
 	
@@ -91,7 +91,7 @@ p{
 		width: 78px !important;
 		height: 72px !important;
 		margin-top:-61px;
-		margin-left: 420px;
+		margin-left: 420px  !important;
 		margin-bottom: 73px;
 		
 	}
@@ -100,7 +100,7 @@ p{
 		width: 596px !important;
 		height: 281px important;
 		margin-top:-128px;
-		margin-left: 151px;
+		margin-left: 151px !important;
 		margin-bottom: -20px;
 	}
   }
@@ -114,24 +114,24 @@ p{
 		border-radius: 152px !important;
 		width: 454px    !important;
 		height: 264px  !important;
-		margin-top: 50px;
-		margin-left: 348px;
-		margin-bottom: 50px;	
+		margin-top: 10px;
+		margin-left: 415px !important;
+		margin-bottom: -80px !important;	
 	}
 	
 	.img-content02{
 		width: 117px !important;
 		height: 110px !important;
 		margin-top:-61px;
-		margin-left: 509px;
+		margin-left: 575px !important;
 		margin-bottom: 73px;
 	}
 	
 		.img-content03{
 		width: 795px !important;
 		height: 314px  !important;
-		margin-top:-128px;
-		margin-left: 177px;
-		margin-bottom: -20px;
+		margin-top: 8px !important;
+		margin-left: 230px !important;
+		margin-bottom: -10px  !important;
 	}
   }

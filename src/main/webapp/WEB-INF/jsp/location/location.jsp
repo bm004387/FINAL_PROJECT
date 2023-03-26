@@ -10,8 +10,6 @@
 	<title>Tour Visit 찾아오시는 길</title>
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/location.css">
-	<script src="/js/bootstrap.bundle.js"></script>
-	<script src="/js/bootstrap.bundle.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 	<script type="text/javascript"></script>
@@ -29,7 +27,6 @@
                             <h3>Tour Visit 오시는 길<br><br></h3>
                             <p>
                                	 이메일 : TourVisit@gmail.com<br>
-                               	 전화번호 : 02-1234-5678<br>
                               	  주소 : 행복시 행복동 123번지 2층<br><hr><br>
                               	  
                               	<div>

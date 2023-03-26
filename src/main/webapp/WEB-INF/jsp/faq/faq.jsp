@@ -8,8 +8,6 @@
 <title>FAQ</title>
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/faq.css">
-	<script src="/js/bootstrap.bundle.js"></script>
-	<script src="/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <jsp:include page="../include/header.jsp"></jsp:include>

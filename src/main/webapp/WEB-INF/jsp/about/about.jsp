@@ -6,49 +6,48 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tour Visit 회사소개</title>
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/vg.css">
+    <link rel="stylesheet" href="/css/vegas.min.css">
 	<link rel="stylesheet" href="/css/about.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<script src="/js/bootstrap.bundle.js"></script>
-	<script src="/js/bootstrap.bundle.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
-    <script src="../js/vegas.min.js"></script>
-	<link rel="stylesheet" href="../css/vegas.min.css">
+	<script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/vegas.min.js"></script>
 	
-	<script>
-        $(document).ready(function() {
-            //문서 전체(body 태그)에 플러그인 적용함
-            $('.content').vegas({
-            slides: [
-                //초반이미지 나타나게 함. 주석처리하면 안 나타남
-                {
-                    //video{}안에 배경 동영상과 옵션값 지정함
-            video: {
-                //src 속성을 사용해 동영상 지정해 줌
-                src: [
-                    '../videos/location.mp4'],
-                    //loop 속성을 사용해 동영상 반복 여부 지정함
-                loop: true,
-                //동영상을 무음상태로 만들어 줌
-                mute: true
-            }
-        }
-    ]
- });
-});
-</script>
+       <script>
+        $(function(){
+        $('.test').vegas({
+            slides: [//이미지를 할당하여 vagas가 구동이 되도록 경로를 지정
+                {   src: '/images/tour1.jpg' },
+                {   src: '/images/tour2.jpg'  },
+                {   src: '/images/tour3.jpg'  },
+                {   src: '',
+                    video: {
+                        src: [
+                            '',
+                        ],
+                        mute: true
+                    }
+                }
+            ]
+        });
+        });
+    </script>
 	<jsp:include page="../include/header.jsp"></jsp:include>
-      <img class="img-fluid w-100"  src="/images/about01.png"  alt="메인이미지1">
+      <img class="img-fluid w-100"  src="/images/about01.png"  alt="메인이미지1" style="z-index: -1;">
+      <body>
+      <div class="test">
 	 	<div class="content">
-			<p>국내의 다양한 볼거리와 체험이<br>가능한 관광 웹사이트입니다.</p>
-			<i class="fas fa-taxi">
-				<h1>최상의 교통편 정보 제공</h1>
-			</i>
-			<i class="fas fa-plane">
-				<h1>항공기 티켓팅 할인 혜택</h1>
-			</i>
+		<p>국내의 다양한 볼거리와 체험이<br>가능한 관광 웹사이트입니다.</p>
+		<i class="fas fa-taxi">
+			<h1>최상의 교통편 정보 제공</h1>
+		</i>
+		<i class="fas fa-plane">
+			<h1>항공기 티켓팅 할인 혜택</h1>
+		</i>
 		<i class="fas fa-hotel">
 			<h1>맞춤형 다양한 숙박시설</h1>
 		</i>
 		</div>
+		</div>
+		</body>
       <img class="img-fluid w-100" src="/images/about02.png" alt="메인이미지2">

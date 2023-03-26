@@ -25,6 +25,11 @@ public class TourpayService {
 		 
 	}
 	
+	public List<payimportVO> tourpayimselect() {
+		return tourpayDAO.getResultList();
+		 
+	}
+	
 	@Transactional
 	public Object insert(Map<String, String> vodata) {
 		return tourpayDAO.insert(vodata);

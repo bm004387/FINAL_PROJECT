@@ -72,6 +72,16 @@ public class tourpayRepository {
 		
 	}
 
+
+	public List<payimportVO> getResultList() {
+		
+		TypedQuery<payimportVO> payim = em.createQuery("select a from payimportVO a",payimportVO.class);
+		
+		List <payimportVO> paylist = payim.getResultList();
+		
+		return paylist;
+	}
+
 	
 	
 

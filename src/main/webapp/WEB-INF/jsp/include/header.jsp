@@ -79,13 +79,12 @@
 	          <ul class="dropdown-menu">
 	            <li><a class="dropdown-item" href="/board.do">공지사항</a></li>
 	            <li><a class="dropdown-item" href="/react.do">홍보게시판</a></li>
-	            <li><hr class="dropdown-divider"></li>
-	            <li><a class="dropdown-item" href="#">Something else here</a></li>
+	            <li><a class="dropdown-item" href="/spring.do">게시판</a></li>
 	          </ul>
 	        </li>
 			<c:if test="${resultVO != null }">
-				<li class="dropdown">
-					<a class="dropdown-toggle"data-bs-toggle="dropdown" aria-expanded="false">여행 상품 메뉴 </a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">여행상품메뉴</a>
 					<form id="pay" name="pay" method="post" action="tourpaylist.do">
 						<input type="hidden" name="memberid" value=${resultVO.memberId}>
 						</form>
@@ -97,6 +96,7 @@
 								<li><button id ="paylistBtn" form="pay" type="submit" class="" >결제리스트</button></li>
 								<c:if test="${resultVO.memberId=='admin'}">
 									<li><a class="dropdown-item" href="api.do">데이터 업데이트</a></li>
+									<li><a class="dropdown-item" href="payimport.do">iamport 결제 리스트</a></li>
 								</c:if>
 						 	</ul>
 					</form>

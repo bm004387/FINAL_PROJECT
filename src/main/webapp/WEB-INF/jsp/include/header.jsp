@@ -69,7 +69,7 @@
 	          <a class="nav-link active" href="/about.do">회사소개</a>
 	        </li>
 	        <li class="nav-item">
-	           <a class="nav-link active" href="/faq.do">FAQ</a>
+	           <a class="nav-link active" href="/faq.do">F A Q</a>
 	        </li>
 	          <li class="nav-item">
 	           <a class="nav-link active" href="/location.do">찾아오시는길</a>

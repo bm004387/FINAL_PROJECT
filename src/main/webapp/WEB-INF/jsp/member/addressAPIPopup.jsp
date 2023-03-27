@@ -1,24 +1,27 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 <script src="js/jquery-2.2.4.min.js"></script>
+<style>
+	dl {
+	cursor: pointer;
+}
+</style>
 <div class="container" style="margin-top:25px;">
 	<div id="memberSearchDiv" class="text-center">
 	
-		<form id="searchForm" name="searchForm" method="post" class="navbar-form navbar-left" role="search" onsubmit="event.preventDefault();">
+		<form id="searchForm" name="searchForm" method="post" class="navbar-form navbar-left row" role="search" onsubmit="event.preventDefault();">
 			<input type="hidden" name="currentPage" value="1"/>
 			<input type="hidden" name="countPerPage" value="100"/>
 			<input type="hidden" name="resultType" value="json"/> 
 			<input type="hidden" id="confmKey" name="confmKey" value="devU01TX0FVVEgyMDIzMDExMTEyMTM0MTExMzQxODE="/> 
 		
-			<div class="form-group">
+			<div class="form-group col-10">
 				<input type="text" id="keyword" name="keyword" class="form-control" placeholder="도로명+건물번호, 건물명, 지번을 입력하세요." onkeypress="javascript:enterSearch();" />
 			</div>
-			<button type="button" class="btn btn-default" onclick="javascript:fn_search();">검색</button>
+			<button type="button" class="btn btn-primary col-2" onclick="javascript:fn_search();">검색</button>
 		</form>
-		
 	</div>
-	
 	<div>
 		<table class="table table-hover">
 			<thead>
@@ -28,7 +31,6 @@
 				</tr>
 			</thead>
 			<tbody id="addressTableTbody">
-				
 			</tbody>
 		</table>	
 	</div>

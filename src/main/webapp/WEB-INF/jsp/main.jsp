@@ -84,13 +84,13 @@ a{
 		<div id="carouselExampleFade" class="carousel slide carousel-fade col" data-bs-ride="carousel">
 		  <div class="carousel-inner ctcontleft">
 		    <div class="carousel-item active">
-		      <a href="#"><img src="images/img2.png" class="d-block w-100" alt="케러셀 이미지1"></a>
+		      <a href="#"><img src="images/casel1.jpg" class="d-block w-100" alt="케러셀 이미지1"></a>
 		    </div>
 		    <div class="carousel-item">
-		      <a href="#"><img src="images/img6.jpg" class="d-block w-100" alt="케러셀 이미지1"></a>
+		      <a href="#"><img src="images/casel2.jpg" class="d-block w-100" alt="케러셀 이미지1"></a>
 		    </div>
 		    <div class="carousel-item">
-		      <a href="#"><img src="images/img3.jfif" class="d-block w-100" alt="케러셀 이미지1"></a>
+		      <a href="#"><img src="images/casel3.jpg" class="d-block w-100" alt="케러셀 이미지1"></a>
 		    </div>
 		  </div>
 		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+.input-group{
+	align-items: center !important;
+}
+.btnForm{
+	display: flex;
+	justify-content: flex-end;
+}
+.popup{
+	background: lightgray !important;
+}
+#insertForm label{
+	font-family: 'Dovemayo_gothic';
+	font-size: 22px;
+	color: #F5D300;
+	text-shadow: 1px 1px 1px #000;
+}
+#insertForm span{
+	font-family: 'Dovemayo_gothic';
+	font-size: 22px;
+	font-weight: bold;
+	color: #F5D300;
+	text-shadow: 1px 1px 1px #000;
+}
+#insertForm input{
+	background: #E9ECEF !important;
+	border-radius: 10px;
+    border: none;
+    font-weight: bold;
+}
+#insertForm{
+	margin: 0 auto;
+    margin-top: 50px !important;
+    background: none !important;
+    border: none !important;
+    max-width: 900px;
+    margin-bottom: 100px;
+}
+@media screen and (max-width: 768px){
+	#insertForm label{
+		font-size: 16px;
+	}
+	#insertForm span{
+		font-size: 16px;
+	}
+}
+@media screen and (max-width: 576px){
+	#insertForm label{
+		font-size: 14px;
+	}
+	#insertForm span{
+		font-size: 14px;
+	}
+}

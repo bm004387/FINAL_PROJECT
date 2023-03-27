@@ -72,6 +72,9 @@ a{
 }
 
 @media screen and (max-width: 576px){
+	#loginForm  label{
+		font-size: 20px;
+	}
 	.orLogin{
 		padding-left: 0; 
 	}

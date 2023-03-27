@@ -44,7 +44,7 @@ h3{
 	height: 700px;
 }
 .bestcont{
-	height: 400px;
+	height: 700px;
 	margin: 50px 0 !important;
 }
 .bestTour{
@@ -54,7 +54,7 @@ h3{
     align-items: center;
     position: relative;
 	border-radius: 15px;
-	height: 380px;
+	height: 700px;
 }
 .bestTour a{
 	position: absolute;
@@ -72,7 +72,7 @@ h3{
     position: relative;
 	border-radius: 15px;
 	padding-right: 0 !important;
-	height: 380px;
+	height: 700px;
 }
 .suggest a{
 	position: absolute;
@@ -168,13 +168,13 @@ h3{
 		height: 650px;
 	}
 	.bestcont{
-		height: 350px; 
+		height: 550px; 
 	}
 	.bestTour{
-		height: 350px;
+		height: 550px;
 	}
 	.suggest{
-		height: 350px;
+		height: 550px;
 	}
 	.ctcont > .carousel{
 		height: 350px;
@@ -212,13 +212,13 @@ h3{
 		height: 630px;
 	}
 	.bestcont{
-		height: 320px; 
+		height: 500px; 
 	}
 	.bestTour{
-		height: 320px;
+		height: 500px;
 	}
 	.suggest{
-		height: 320px;
+		height: 500px;
 	}
 	.ctcont > .carousel{
 		height: 320px;
@@ -270,13 +270,13 @@ h3{
 		height: 430px;
 	}
 	.bestcont{
-		height: 280px; 
+		height: 330px; 
 	}
 	.bestTour{
-		height: 280px;
+		height: 330px;
 	}
 	.suggest{
-		height: 280px;
+		height: 330px;
 	}
 	.ctcont > .carousel{
 		height: 240px;
@@ -310,13 +310,13 @@ h3{
 		height: 300px;
 	}
 	.bestcont{
-		height: 200px; 
+		height: 250px; 
 	}
 	.bestTour{
-		height: 200px;
+		height: 250px;
 	}
 	.suggest{
-		height: 200px;
+		height: 250px;
 	}
 	.ctcont > .carousel{
 		height: 190px;

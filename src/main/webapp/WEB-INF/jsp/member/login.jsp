@@ -141,16 +141,16 @@ function kakaoLogout() {
 		</ul>
 		<ul class="orLogin">
 			<h3>다른방법으로 로그인</h3><hr>
-			<li onclick="kakaoLogin();">
+			<li onclick="kakaoLogin();" style="margin-bottom: 30px;">
 		      <a href="javascript:void(0)">
 		          <img alt="카카오 로그인" src="images/kakao_login_large_wide.png">
 		      </a>
 			</li>
-			<li onclick="kakaoLogout();">
-		      <a href="javascript:void(0)">
-		          <span>카카오 로그아웃</span>
-		      </a>
-			</li>
+<!-- 			<li onclick="kakaoLogout();"> -->
+<!-- 		      <a href="javascript:void(0)"> -->
+<!-- 		          <span>카카오 로그아웃</span> -->
+<!-- 		      </a> -->
+<!-- 			</li> -->
 			<li onclick="kakaoLogin();">
 		      <a href="javascript:void(0)">
 		          <img alt="카카오 로그인" src="images/google_login.png">

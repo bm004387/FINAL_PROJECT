@@ -34,34 +34,34 @@
 			</div>
 			<div class="input-group">
 				<span class="input-group-addon col-3" id="basic-addon1">이메일</span>
-				<input type="text" id="memberEmail" name="memberEmail" class="form-control col-9" placeholder="이메일을 입력하세요." aria-describedby="basic-addon1">
+				<input type="text" id="memberEmail" name="memberEmail" class="form-control col-10" placeholder="이메일을 입력하세요." aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group">
 				<span class="input-group-addon col-3" id="basic-addon1">휴대전화</span>
-				<input type="text" id="memberPhoneNumber" name="memberPhoneNumber" class="form-control col-9" placeholder="휴대전화를 입력하세요." aria-describedby="basic-addon1">
+				<input type="text" id="memberPhoneNumber" name="memberPhoneNumber" class="form-control col-10" placeholder="휴대전화를 입력하세요." aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group">
 				<span class="input-group-addon col-3" id="basic-addon1">아이디</span>
-				<input type="text" id="memberId" name="memberId" class="form-control col-9" placeholder="아이디를 입력하세요." aria-describedby="basic-addon1">
+				<input type="text" id="memberId" name="memberId" class="form-control col-10" placeholder="아이디를 입력하세요." aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group">
 				<span class="input-group-addon col-3" id="basic-addon1">비밀번호</span>
-				<input type="password" id="memberPw" name="memberPw" class="form-control col-9" placeholder="비밀번호를 입력해 주세요." aria-describedby="basic-addon1">
+				<input type="password" id="memberPw" name="memberPw" class="form-control col-10" placeholder="비밀번호를 입력해 주세요." aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group">
 				<span class="input-group-addon col-3" id="basic-addon1">비밀번호 확인</span>
-				<input type="password" id="memberPw2" name="memberPw2" class="form-control col-9" placeholder="비밀번호를 한번 더 입력하세요." aria-describedby="basic-addon1">
+				<input type="password" id="memberPw2" name="memberPw2" class="form-control col-10" placeholder="비밀번호를 한번 더 입력하세요." aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group">
 				<span class="input-group-addon col-3" id="basic-addon1">주소</span>
-				<input type="text" id="memberAddress" name="memberAddress" class="form-control col-9" placeholder="주소를 선택하세요." aria-describedby="basic-addon1" readonly="readonly">
+				<input type="text" id="memberAddress" name="memberAddress" class="form-control col-10" placeholder="주소를 선택하세요." aria-describedby="basic-addon1" readonly="readonly">
 				<span class="input-group-btn">
 					<button class="btn btn-default popup" type="button" onclick="javascript:fn_openAddressPopup();">검색</button>
 				</span>
 			</div>
 			<div class="input-group">
 				<span class="input-group-addon col-3" id="basic-addon1">나머지 주소</span>
-				<input type="text" id="memberAddress2" name="memberAddress2" class="form-control col-9" placeholder="나머지 주소를 입력하세요." aria-describedby="basic-addon1">
+				<input type="text" id="memberAddress2" name="memberAddress2" class="form-control col-10" placeholder="나머지 주소를 입력하세요." aria-describedby="basic-addon1">
 			</div>
 			<div style="margin-top:15px;">
 				<div class="btnForm">

@@ -19,9 +19,11 @@
 		    <span class="title-word title-word-2">지</span>
 		    <span class="title-word title-word-3">사</span>
 		    <span class="title-word title-word-4">항</span>
-			<form action="/write.do" class="insertBtn">
-				<button type="submit" class="btn btn-primary">게시글 등록</button>
-			</form>
+		    <c:if test="${resultVO.memberId == 'admin'}">
+				<form action="/write.do" class="insertBtn">
+					<button type="submit" class="btn btn-primary">게시글 등록</button>
+				</form>
+			</c:if>
 		</h1>
 	</div>
 		<table width="100%" class="table table-striped table-bordered table-hover">

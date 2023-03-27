@@ -56,7 +56,7 @@
 <!-- End Channel Plugin -->
 </head>
 <body>
-<div class="container">
+<div class="container tcn">
 	<nav class="navbar navbar-expand-lg bg-light">
 	  <div class="container-fluid hdnav">
 	    <a class="navbar-brand logo" href="/main.do"><img src="/images/logo1.png"/></a>

@@ -97,7 +97,7 @@ function kakaoLogout() {
 					if(data != "N"){
 						alert(data + "회원님, 환영합니다");
 						//location.href="/selectMemberList.do?page=0&size=10"
-						location.href="/"
+						location.href="/main.do"
 					}else{
 						alert("회원정보 가입을 해주세요");
 					}

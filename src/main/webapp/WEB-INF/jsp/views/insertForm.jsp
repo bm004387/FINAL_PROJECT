@@ -69,7 +69,7 @@ $(document).ready(function(){
 				</tr>
 			</table>
 				<div class="btnForm">
-					<button class="btn btn-primary" id="submit" type="submit" value="게시글 등록" >게시글 등록</button>
+					<button class="btn btn-primary" id="submit" type="submit" value="게시글 등록" style="margin-right: 10px;">게시글 등록</button>
 					<button class="btn btn-danger" type="button" onclick="javascript:history.go(-1);">취소</button>
 				</div>								
 			</form>

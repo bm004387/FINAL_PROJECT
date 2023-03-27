@@ -45,19 +45,19 @@ a{
 	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-		      <a><img src="images/img1.jpg" class="d-block w-100" alt="여수 랜드마크"></a>
+		      <a><img src="images/액스포대교 무지게 분수.jpg" class="d-block w-100" alt="액스포 대교"></a>
 		    </div>
 		    <div class="carousel-item">
-		      <a><img src="images/img2.jpg" class="d-block w-100" alt="울릉도"></a>
+		      <a><img src="images/경복궁.jpg" class="d-block w-100" alt="경복궁"></a>
 		    </div>
 		    <div class="carousel-item">
 		      <a><img src="images/img4.png" class="d-block w-100" alt="야간관광 100선"></a>
 		    </div>
 		    <div class="carousel-item">
-		      <a><img src="images/img1.jfif" class="d-block w-100" alt="동굴과 월지 야경"></a>
+		      <a><img src="images/경복궁1.jpg" class="d-block w-100" alt="경복궁"></a>
 		    </div>
 		    <div class="carousel-item">
-		      <a><img src="images/img6.jpg" class="d-block w-100" alt="경복궁"></a>
+		      <a><img src="images/남산 순환도로.png" class="d-block w-100" alt="남산 순환도로"></a>
 		    </div>
 	  </div>
 	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -153,10 +153,10 @@ a{
 			<img src="http://tong.visitkorea.or.kr/cms/resource/07/2951407_image2_1.jpg" class="img-thumbnail" alt="서울 FCI 국제 도그쇼">
 		</div>
 		<div>
-			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
+			<img src="images/20230320_01.jpg" class="img-thumbnail" alt="...">
 		</div>
 		<div>
-			<img src="images/besttour.jpg" class="img-thumbnail" alt="...">
+			<img src="images/images.jpg" class="img-thumbnail" alt="...">
 		</div>
 	</div>
 </div>

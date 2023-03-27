@@ -48,11 +48,11 @@
 			</table>
 			<div class="btnForm">	
 				<form action="/board.do">
-					<button class="btn btn-primary" type="submit" >목록으로</button>
+					<button class="btn btn-primary" type="submit" style="margin-right: 10px;">목록으로</button>
 				</form>
 				<c:if test="${resultVO.memberId == 'admin'}">
 					<form action="/modify.do/bno=${detail.bno}">
-						<button class="btn btn-success" type="submit">게시글 수정</button>
+						<button class="btn btn-success" type="submit" style="margin-right: 10px;">게시글 수정</button>
 					</form>
 					<form action="/delete.do" method="post" onsubmit="return del()">
 						<button class="btn btn-danger" type="submit">게시글 삭제</button>

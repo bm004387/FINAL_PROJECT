@@ -35,7 +35,7 @@ public class BoardController {
 	@GetMapping("/react.do")
 	public RedirectView react() {
 		RedirectView redirectView = new RedirectView();
-       redirectView.setUrl("http://localhost:3000");
+       redirectView.setUrl("http://192.168.0.149:3000");
        return redirectView;
 	}
 	

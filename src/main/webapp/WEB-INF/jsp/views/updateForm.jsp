@@ -48,10 +48,10 @@
 				</table>
 				<div class="btnForm">
 					<form>
-						<button class="btn btn-primary" type="submit">수정하기</button>
+						<button class="btn btn-primary" type="submit" style="margin-right: 10px;">수정하기</button>
 					</form>
 					<form action="/board.do">
-						<button class="btn btn-primary"  >목록으로</button>
+						<button class="btn btn-primary" style="margin-right: 10px;">목록으로</button>
 					</form>
 					<button class="btn btn-danger" type="button" onclick="javascript:history.go(-1);">취소</button>				
 				</div>	

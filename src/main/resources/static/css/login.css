@@ -71,6 +71,17 @@ a{
 	border-radius: 10px;
 }
 
+@media screen and (max-width: 576px){
+	.orLogin{
+		padding-left: 0; 
+	}
+	
+	.orLogin img{
+		width: 350px;
+		height: 60px;
+		border-radius: 10px;
+	}
+}
 
 
 

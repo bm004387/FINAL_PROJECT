@@ -58,13 +58,13 @@ $(document).ready(function(){
 		<form action="write.do" method="post" name="insertForm" onsubmit="return chkBoard()">	   		
 			<table class="table table-striped">
 				<tr>
-					<th>제목 : </th>
+					<th>제목</th>
 					<td><input class="form-control" id="title_box" type="text" name="title" value="${param.title}" required></td>
-					<th>이름 : </th>
+					<th>이름</th>
 					<td><input class="form-control" id="writer_box" type="text" name="writer" value="${param.writer}" required></td>
 				</tr>
 				<tr>
-					<th>내용 : </th>
+					<th>내용</th>
 					<td colspan="3"><textarea class="form-control" id="content_box" name="content" rows="20" cols="30" required>${param.content}</textarea></td>
 				</tr>
 			</table>

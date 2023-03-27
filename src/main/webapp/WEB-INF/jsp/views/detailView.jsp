@@ -36,13 +36,13 @@
 			</h2>
 			<table class="table table-striped">
 				<tr>
-					<th>제목 : </th>
+					<th>제목</th>
 					<td><input class="form-control" id="title_box" type="text" name="title" value="${detail.title}" readonly></td>
-					<th>이름 : </th>
+					<th>이름</th>
 					<td><input class="form-control" id="writer_box" type="text" name="writer" value="${detail.writer}" readonly></td>
 				</tr>
 				<tr>
-					<th>내용 : </th>
+					<th>내용</th>
 					<td colspan="3"><textarea class="form-control" id="content_box" name="content" rows="20" cols="30" readonly>${detail.content}</textarea></td>
 				</tr>
 			</table>

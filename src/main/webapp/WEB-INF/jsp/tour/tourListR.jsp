@@ -33,6 +33,7 @@
   border-image-source:  var(--gradient) !important; 
   text-decoration: none;
   transition: all .4s ease;
+  float:right;
 }
 
 .btn:hover, .btn:focus {
@@ -42,6 +43,7 @@
   border: 5px solid #fff !important; 
   box-shadow: #222 1px 0 10px;
   text-decoration: underline;
+  
 }
 
 .input-group{

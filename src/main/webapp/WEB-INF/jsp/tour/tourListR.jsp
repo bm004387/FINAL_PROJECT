@@ -99,7 +99,7 @@
 								
 									  
 					        </div>
-					        <div class="col">
+					        <div class="col" style=" display: flex; justify-content: space-between;">
                       <button id ="cartBtn" form="cart${status.index}" type="submit" class="btn btn-warning btn-lg"  style="border-radius: 10px !important;"><i class="fa fa-shopping-cart fa-2x">&nbsp;장바구니</i></button>
                       </form>
                       <form id="cartbuy" name="cartbuy" method="post" action="#">

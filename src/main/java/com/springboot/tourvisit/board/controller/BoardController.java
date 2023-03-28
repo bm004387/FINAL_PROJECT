@@ -42,7 +42,7 @@ public class BoardController {
 	@GetMapping("/spring.do")
 	public RedirectView spring() {
 		RedirectView redirectView = new RedirectView();
-       redirectView.setUrl("http://localhost:9005/board/list.do");
+       redirectView.setUrl("http://localhost:9080/work/product/goMain.do");
        return redirectView;
 	}
 	

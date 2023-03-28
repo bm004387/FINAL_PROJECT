@@ -87,11 +87,11 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
          String apiUri = "areaBasedList";
          String serviceKey = "?serviceKey=Lte9EaFEKl77Nf7DNWMbLTbLKPzbziOIHqfdh9EfekbiV9YBUQBtp9HchlcWxDH7IJ0YFxO7TQWh5VKTnmCi%2BQ%3D%3D";
          String defaultQueryParam = "&MobileOS=ETC&MobileApp=AppTest&_type=json";
-         String numOfRows = "&numOfRows=10000";
+         String numOfRows = "&numOfRows=2000";
          String pageNo = "&pageNo=1";
          String listYN = "&listYN=Y";
          String arrange = "&arrange=C";
-         String contentTypeId = "&contentTypeId=15"; //숙박 등 여러가지 정보 받아오니 지저분해 축제항목만 받아오도록 함
+         //String contentTypeId = "&contentTypeId=15"; //숙박 등 여러가지 정보 받아오니 지저분해 축제항목만 받아오도록 함
         
         String addr ="";
         addr += BASE_URL;
@@ -102,7 +102,7 @@ public void callDetail(HttpServletRequest request, HttpServletResponse response)
         addr += pageNo;
         addr += listYN;
         addr += arrange;
-        addr += contentTypeId;
+        //addr += contentTypeId;
         
         URL url = new URL(addr);
         

@@ -23,9 +23,9 @@
 <div class="container">
 	<div class="row">
 		<form id="insertForm" name="insertForm" method="post" enctype="multipart/form-data">
-			<div class="input-group text-center">
+			<div class="input-group text-center" style="display: none;">
 				<label class="btn btn-default">
-				    Browse <input type="file" id="userImageAttachFile" name="userImageAttachFile" hidden onchange="setThumbnail(event);" />
+				    Browse <input type="hidden" id="userImageAttachFile" name="userImageAttachFile" onchange="setThumbnail(event);" />
 				</label>
 			</div>
 			<div class="input-group">
